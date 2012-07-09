@@ -1,0 +1,7 @@
+startup_message	off
+bindkey "^[q" prev
+bindkey "^[w" next
+
+hardstatus alwayslastline '%{= M} %H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
+backtick 100 5 5 tail -1 /var/tmp/mprem.stats.top
+caption always '%{= wk} %200` %= %100` %='
