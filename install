@@ -1,7 +1,7 @@
 #!/bin/bash
 
 shopt -s extglob
-for file in ./!(.git|readme.md|install)
+for file in !(.git|readme.md|install)
 do
-  ln -s $file ~/.$file
+  ln $file ~/.$file
 done
