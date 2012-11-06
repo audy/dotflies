@@ -10,6 +10,8 @@ call pathogen#infect()
 "
 " GENERAL
 "
+set list
+set listchars=tab:▸\ ,eol:¬
 
 syntax on
 filetype plugin indent on
@@ -51,7 +53,7 @@ nnoremap k gk
 " POWERLINE
 "
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 "
 " NERDTREE
