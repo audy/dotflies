@@ -3,5 +3,5 @@
 shopt -s extglob
 for file in !(.git|readme.md|install)
 do
-  ln $file ~/.$file
+  ln -f $file ~/.$file
 done
