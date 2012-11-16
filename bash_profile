@@ -18,7 +18,10 @@ eval "$(rbenv init -)"
 
 # Make a cool prompt
 # ???
-PS1="$(tput setaf 5)\W $(tput sgr0)$ "
+#PS1="$(tput setaf 5)\W $(tput sgr0)$ "
+
+# for GTK
+export PATH="$PATH:$HOME/.local/bin"
 
 # Enable LS colors
 alias ls='ls -G'
