@@ -2,6 +2,7 @@
 " ~/.vimrc
 "
 
+
 "
 " PATHOGEN
 "
@@ -17,10 +18,15 @@ let g:vimclojure#ParenRainbow = 1
 "
 " GENERAL
 "
+
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
+
+" make uses real tabs
+au FileType make set no expandtab
 
 filetype off
+
 call pathogen#runtime_append_all_bundles()
 
 filetype plugin indent on
@@ -40,10 +46,17 @@ set smarttab
 set nowrap
 set autoindent
 
+" default tab settings are for Ruby
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" tab settings for Python
+au FileType python set tabstop=8 shiftwidth=4 softtabstop=4
+
+" use global clipboard
+
 
 "
 " MAPPINGS
@@ -71,6 +84,8 @@ set laststatus=2
 " NERDTREE
 "
 
+let NERDTreeIgnore=['\.rbc$', '\.pyc$', '\~$']
+
 " show NERDtree if no files are specified
 autocmd vimenter * if !argc() | NERDTree | endif 
 
@@ -82,3 +97,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " close vim if NERDtree is only open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
