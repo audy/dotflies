@@ -4,11 +4,6 @@
 
 
 "
-" PATHOGEN
-"
-call pathogen#infect()
-
-"
 " Clojure
 "
 
@@ -27,7 +22,6 @@ au FileType make set no expandtab
 
 filetype off
 
-call pathogen#runtime_append_all_bundles()
 
 filetype plugin indent on
 syntax on
@@ -75,6 +69,12 @@ nnoremap j gj
 nnoremap k gk
 
 "
+" PATHOGEN
+"
+
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+"
 " POWERLINE
 "
 set laststatus=2
@@ -90,7 +90,7 @@ let NERDTreeIgnore=['\.rbc$', '\.pyc$', '\~$']
 autocmd vimenter * if !argc() | NERDTree | endif 
 
 " close NERDtree if it's the only window open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " so cursor doesn't start in NERDtree window
 " autocmd VimEnter * wincmd p 
