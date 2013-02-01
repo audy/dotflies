@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+source ~/.aliases
+
+# Load Pythonbrew, if you are using it
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
@@ -6,38 +11,21 @@
 # Add rvm gems and nginx to the path
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
-# Path to the bash it configuration
-export BASH_IT=$HOME/.bash_it
+# Add /usr/local/bin to the path
+export PATH=/usr/local/bin:$PATH
 
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
+# Rbenv
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
-# Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.domain.com'
+# Make a cool prompt
+export PS1='\[\033[01;30m\]\w \$\[\033[00m\] '
 
-# Set my editor and git editor
-export EDITOR="/usr/bin/mate -w"
-export GIT_EDITOR='/usr/bin/mate -w'
+# for GTK
+export PATH="$PATH:$HOME/.local/bin"
 
-# Set the path nginx
-export NGINX_PATH='/opt/nginx'
+# Enable LS colors
+export LS_COLORS='exfxcxdxbxegedabagacad'
 
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-
-# Change this to your console based IRC client of choice.
-
-export IRC_CLIENT='irssi'
-
-# Set this to the command you use for todo.txt-cli
-
-export TODO="t"
-
-# Set vcprompt executable path for scm advance info in prompt (demula theme)
-# https://github.com/xvzf/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
+# for pyqt
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
