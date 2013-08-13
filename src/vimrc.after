@@ -1,0 +1,8 @@
+"  for go
+au BufRead,BufNewFile *.go set filetype=go
+set mouse=vin
+colorscheme Mustang
+set rnu
+set nocompatible
+
+set t_Co=256
