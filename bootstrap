@@ -1,3 +1,31 @@
 #!/bin/bash
 
 set -e
+
+ROOT=$PWD
+
+link_files () {
+  ln -s $1 $2
+  echo "Linked $1 to $2"
+}
+
+install_dotfiles () {
+  echo 'installing dotfiles'
+
+  for source in $(git ls-files src/)
+  do
+
+    dest="$HOME/.$(basename $source)"
+    source=$ROOT/$source
+
+    if [ ! -e $dest ]
+    then
+      link_files $source $dest
+    else
+      echo "$source already exists! Skipping $dest"
+    fi
+
+  done
+}
+
+install_dotfiles
