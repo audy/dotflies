@@ -1,7 +1,3 @@
 #!/bin/bash
 
-shopt -s extglob
-for file in !(.git|readme.md|install)
-do
-  ln -f $file ~/.$file
-done
+set -e

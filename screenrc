@@ -1,4 +1,4 @@
-startup_message	off
+startup_message off
 bindkey "^[q" prev
 bindkey "^[w" next
 
