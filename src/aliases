@@ -35,6 +35,10 @@ alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 alias gp='git push origin master'
 alias gb='git checkout -b'
 
+# lazy ls
+alias ls='ls -G'
+alias l='ls -aG'
+
 # recursive directory listing
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
@@ -45,6 +49,8 @@ alias netlisteners='lsof -i -P | grep LISTEN'
 # alias ls='ls -G'
 # alias l='ls -lshG'
 # alias la='ls -lashG'
+
+alias e=$EDITOR
 
 # say something using the google talk api
 gsay() {
@@ -58,3 +64,5 @@ gsay() {
   fi;
  mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ;
 }
+
+alias fucking='sudo'
