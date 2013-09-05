@@ -1,2 +1,6 @@
-options(showWarnCalls=T, showErrorCalls=T)
 options(repos=c("http://cran.us.r-project.org"))
+
+# options(showWarnCalls=T, showErrorCalls=T)
+library(colorout)
+library(setwidth)
+library(vimcom)
