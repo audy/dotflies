@@ -1,8 +1,31 @@
-"  for go
+" for go
 au BufRead,BufNewFile *.go set filetype=go
+
+" for laziness
 set mouse=vin
+
+" 256 colors
+set t_Co=256
 colorscheme Mustang
+
+" relative line numbers
 set rnu
+
 set nocompatible
 
-set t_Co=256
+" (((()))) {{{{}}}} [[[[]]]]
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" R stuff
+let vimrplugin_assign = 0 " don't automatically convert underscores to <-
+
+" tmuxify
+let g:tmuxify_pane_split = '-v' " start vertical pane
+
+let g:tmuxify_run = {
+    \ 'sh': 'bash %',
+    \ 'go': 'go build %',
+    \}
