@@ -5,3 +5,5 @@
 	email = harekrishna@gmail.com
 [github]
 	user = audy
+[push]
+	default = simple
