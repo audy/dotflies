@@ -1,3 +1,0 @@
-[submodule "src/janus"]
-	path = src/janus
-	url = https://github.com/carlhuda/janus.git
