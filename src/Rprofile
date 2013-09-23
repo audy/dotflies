@@ -8,3 +8,10 @@ library(vimcom)
 # zap() removes all variables in current session
 # from http://r.789695.n4.nabble.com/How-to-Clear-all-variables-stored-in-current-and-previous-sessions-td873058.html
 zap <- function() rm(list=ls(all=TRUE))
+
+# Looks for a file called .Rinit in the present working directory and if
+# it's present, sources it. Useful if you have a project directory and a
+# setup script you want to run when you initialize a new R session.
+if (file.exists('.Rinit')) {
+  source('.Rinit')
+}
