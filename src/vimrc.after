@@ -29,3 +29,17 @@ let g:tmuxify_run = {
     \ 'sh': 'bash %',
     \ 'go': 'go build %',
     \}
+
+" vim-pandoc
+setlocal linebreak " break on words
+setlocal breakat-=* " account for asterisks used in emphasis
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 1
+
+" I don't have a global library file but I should get one :)
+" let g:pandoc_bibfiles = ['/the/path/to/your/bibtex/file.bib']
+
+set columns=80
+
+" softwrap
+"AU BufEnter *.md set wrap linebreak textwidth=0
