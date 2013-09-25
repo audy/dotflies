@@ -39,7 +39,5 @@ let g:pandoc_auto_format = 1
 " I don't have a global library file but I should get one :)
 " let g:pandoc_bibfiles = ['/the/path/to/your/bibtex/file.bib']
 
-set columns=80
-
 " softwrap
 "AU BufEnter *.md set wrap linebreak textwidth=0
