@@ -15,3 +15,7 @@ zap <- function() rm(list=ls(all=TRUE))
 if (file.exists('.Rinit')) {
   source('.Rinit')
 }
+
+# automatically enter debugger upon error when using the
+# interactive console.
+options(error=utils::recover)
