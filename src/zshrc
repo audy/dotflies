@@ -74,3 +74,5 @@ then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 export URBIT_HOME=/Users/austin/Code/urbit/urb
+
+bindkey -v
