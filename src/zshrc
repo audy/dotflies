@@ -40,18 +40,12 @@ ZSH_THEME="pure"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374@global/bin:/Users/austin/.rvm/rubies/ruby-1.9.3-p374/bin:/Users/austin/.rvm/bin:/Users/austin/.pythonbrew/bin:/Users/austin/.pythonbrew/pythons/Python-2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/austin/.gem/ruby/1.8/bin:/opt/nginx/sbin:/Users/austin/.local/bin:$PATH
-
-# Load Pythonbrew, if you are using it
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-# Load RVM, if you are using it
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
@@ -75,4 +69,11 @@ then
 fi
 export URBIT_HOME=/Users/austin/Code/urbit/urb
 
-bindkey -v
+export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"

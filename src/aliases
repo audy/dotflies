@@ -38,7 +38,7 @@ alias gs='git status'
 
 # lazy ls
 alias ls='ls -G'
-alias l='ls -aG'
+alias l='ls -lash'
 
 # recursive directory listing
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
