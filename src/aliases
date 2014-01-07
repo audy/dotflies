@@ -84,3 +84,6 @@ convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]
 
 # coreutils
 alias seq='qseq'
+
+# random password generator
+alias password="cat /usr/share/dict/words | ruby -e 'puts \$stdin.readlines.shuffle.first(3).map(&:strip).join'"
