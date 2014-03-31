@@ -89,3 +89,7 @@ alias pc='pass -c'
 
 alias mux='tmuxinator'
 
+# hide desktop icons (mac os x)
+alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+
+alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
