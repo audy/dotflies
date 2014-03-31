@@ -84,3 +84,5 @@ convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]
 
 # coreutils
 alias seq='qseq'
+
+alias pc='pass -c'
