@@ -85,6 +85,9 @@ convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]
 # coreutils
 alias seq='qseq'
 
+# Peanut Butter and JAAAAM
+alias baam='mplayer -ss 19 -novideo ~/baam.mp5'
+
 alias pc='pass -c'
 
 alias mux='tmuxinator'
