@@ -16,6 +16,3 @@ if (file.exists('.Rinit')) {
   source('.Rinit')
 }
 
-# automatically enter debugger upon error when using the
-# interactive console.
-options(error=utils::recover)
