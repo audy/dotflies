@@ -1,1 +1,9 @@
-![dotflies](https://raw.github.com/audy/dotflies/master/dotflies301x223.png)
+# ~/.dotfiles
+
+of Austin G. Davis-Richardson
+
+## Installation
+
+```sh
+./bootstrap # stand back
+```
