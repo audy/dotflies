@@ -12,11 +12,10 @@ link_files () {
 install_dotfiles () {
   echo 'installing dotfiles'
 
-  for source in $(git ls-files src/)
+  for source in `find src/ -maxdepth 2 -mindepth 1`
   do
 
     dest="$HOME/.$(basename $source)"
-    source=$ROOT/$source
 
     if [ ! -e $dest ]
     then
