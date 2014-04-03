@@ -1,3 +1,0 @@
-" backslash hurts my wrist
-nnoremap <SPACE> <Nop>
-set mapleader=' '
