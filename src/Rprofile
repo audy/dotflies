@@ -1,10 +1,5 @@
 options(repos=c("http://cran.us.r-project.org"))
 
-# options(showWarnCalls=T, showErrorCalls=T)
-library(colorout)
-library(setwidth)
-library(vimcom)
-
 # zap() removes all variables in current session
 # from http://r.789695.n4.nabble.com/How-to-Clear-all-variables-stored-in-current-and-previous-sessions-td873058.html
 zap <- function() rm(list=ls(all=TRUE))
