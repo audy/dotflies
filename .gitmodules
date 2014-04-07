@@ -10,3 +10,6 @@
 [submodule "src/vim/bundle/vim-markdown"]
 	path = src/vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "src/vim/bundle/vim-javascript-syntax"]
+	path = src/vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
