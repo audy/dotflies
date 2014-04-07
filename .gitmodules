@@ -7,3 +7,6 @@
 [submodule "src/vim/bundle/mustang-vim"]
 	path = src/vim/bundle/mustang-vim
 	url = https://github.com/croaker/mustang-vim.git
+[submodule "src/vim/bundle/vim-markdown"]
+	path = src/vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
