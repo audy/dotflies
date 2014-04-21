@@ -80,3 +80,8 @@ export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
 # for gems installed by Homebrew Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# GOPATH
+export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
+
