@@ -13,3 +13,6 @@
 [submodule "src/vim/bundle/vim-javascript-syntax"]
 	path = src/vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "src/vim/bundle/vim-tmuxify"]
+	path = src/vim/bundle/vim-tmuxify
+	url = https://github.com/mhinz/vim-tmuxify.git
