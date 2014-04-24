@@ -79,7 +79,7 @@ au BufRead,BufNewFile *.go set filetype=go
 let vimrplugin_assign = 0 " don't automatically convert underscores to <-
 
 fun! s:DetectRscript()
-    if getline(1) == '#!/usr/bin/env rscript'
+    if tolower(getline(1)) == '#!/usr/bin/env rscript'
         set ft=R
     endif
 endfun
