@@ -11,3 +11,8 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 [core]
 	excludesfile = ~/.cvsignore
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[ghi]
+	token = !security find-internet-password -a audy -s github.com -l 'ghi token' -w
