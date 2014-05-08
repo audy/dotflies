@@ -16,3 +16,6 @@
 [submodule "src/vim/bundle/vim-tmuxify"]
 	path = src/vim/bundle/vim-tmuxify
 	url = https://github.com/mhinz/vim-tmuxify.git
+[submodule "src/vim/bundle/github-issues.vim"]
+	path = src/vim/bundle/github-issues.vim
+	url = https://github.com/jaxbot/github-issues.vim.git
