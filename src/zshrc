@@ -92,3 +92,6 @@ export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
+
+# so CPAN installs modules to ~/perl5
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
