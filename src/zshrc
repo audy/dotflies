@@ -87,3 +87,8 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
 export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
 
+# rbenv shim
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(rbenv init -)"
