@@ -2,9 +2,9 @@ servers = (
   {
     address = "irc.freenode.org";
     chatnet = "freenode";
-    port = "6667";
+    port = "7070";
     use_ssl = "yes";
-    ssl_verify = "yes";
+    ssl_verify = "no";
     autoconnect = "yes";
     nick = "audy";
   }
@@ -13,6 +13,7 @@ servers = (
 chatnets = {
   freenode = {
     type = "IRC";
+    autosendcmd = "/^msg nickserv identify fromage;wait 2000";
   };
 };
 
@@ -184,10 +185,7 @@ statusbar = {
   };
 };
 settings = {
-  core = {
-    real_name = "agdr";
-    user_name = "austin";
-    nick = "audy";
-  };
+  core = { real_name = "agdr"; user_name = "austin"; nick = "audy"; };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "hv"; };
 };

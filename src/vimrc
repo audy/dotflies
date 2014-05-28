@@ -11,6 +11,8 @@ filetype indent on " file type based indentation
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" disable folding
+set nofoldenable
 
 "
 " Get Infected
@@ -26,8 +28,6 @@ call pathogen#infect()
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-
 
 
 "
@@ -48,7 +48,7 @@ set shiftwidth=2
 set expandtab
 
 " \ is the leader character
-let mapleader = ","
+let mapleader = " "
 
 set mouse=vin " laziness
 
