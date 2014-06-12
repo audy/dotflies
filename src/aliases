@@ -96,3 +96,6 @@ alias mux='tmuxinator'
 alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
 
 alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+
+# quit using R
+alias R='echo no'
