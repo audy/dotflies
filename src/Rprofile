@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 options(repos=c("http://cran.us.r-project.org"))
 
 #library(colorout)
