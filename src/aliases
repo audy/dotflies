@@ -100,5 +100,7 @@ alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && kil
 
 alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
 
-# quit using R
-alias R='echo no'
+# for vim-r-plugin
+alias vimr='vim --servername VIM'
+
+alias r='R --silent'
