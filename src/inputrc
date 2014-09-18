@@ -1,7 +1,7 @@
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-set show-all-if-ambiguous on
+# tab complete doesn't care about case
 set completion-ignore-case on
 
 # replace completed prefix with '...'
