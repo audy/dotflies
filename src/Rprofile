@@ -1,6 +1,6 @@
 options(repos=c("http://cran.us.r-project.org"))
 
-library(colorout)
+#library(colorout)
 
 # zap() removes all variables in current session
 # from http://r.789695.n4.nabble.com/How-to-Clear-all-variables-stored-in-current-and-previous-sessions-td873058.html
