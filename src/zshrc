@@ -9,6 +9,7 @@ ZSH_THEME="pure"
 
 export TERM='xterm-256color'
 
+
 # Example aliases
 # alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -95,3 +96,12 @@ eval "$(rbenv init -)"
 
 # so CPAN installs modules to ~/perl5
 eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+
+export DOCKER_HOST=tcp://127.0.0.1:2375
+
+# for GNU OCTAVE
+PATH="$PATH:/usr/texbin"
+
+# solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
