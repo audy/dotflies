@@ -36,6 +36,9 @@ alias gp='git push'
 alias gb='git checkout -b'
 alias gs='git status'
 
+# bundler
+alias b='bundle exec'
+
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
