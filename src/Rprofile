@@ -98,3 +98,8 @@ if(interactive()){
 }
 
 cat("\014")
+
+# this will probably break everything but oh well, I'm sick of the default
+# ggplot2 theme!
+library(ggthemr)
+ggthemr("fresh")
