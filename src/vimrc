@@ -5,42 +5,92 @@
 " most of the things here are taken from others
 "
 
+set mouse=vin " lazy man
 
-" Pathogen
-"
-"
 filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" YAY! PLUGINS!
+" PLUGGGINNS!!!
+
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'junegunn/vim-emoji'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mhinz/vim-tmuxify'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'uguu-org/vim-matrix-screensaver'
+Plugin 'vim-ruby/vim-ruby'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" solarized
+set t_Co=256
+syntax enable
+
+" default is light
+if $ITERM_PROFILE == 'dark'
+  set background=dark
+else
+  set background=light
+endif
+
+colorscheme solarized
+
+" ctrl-P stuff
+let g:ctrlp_max_files=0 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/data/*
+
+" emoji
+set completefunc=emoji#complete
 
 "
 " misc.
 "
-filetype plugin indent on
-set nocompatible
-
-set nobackup
-set nowritebackup
-set noswapfile
-
-set backup                        " enable backups
-set noswapfile                    " it's 2013, Vim.
 
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
+set backup
+set noswapfile
+
 set autoindent
 set tabstop=8
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set wrap
 set textwidth=80
-
-set mouse=vin " laziness
-
-syntax enable
 
 set encoding=utf-8
 
@@ -48,7 +98,6 @@ set undofile
 set undoreload=10000
 
 set ttyfast
-set lazyredraw
 
 set showbreak=↪
 
@@ -58,33 +107,33 @@ set autoread
 set shiftround
 set colorcolumn=+1
 
-set t_Co=256
-set background=dark
-colorscheme Mustang
 
 set ruler
 set rnu
 set numberwidth=5
 
-" Trailing whitespace {{{
+
+" Trailing whitespace
 " Only shown when not in insert mode so I don't go insane.
-augroup trailing
-    au!
-    au InsertEnter * :set listchars-=trail:⌴
-    au InsertLeave * :set listchars+=trail:⌴
+" xxx not working!
+augroup trailin
+  au!
+  au InsertEnter * :set listchars-=trail:⌴
+  au InsertLeave * :set listchars+=trail:⌴
 augroup END
 
 " return to same line when you reopen vim
 augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+  au!
+  au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
 augroup END
 
-" space is the leader character
+" leader/local leader
 let mapleader = " "
+let maplocalleader = ","
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -99,13 +148,6 @@ set ttimeoutlen=10
 " save when focus lost
 au FocusLost *:silent! wall
 
-" Only show cursorline in the current window and in normal mode.
-augroup cline
-    au!
-    au WinLeave,InsertEnter * set nocursorline
-    au WinEnter,InsertLeave * set cursorline
-augroup END
-
 "
 " Shortcuts
 "
@@ -118,6 +160,9 @@ nnoremap K :q<cr>
 
 " Wrap
 nnoremap <leader>W :set wrap!<cr>
+
+" the fucking clipboard
+set clipboard=unnamed
 
 
 " Copying text to the system clipboard.
@@ -171,18 +216,6 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-" Heresy
-inoremap <c-a> <esc>I
-inoremap <c-e> <esc>A
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
-
-" Easy buffer navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 " enable just enough folding to annoy me if
 " I nest too deeply
 set foldlevelstart=6
@@ -205,16 +238,45 @@ let g:tmuxify_pane_split = '-v' " start vertical pane
 " Language-specific settings
 "
 
+" Markdown
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+let g:markdown_fenced_languages = ['css', 'javascript', 'python', 'ruby', 'xml']
+
 " Go
 au BufRead,BufNewFile *.go set filetype=go
 
+" Ruby
+
 " R
+
+"" vim-r-plugin
+let vimrplugin_r_path='/usr/local/bin'
+let vimrplugin_vim_wd = 1 " Start vim in vim's working directory not buffer's
 let vimrplugin_assign = 0 " don't automatically convert underscores to <-
+let vimrplugin_r_args = "--no-save --quiet"
 
 fun! s:DetectRscript()
-    if tolower(getline(1)) == '#!/usr/bin/env rscript'
-        set ft=R
-    endif
+  if tolower(getline(1)) == '#!/usr/bin/env rscript'
+    set ft=R
+  endif
 endfun
 
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+
 autocmd BufNewFile,BufRead * call s:DetectRscript()
+
+" Lines added by the Vim-R-plugin command :RpluginConfig (2014-Aug-31 12:48):
+filetype plugin on
+
+" mini-plugin for inserting electrophoresis files into current markdown and copy
+" image to /public/images/gels/
+" I use this for my lab notebook.
+
+"function CopyGel(path)
+  "let basename=expand('%:t')
+  "let fullpath=expand('%:p')
+  "echo "cp " + fullpath + " " + basename
+"endfunction
