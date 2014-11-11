@@ -37,6 +37,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'uguu-org/vim-matrix-screensaver'
+Plugin 'urbit/hoon.vim'
 Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
