@@ -104,3 +104,6 @@ alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && kill
 alias vimr='vim --servername VIM'
 
 alias r='R --silent'
+
+# find largest files in pwd
+alias big='du  -a . | sort -n -r | less'
