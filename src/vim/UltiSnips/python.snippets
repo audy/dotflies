@@ -1,0 +1,29 @@
+snippet script
+#!/usr/bin/env python
+
+import argparse
+import logging
+
+def parse_args():
+    ''' return arguments
+        >>> args = parse_args()
+    '''
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--log', default='/dev/stderr',
+						help='log file (default=stderr)')
+    return parser.parse_args()
+
+def main():
+    '''
+        >>> main() # stuff happens
+    '''
+
+    args = parse_args()
+	logging.basicConfig(filename=args.logfile, level=logging.INFO)
+
+	$0
+
+if __name__ == '__main__':
+    main()
+endsnippet

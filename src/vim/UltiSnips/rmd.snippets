@@ -1,0 +1,22 @@
+snippet rmd
+---
+title: $1
+date: ${2:`date +%Y-%m-%d`}
+author: Austin G. Davis-Richardson
+---
+
+## Load Requirements
+
+\`\`\`{r}
+library(knitr)
+library(ggplot2)
+library(ggthemr)
+library(magrittr)
+library(dplyr)
+ggthemr('fresh')
+\`\`\`
+
+\`\`\`{r}
+dat <- read.csv($0)
+\`\`\`
+endsnippet
