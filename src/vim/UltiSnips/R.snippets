@@ -1,0 +1,9 @@
+snippet rscript
+#!/usr/bin/env Rscript
+
+main <- function () {
+  $0
+}
+
+tryCatch( main(), error = { traceback() } )
+endsnippet
