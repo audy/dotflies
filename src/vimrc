@@ -191,15 +191,16 @@ set clipboard=unnamed
 " For some reason Vim no longer wants to talk to the OS X pasteboard through "*.
 " Computers are bullshit.
 " (thanks steve losh)
-function! g:FuckingCopyTheTextPlease()
-    let old_z = @z
-    normal! gv"zy
-    call system('pbcopy', @z)
-    let @z = old_z
-endfunction
-noremap <leader>p :silent! set paste<CR>"*p:set nopaste<CR>
-" noremap <leader>p mz:r!pbpaste<cr>`z
-vnoremap <leader>y :<c-u>call g:FuckingCopyTheTextPlease()<cr>
+
+"function! g:FuckingCopyTheTextPlease()
+"    let old_z = @z
+"    normal! gv"zy
+"    call system('pbcopy', @z)
+"    let @z = old_z
+"endfunction
+"noremap <leader>p :silent! set paste<CR>"*p:set nopaste<CR>
+"" noremap <leader>p mz:r!pbpaste<cr>`z
+"vnoremap <leader>y :<c-u>call g:FuckingCopyTheTextPlease()<cr>
 
 " Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
