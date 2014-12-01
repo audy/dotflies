@@ -57,10 +57,10 @@ set t_Co=256
 syntax enable
 
 " default is light
-if $ITERM_PROFILE == 'dark'
-  set background=dark
-else
+if $ITERM_PROFILE == 'light'
   set background=light
+else
+  set background=dark
 endif
 
 colorscheme solarized
@@ -80,6 +80,9 @@ set t_vb=
 
 " disable GUI scrollbar in MacVim
 set guioptions-=L
+" custom filetypes
+
+au BufNewFile,BufRead *.qsub set filetype=sh
 
 "
 " misc.
@@ -92,15 +95,15 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 
 " Make those folders automatically if they don't already exist.
-if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
-endif
-if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
-endif
-if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
-endif
+"if !isdirectory(expand(&undodir))
+"    call mkdir(expand(&undodir), "p")
+"endif
+"if !isdirectory(expand(&backupdir))
+"    call mkdir(expand(&backupdir), "p")
+"endif
+"if !isdirectory(expand(&directory))
+"    call mkdir(expand(&directory), "p")
+"endif
 
 set backup
 set noswapfile

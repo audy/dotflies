@@ -5,10 +5,6 @@
 	email = harekrishna@gmail.com
 [github]
 	user = audy
-[push]
-	default = simple
-[alias]
-	up = "!git remote update -p; git merge --ff-only @{u}"
 [core]
 	excludesfile = ~/.cvsignore
 [filter "media"]
