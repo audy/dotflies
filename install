@@ -5,7 +5,11 @@ set -e
 ROOT=$PWD
 
 link_files () {
-  ln -s $1 $2
+  if [[ ! -z "$FORCE" ]]; then
+    echo "removing $2 if it exists"
+    rm -rf $2
+  fi
+  ln -vs `pwd`/$1 $2
   echo "Linked $1 to $2"
 }
 
