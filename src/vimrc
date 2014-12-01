@@ -5,6 +5,8 @@
 " most of the things here are taken from others
 "
 
+set shell=bash\ -i
+
 set mouse=vin " lazy man
 
 filetype off
