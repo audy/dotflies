@@ -78,6 +78,9 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
+" disable GUI scrollbar in MacVim
+set guioptions-=L
+
 "
 " misc.
 "
