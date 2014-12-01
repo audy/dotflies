@@ -266,10 +266,23 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 let g:markdown_fenced_languages = ['css', 'javascript', 'python', 'ruby', 'xml']
 
+" can't figure out how to get markdown folding working anyway...
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_initial_foldlevel=1
+
 " Go
 au BufRead,BufNewFile *.go set filetype=go
 
 " Ruby
+
+" RSpec.vim
+let g:rspec_runner = "os_x_iterm"
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " R
 
