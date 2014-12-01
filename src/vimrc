@@ -72,6 +72,12 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/data/*
 " emoji
 set completefunc=emoji#complete
 
+" disable visual bell in MacVim
+autocmd! GUIEnter * set vb t_vb=
+set noerrorbells 
+set novisualbell
+set t_vb=
+
 "
 " misc.
 "
