@@ -64,6 +64,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/data/*
 " emoji
 set completefunc=emoji#complete
 
+" custom filetypes
+
+au BufNewFile,BufRead *.qsub set filetype=sh
+
 "
 " misc.
 "

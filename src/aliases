@@ -111,3 +111,5 @@ alias r='R --silent'
 
 # find largest files in pwd
 alias big='du  -a . | sort -n -r | less'
+
+#alias vim='/apps/vim/7.4.005-py2/bin/vim'
