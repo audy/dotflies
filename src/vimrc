@@ -23,7 +23,6 @@ Plugin 'gmarik/Vundle.vim'
 " PLUGGGINNS!!!
 
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
