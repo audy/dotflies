@@ -58,10 +58,10 @@ set t_Co=256
 syntax enable
 
 " default is light
-if $ITERM_PROFILE == 'light'
-  set background=light
-else
+if $ITERM_PROFILE == 'dark'
   set background=dark
+else
+  set background=light
 endif
 
 colorscheme solarized
