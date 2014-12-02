@@ -47,6 +47,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/DrawIt'
 Plugin 'vim-scripts/sketch.vim'
 
 call vundle#end()            " required
