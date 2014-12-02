@@ -37,8 +37,6 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mhinz/vim-tmuxify'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tomtom/tlib_vim'
@@ -81,9 +79,6 @@ set t_vb=
 
 " disable GUI scrollbar in MacVim
 set guioptions-=L
-" custom filetypes
-
-au BufNewFile,BufRead *.qsub set filetype=sh
 
 "
 " misc.
