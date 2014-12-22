@@ -3,7 +3,10 @@
 " austin g. davis-richardson
 "
 " most of the things here are taken from others
-"
+
+" STFU
+set noerrorbells
+set vb t_vb=
 
 set shell=bash\ -i
 
@@ -25,6 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ap/vim-buftabline'
 Plugin 'bling/vim-airline'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'godlygeek/tabular'
@@ -37,6 +41,7 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mhinz/vim-tmuxify'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tomtom/tlib_vim'
@@ -47,6 +52,7 @@ Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'vim-scripts/sketch.vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,6 +60,9 @@ filetype plugin indent on    " required
 " solarized
 set t_Co=256
 syntax enable
+
+"buffers
+set hidden
 
 " default is light
 if $ITERM_PROFILE == 'dark'
