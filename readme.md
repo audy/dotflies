@@ -1,11 +1,15 @@
 # ~/.dotfiles
 
-Bzz.
-
 of Austin G. Davis-Richardson
 
-## Installation
+```
+   ,__ ., __, ,,,,
+      '--/,,\--'\*\%\*\
+        //  \\\'\'%.\'%\
+         '..'//'%\.\%/\\'.^
+            \\'/'/%''/\'
+              ||     ||
+              "      "
 
-```sh
-./bootstrap # stand back
+morfina              
 ```
