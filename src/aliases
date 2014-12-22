@@ -105,7 +105,7 @@ alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && kill
 alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # for vim-r-plugin, need to run vim server
-alias vimr='vim --servername VIM'
+alias vimr='/usr/local/bin/vim --servername VIM'
 
 
 alias r='R --silent'
