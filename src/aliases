@@ -114,3 +114,11 @@ alias r='R --silent'
 alias big='du  -a . | sort -n -r | less'
 
 #alias vim='/apps/vim/7.4.005-py2/bin/vim'
+
+alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
+
+colors() {
+  for i in {0..255} ; do
+      printf "\x1b[38;5;${i}mcolour${i}\n"
+  done
+}
