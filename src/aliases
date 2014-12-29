@@ -34,7 +34,7 @@ alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 # misc git
 alias gp='git push'
 alias gb='git checkout -b'
-alias gs='git status --untracked-files=no'
+alias gs='git status'
 alias gap='git add -p'
 
 # bundler
