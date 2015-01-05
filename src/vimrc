@@ -39,6 +39,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mhinz/vim-tmuxify'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'suan/vim-instant-markdown'
@@ -57,21 +58,26 @@ Plugin 'wting/rust.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" solarized
+" leader/local leader
+let mapleader = " "
+let maplocalleader = ","
+
+" colors
 set t_Co=256
 syntax enable
 
-"buffers
+colorscheme jellybeans
+
+" buffers
 set hidden
 
-" default is light
+" set background depending on iTerm profile
 if $ITERM_PROFILE == 'dark'
   set background=dark
 else
   set background=light
 endif
 
-colorscheme solarized
 
 " ctrl-P stuff
 let g:ctrlp_max_files=0 
@@ -100,6 +106,7 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 
 " Make those folders automatically if they don't already exist.
+" xxx doesn't work
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), "p")
 endif
@@ -136,11 +143,10 @@ set autoread
 set shiftround
 set colorcolumn=+1
 
-
+" relative line numbers
 set ruler
 set rnu
 set numberwidth=5
-
 
 " Trailing whitespace
 " Only shown when not in insert mode so I don't go insane.
@@ -159,10 +165,6 @@ augroup line_return
     \     execute 'normal! g`"zvzz' |
     \ endif
 augroup END
-
-" leader/local leader
-let mapleader = " "
-let maplocalleader = ","
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -252,7 +254,6 @@ set foldlevelstart=6
 
 nnoremap zO zczO
 
-
 "
 " Plugins
 "
@@ -313,13 +314,3 @@ autocmd BufNewFile,BufRead * call s:DetectRscript()
 
 " Lines added by the Vim-R-plugin command :RpluginConfig (2014-Aug-31 12:48):
 filetype plugin on
-
-" mini-plugin for inserting electrophoresis files into current markdown and copy
-" image to /public/images/gels/
-" I use this for my lab notebook.
-
-"function CopyGel(path)
-  "let basename=expand('%:t')
-  "let fullpath=expand('%:p')
-  "echo "cp " + fullpath + " " + basename
-"endfunction
