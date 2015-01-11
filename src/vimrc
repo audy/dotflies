@@ -65,8 +65,6 @@ let maplocalleader = ","
 set t_Co=256
 syntax enable
 
-colorscheme jellybeans
-
 " buffers
 set hidden
 
@@ -77,6 +75,7 @@ else
   set background=light
 endif
 
+colorscheme solarized
 
 " ctrl-P stuff
 let g:ctrlp_max_files=0 
