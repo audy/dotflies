@@ -4,32 +4,34 @@
 # update all packages
 sudo pacman -Syu --noconfirm
 
-# install things I want
-
-mypackages=$(
+mypackages=(
+  awesome
+  cowsay
   git
   htop
+  mesa
+  vicious
   vim
   weechat
   wget
-  xterm
   xorg-server
-  xorg-xinit
   xorg-server-utils
-  mesa
   xorg-twm
   xorg-xclock
-  awesome
-  vicious
+  xorg-xinit
+  xterm
 )
 
-sudo pacman -Sy $(mypackages)
+# install things I want
+echo "----> installing packages: "
+for package in packages; do
+  echo "- installing $(package)"
+  echo sudo pacman -Sy "$(package)" > /dev/null
+done
 
 # download and install dotfiles
-git clone https://github.com/audy/dotflies.git ~/.dotflies
-cd ~/.dotflies && ./install
+echo "----> downloading dotfiles"
+git clone https://github.com/audy/dotflies.git ~/.dotflies > /dev/null
+cd ~/.dotflies && FORCE=1 ./install
 
-# setup awesome window manager
-cp /etc/skel/.xinitrc /home/vagrant
-mkdir -p ~/.config
-cp /etc/xdg/awesome/rc.lua ~/.config/awesome
+cowsay "setup complete!"
