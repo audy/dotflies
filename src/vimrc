@@ -69,11 +69,7 @@ syntax enable
 set hidden
 
 " set background depending on iTerm profile
-if $ITERM_PROFILE == 'dark'
-  set background=dark
-else
-  set background=light
-endif
+set background=dark
 
 colorscheme solarized
 
@@ -176,6 +172,12 @@ set ttimeoutlen=10
 
 " save when focus lost
 au FocusLost *:silent! wall
+
+"
+" Custom Highlights
+"
+
+" todo.md
 
 "
 " Shortcuts
