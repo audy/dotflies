@@ -121,7 +121,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set wrap
-set textwidth=80
 
 set encoding=utf-8
 
