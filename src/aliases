@@ -122,3 +122,8 @@ colors() {
       printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
+
+alias news="newsbeuter"
+alias mutt="cd ~/Downloads && mutt"
+
+alias sync="rsync --archive --compress --delete --progress"
