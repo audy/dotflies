@@ -4,6 +4,8 @@
 "
 " most of the things here are taken from others
 
+" startup screen
+
 " STFU
 set noerrorbells
 set vb t_vb=
@@ -31,18 +33,20 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'ap/vim-buftabline'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'godlygeek/tabular'
+Plugin 'hylang/vim-hy'
 Plugin 'jcf/vim-latex'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'junegunn/vim-emoji'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
-Plugin 'moll/vim-node'
 Plugin 'mattn/webapi-vim'
 Plugin 'mhinz/vim-tmuxify'
+Plugin 'moll/vim-node'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'oblitum/rainbow'
 Plugin 'tapichu/potion.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tomtom/tlib_vim'
@@ -70,7 +74,12 @@ syntax enable
 set hidden
 
 " set background depending on iTerm profile
-set background=dark
+if $ITERM_PROFILE == 'light'
+  set background=light
+else
+  set background=dark
+endif
+
 
 colorscheme solarized
 
@@ -187,7 +196,7 @@ au FocusLost *:silent! wall
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Kill window
-nnoremap K :q<cr>
+nnoremap q :q<cr>
 
 " Wrap
 nnoremap <leader>W :set wrap!<cr>
