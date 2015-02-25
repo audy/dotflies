@@ -126,4 +126,4 @@ colors() {
 alias news="newsbeuter"
 alias mutt="cd ~/Downloads && mutt"
 
-alias sync="rsync --archive --compress --delete --progress"
+alias rsy="rsync --archive --compress --delete --progress"
