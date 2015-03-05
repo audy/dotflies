@@ -71,6 +71,7 @@ export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval "$(pyenv virtualenv-init -)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
@@ -103,3 +104,4 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 # node version manager
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
+$(docker-machine env dev)
