@@ -27,37 +27,24 @@ Plugin 'gmarik/Vundle.vim'
 " YAY! PLUGINS!
 " PLUGGGINNS!!!
 
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'ap/vim-buftabline'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'godlygeek/tabular'
 Plugin 'hylang/vim-hy'
 Plugin 'jcf/vim-latex'
 Plugin 'jcfaria/Vim-R-plugin'
-Plugin 'junegunn/vim-emoji'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
+Plugin 'mattn/webapi-vim' " needed for gist-vim
 Plugin 'mhinz/vim-tmuxify'
 Plugin 'moll/vim-node'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'nelstrom/vim-markdown-folding'
-Plugin 'oblitum/rainbow'
-Plugin 'tapichu/potion.vim'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'vim-scripts/sketch.vim'
-Plugin 'wting/rust.vim'
+Plugin 'honza/dockerfile.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -70,8 +57,7 @@ let maplocalleader = ","
 set t_Co=256
 syntax enable
 
-" buffers
-set hidden
+set textwidth=80
 
 " set background depending on iTerm profile
 if $ITERM_PROFILE == 'light'
