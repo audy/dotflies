@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # extract most known archives with one command
 extract () {
     if [ -f $1 ] ; then
@@ -127,3 +129,12 @@ alias news="newsbeuter"
 alias mutt="cd ~/Downloads && mutt"
 
 alias rsy="rsync --archive --compress --delete --progress"
+
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
+
+# docker / docker-machine / docker-compose
+#denv=docker-machine env dev
+
+alias gad="git add '$1' && git commit -m \"+ '$1'\""
+
+alias per='ssh agdr "dokku perrier rake db:tail"'
