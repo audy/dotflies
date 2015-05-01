@@ -29,9 +29,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" YAY! PLUGINS!
-" PLUGGGINNS!!!
+"
+" Plugins
+"
 
+Plugin 'rizzatti/dash.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
