@@ -74,36 +74,15 @@ if (interactive()) {
     }
   }
 
-  # Lines added by the Vim-R-plugin command :RpluginConfig (2014-Aug-31 12:48):
-  if(interactive()){
-      if(nchar(Sys.getenv("DISPLAY")) > 1)
-          options(editor = 'gvim -f -c "set ft=r"')
-      else
-          options(editor = 'vim -c "set ft=r"')
-      library(colorout)
 
-      # c(formatting, bg, fg)
-      x <- setOutputColors(normal = 0,
-                      number = c(0, 0, 0),
-                      negnum = c(0, 0, 1),
-                      date = c(4, 0, 4),
-                      string = c(0, 0, 5),
-                      const = c(7, 0, 0),
-                      verbose=FALSE)
-                      
+   if(interactive()){
+       library(colorout)
+       library(setwidth)
+       options(vimcom.verbose = 1) # optional
+       library(vimcom)
+   }
 
-      # library(setwidth)
-      library(vimcom)
-      # See R documentation on Vim buffer even if asking for help in R Console:
-      if(Sys.getenv("VIM_PANE") != "")
-          options(pager = vim.pager)
-  }
 
   cat("\014")
-
-  # this will probably break everything but oh well, I'm sick of the default
-  # ggplot2 theme!
-#  library(ggthemr)
-#  ggthemr("fresh")
 
 }
