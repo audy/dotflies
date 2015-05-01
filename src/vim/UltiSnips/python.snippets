@@ -52,3 +52,40 @@ def main():
 if __name__ == '__main__':
     main()
 endsnippet
+
+# start an interative repl with current local variables
+snippet repl
+import code
+code.interact(local=locals())
+endsnippet
+
+# bioinformatics
+
+snippet iter_gff
+def iter_gff(handle):
+    ''' yield gff items as hashes '''
+
+    for line in handle:
+        if line.startswith('#'):
+            continue
+
+        fields = line.strip().split("\t")
+
+        dat = {
+                'contig': fields[0],
+                'source': fields[1],
+                'feature': fields[2],
+                'start': fields[3],
+                'end': fields[4],
+                'score': fields[5],
+                'strand': field[6],
+                'frame': field[7],
+                'attribute': field[8]
+                }
+
+        yield dat
+endsnippet
+
+snippet seqio
+records = SeqIO.parse(handle, 'fasta')
+endsnippet
