@@ -144,15 +144,6 @@ set ruler
 set rnu
 set numberwidth=5
 
-" Trailing whitespace
-" Only shown when not in insert mode so I don't go insane.
-" xxx not working!
-augroup trailin
-  au!
-  au InsertEnter * :set listchars-=trail:⌴
-  au InsertLeave * :set listchars+=trail:⌴
-augroup END
-
 " return to same line when you reopen vim
 augroup line_return
   au!
