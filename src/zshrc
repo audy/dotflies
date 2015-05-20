@@ -41,7 +41,7 @@ bindkey '\e[B' history-search-forward
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374@global/bin:/Users/austin/.rvm/rubies/ruby-1.9.3-p374/bin:/Users/austin/.rvm/bin:/Users/austin/.pythonbrew/bin:/Users/austin/.pythonbrew/pythons/Python-2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/austin/.gem/ruby/1.8/bin:/opt/nginx/sbin:/Users/austin/.local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/opt/nginx/sbin:$HOME/.local/bin:$PATH
 
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
