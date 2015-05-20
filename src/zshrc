@@ -13,7 +13,6 @@ function random_emoji {
 PROMPT="$(random_emoji)  "
 RPROMPT='%c'
 
-
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
@@ -21,6 +20,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 # COMPLETION
 #
 
+# cache autocomplete
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
@@ -67,7 +67,6 @@ export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
 # --no-rehash takes about 0.25s off startup time (for both)
 #if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 #if which pyenv > /dev/null; then eval "$(pyenv init - --no-rehash)"; fi
-
 
 
 #eval "$(pyenv virtualenv-init -)"
