@@ -32,3 +32,6 @@ install_dotfiles () {
 }
 
 install_dotfiles
+
+puts "linking local to ~/.local"
+puts `ln -sv local ~/.local`
