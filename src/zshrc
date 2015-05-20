@@ -17,18 +17,12 @@ RPROMPT='%c'
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-# Uncomment to change how often before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=30
-
 #
 # COMPLETION
 #
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
 
 # fuzzy matching
 zstyle ':completion:*' completer _complete _match _approximate
@@ -40,13 +34,6 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(per-directory-history pass)
-
-#source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374/bin:/Users/austin/.rvm/gems/ruby-1.9.3-p374@global/bin:/Users/austin/.rvm/rubies/ruby-1.9.3-p374/bin:/Users/austin/.rvm/bin:/Users/austin/.pythonbrew/bin:/Users/austin/.pythonbrew/pythons/Python-2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/austin/.gem/ruby/1.8/bin:/opt/nginx/sbin:/Users/austin/.local/bin:$PATH
