@@ -103,12 +103,8 @@ alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && kil
 
 alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
 
-# use the vim binary in Mac Vim (so system-wide copy/paste just works)
-alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
-
 # for vim-r-plugin, need to run vim server
 alias vimr='/usr/local/bin/vim --servername VIM'
-
 
 alias r='R --silent'
 
