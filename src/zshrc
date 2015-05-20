@@ -29,6 +29,11 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
+# search through history by typing up and down
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
+# per-directory history
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
