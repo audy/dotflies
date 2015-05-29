@@ -73,7 +73,11 @@ else
   set background=dark
 endif
 
+set background=light
 
+let g:solarized_visibility="high"    "default value is normal
+let g:solarized_hitrail=1    "default value is 0
+syntax enable
 colorscheme solarized
 
 " ctrl-P stuff
