@@ -6,11 +6,22 @@ export TERM='xterm-256color'
 
 EMOJI=(💩 🐦 🚀 🐞 🎨 🍕 🐭 👽 ☕️ 🔬 💀 🐷 🐼 🐶 🐸 🐧 🐳 🍔 🍣 🍻 🔮 💰 💎 💾 💜 🍪 🌞 🌍 🐌 🐓 🍄 )
 
-function random_emoji {
-  echo -n "$EMOJI[$RANDOM%$#EMOJI+1]"
+settitle() {
+  # set iTerm2 window title
+  echo -ne "\e]1;$1\a"
 }
 
-PROMPT="$(random_emoji)  "
+# creates prompt by getting a random emoji BUT ALSO! It sets the window title
+# to the current prompt emoji :3. The emojis are a pnemonic device I use to
+# remember which terminal window is which.
+
+function create_prompt {
+  emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
+  settitle $emoji
+  echo -n $emoji
+}
+
+PROMPT="$(create_prompt)  "
 RPROMPT='%c'
 
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
