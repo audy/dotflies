@@ -81,8 +81,8 @@ export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
 
 # these things are slow
 # --no-rehash takes about 0.25s off startup time (for both)
-#if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
-#if which pyenv > /dev/null; then eval "$(pyenv init - --no-rehash)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init - --no-rehash)"; fi
 
 
 #eval "$(pyenv virtualenv-init -)"
