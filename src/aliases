@@ -38,6 +38,10 @@ alias gp='git push'
 alias gb='git checkout -b'
 alias gs='git status -sb'
 alias gap='git add -p'
+alias gad="git add '$1' && git commit -m \"+ '$1'\""
+# gcm commit message goes here without quotes
+function gcm() { git commit -m "'$@'" }
+function gcam() { git commit -am "'$@'" }
 
 # bundler
 alias b='bundle exec'
@@ -131,6 +135,5 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
 # docker / docker-machine / docker-compose
 #denv=docker-machine env dev
 
-alias gad="git add '$1' && git commit -m \"+ '$1'\""
 
 alias per='ssh agdr "dokku perrier rake db:tail"'
