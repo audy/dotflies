@@ -12,7 +12,7 @@ settitle() {
 }
 
 # creates prompt by getting a random emoji BUT ALSO! It sets the window title
-# to the current prompt emoji :3. The emojis are a pnemonic device I use to
+# to the current prompt emoji :3. The emojis are a mnemonic device I use to
 # remember which terminal window is which.
 
 function create_prompt {
