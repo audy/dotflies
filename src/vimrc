@@ -136,7 +136,7 @@ set colorcolumn=+1
 " relative line numbers
 set ruler
 set rnu
-set numberwidth=5
+set numberwidth=3
 
 " return to same line when you reopen vim
 augroup line_return
