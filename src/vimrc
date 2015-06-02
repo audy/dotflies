@@ -33,23 +33,17 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 "
 
-Plugin 'rizzatti/dash.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
-Plugin 'hylang/vim-hy'
-Plugin 'jcf/vim-latex'
 Plugin 'jcfaria/Vim-R-plugin'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " needed for gist-vim
 Plugin 'mhinz/vim-tmuxify'
 Plugin 'moll/vim-node'
-Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
-Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'honza/dockerfile.vim'
 
@@ -80,16 +74,6 @@ let g:solarized_hitrail=1    "default value is 0
 syntax enable
 colorscheme solarized
 
-" ctrl-P stuff
-let g:ctrlp_max_files=0 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/data/*
-
-let g:ctrlp_custom_ignore = {
- \}
-
-" emoji
-set completefunc=emoji#complete
-
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
 set noerrorbells 
@@ -106,7 +90,8 @@ set guioptions-=L
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 
-" xxx if you edit sensitive documents, they will be stored here in plain-text!!
+" xxx if you edit sensitive documents, they will be stored here in
+" plain-text!!
 set directory=~/.vim/tmp/swap//   " swap files
 
 set backup
@@ -182,23 +167,6 @@ nnoremap <leader>W :set wrap!<cr>
 " the fucking clipboard
 set clipboard=unnamed
 
-
-" Copying text to the system clipboard.
-"
-" For some reason Vim no longer wants to talk to the OS X pasteboard through "*.
-" Computers are bullshit.
-" (thanks steve losh)
-
-"function! g:FuckingCopyTheTextPlease()
-"    let old_z = @z
-"    normal! gv"zy
-"    call system('pbcopy', @z)
-"    let @z = old_z
-"endfunction
-"noremap <leader>p :silent! set paste<CR>"*p:set nopaste<CR>
-"" noremap <leader>p mz:r!pbpaste<cr>`z
-"vnoremap <leader>y :<c-u>call g:FuckingCopyTheTextPlease()<cr>
-
 " Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
@@ -248,6 +216,8 @@ nnoremap zO zczO
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files=1024
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
 
 " tmuxify
 let g:tmuxify_pane_split = '-v' " start vertical pane
@@ -260,6 +230,7 @@ let g:tmuxify_pane_split = '-v' " start vertical pane
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" language-specific syntax highlighting in markdown ''' blocks
 let g:markdown_fenced_languages = ['css', 'javascript', 'python', 'ruby', 'xml']
 
 " can't figure out how to get markdown folding working anyway...
@@ -269,10 +240,10 @@ let g:vim_markdown_initial_foldlevel=1
 " Go
 au BufRead,BufNewFile *.go set filetype=go
 
-" Ruby
+" Python
+au FileType python set shiftwidth=4 tabstop=4
 
-" RSpec.vim
-let g:rspec_runner = "os_x_iterm"
+" Ruby
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -298,6 +269,3 @@ vmap <Space> <Plug>RDSendSelection
 nmap <Space> <Plug>RDSendLine
 
 autocmd BufNewFile,BufRead * call s:DetectRscript()
-
-" Lines added by the Vim-R-plugin command :RpluginConfig (2014-Aug-31 12:48):
-filetype plugin on
