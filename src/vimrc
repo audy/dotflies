@@ -64,7 +64,7 @@ let maplocalleader = ","
 set t_Co=256
 syntax enable
 
-set textwidth=80
+"set textwidth=80
 
 " set background depending on iTerm profile
 if $ITERM_PROFILE == 'light'
