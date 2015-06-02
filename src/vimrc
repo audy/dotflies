@@ -85,7 +85,6 @@ let g:ctrlp_max_files=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/data/*
 
 let g:ctrlp_custom_ignore = {
- \ 'dir': '[node_modules]$',
  \}
 
 " emoji
