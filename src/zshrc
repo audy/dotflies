@@ -21,7 +21,8 @@ function create_prompt {
   echo -n $emoji
 }
 
-PROMPT="$(create_prompt)  "
+#PROMPT="$(create_prompt)"
+PROMPT='> '
 RPROMPT='%c'
 
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
