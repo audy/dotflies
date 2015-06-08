@@ -51,6 +51,9 @@ compinit
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
+# make ctrl-a and ctrl-e work in tmux
+bindkey -e
+
 # per-directory history
 
 # Uncomment following line if you want to disable marking untracked files under
