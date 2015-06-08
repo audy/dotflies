@@ -87,11 +87,10 @@ set guioptions-=L
 " misc.
 "
 
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-
 " xxx if you edit sensitive documents, they will be stored here in
 " plain-text!!
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 
 set backup
