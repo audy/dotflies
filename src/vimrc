@@ -217,6 +217,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=1024
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules'
+  \ }
 
 " tmuxify
 let g:tmuxify_pane_split = '-v' " start vertical pane
