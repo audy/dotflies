@@ -108,8 +108,8 @@ export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
 # rbenv shim
 
 # so CPAN installs modules to ~/perl5
-#eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-#export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 export DOCKER_HOST=tcp://127.0.0.1:2375
 
