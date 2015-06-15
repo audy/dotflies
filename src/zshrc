@@ -11,18 +11,17 @@ settitle() {
   echo -ne "\e]1;$1\a"
 }
 
-# creates prompt by getting a random emoji BUT ALSO! It sets the window title
-# to the current prompt emoji :3. The emojis are a mnemonic device I use to
-# remember which terminal window is which.
-
-function create_prompt {
-  emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
-  settitle $emoji
-  echo -n $emoji
+getprompt() {
+  if [ ! -z $SSH_CLIENT ]; then
+    hostname=`hostname`
+  fi
+  echo -n "${hostname}> "
 }
 
-#PROMPT="$(create_prompt)"
-PROMPT='> '
+emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
+settitle $emoji
+
+PROMPT=$(getprompt)
 RPROMPT='%c'
 
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
