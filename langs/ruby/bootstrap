@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Bootstrap Ruby installation:
+# - install Ruby with Homebrew
+# - install global gemset to system gems
+
+brew update
+brew install ruby
+
+bundler install \
+  --gemfile global.gemfile \
+  --system
