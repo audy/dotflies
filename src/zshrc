@@ -15,7 +15,7 @@ getprompt() {
   if [ ! -z $SSH_CLIENT ]; then
     hostname=`hostname`
   fi
-  echo -n "${hostname}> "
+  echo -n "${hostname}\e[0;33m> \e[0m"
 }
 
 emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
