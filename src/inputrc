@@ -1,5 +1,5 @@
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+#"\e[A": history-search-backward
+#"\e[B": history-search-forward
 
 # tab complete doesn't care about case
 set completion-ignore-case on
