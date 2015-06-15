@@ -2,6 +2,8 @@
 
 options(repos=c("http://cran.us.r-project.org"))
 
+options(prompt="R> ")
+
 if (interactive()) {
 
   #library(colorout)
