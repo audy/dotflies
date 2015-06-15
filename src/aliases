@@ -22,13 +22,6 @@ extract () {
      fi
 }
 
-# jump back n directories at a time
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias ......='cd ../../../../../'
-
 # pretty git logs
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
@@ -39,9 +32,6 @@ alias gb='git checkout -b'
 alias gs='git status -sb'
 alias gap='git add -p'
 alias gad="git add '$1' && git commit -m \"+ '$1'\""
-# gcm commit message goes here without quotes
-function gcm() { git commit -m "'$@'" }
-function gcam() { git commit -am "'$@'" }
 
 # bundler
 alias b='bundle exec'
@@ -56,30 +46,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 # show active network listeners
 alias netlisteners='lsof -i -P | grep LISTEN'
 
-# more directory listing
-# alias ls='ls -G'
-# alias l='ls -lshG'
-# alias la='ls -lashG'
-
 alias e=$EDITOR
-
-# say something using the google talk api
-gsay() {
-  if [[ "${1}" =~ -[a-z]{2} ]];
-  then
-    local lang=${1#-};
-    local text="${*#$1}";
-  else
-    local lang=${LANG%_*};
-    local text="$*";
-  fi;
- mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ;
-}
-
-alias fucking='sudo'
-
-# colorizes stdin
-alias c="pygmentize -O style=monokai -f console256 -g"
 
 # what's my ip?
 alias ip="curl icanhazip.com"
@@ -91,14 +58,6 @@ alias view="vim -p -R"
 function image() {
 convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
 }
-
-# coreutils
-alias seq='qseq'
-
-# Peanut Butter and JAAAAM
-alias baam='mplayer -ss 19 -novideo ~/baam.mp5'
-
-alias pc='pass -c'
 
 alias mux='tmuxinator'
 
