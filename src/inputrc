@@ -5,7 +5,7 @@
 set completion-ignore-case on
 
 # replace completed prefix with '...'
-set completion-prefix-display-length 2
+# set completion-prefix-display-length 2
 
 # completions show immediately after pressing <tab>
 set show-all-if-ambiguous on
