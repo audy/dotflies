@@ -104,7 +104,6 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-export URBIT_HOME=/Users/austin/Code/urbit/urb
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
