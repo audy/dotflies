@@ -5,10 +5,7 @@ set -e
 ROOT=$PWD
 
 link_files () {
-  if [[ ! -z "$FORCE" ]]; then
-    echo "removing $2 if it exists"
-    rm -rf $2
-  fi
+  rm -rf $2
   ln -vs `pwd`/$1 $2
   echo "Linked $1 to $2"
 }
@@ -33,5 +30,5 @@ install_dotfiles () {
 
 install_dotfiles
 
-puts "linking local to ~/.local"
-puts `ln -sv local ~/.local`
+echo "linking local to ~/.local"
+echo `ln -sv local ~/.local`
