@@ -69,15 +69,12 @@ alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && kill
 # for vim-r-plugin, need to run vim server
 alias vimr='/usr/local/bin/vim --servername VIM'
 
-# use MacVim (mostly so system-wide copy/paste works)
-alias vim='/usr/local/Cellar/macvim/7.4-76/MacVim.app/Contents/MacOS/Vim'
-
 alias r='R --silent'
 
 # find largest files in pwd
 alias big='du  -a . | sort -n -r | less'
 
-#alias vim='/apps/vim/7.4.005-py2/bin/vim'
+alias vim='mvim -v'
 
 alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
 
