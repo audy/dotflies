@@ -101,7 +101,7 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
 alias per='ssh agdr "dokku perrier rake db:tail"'
 
 # docker/docker-machine
-alias denv='$(docker-machine env)'
+alias denv='eval $(docker-machine env dev)'
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
