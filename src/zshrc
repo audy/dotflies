@@ -82,7 +82,7 @@ fi
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/opt/nginx/sbin:$HOME/.local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/opt/nginx/sbin:$HOME/.local/bin:$PATH
 
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
