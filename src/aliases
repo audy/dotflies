@@ -74,7 +74,12 @@ alias r='R --silent'
 # find largest files in pwd
 alias big='du  -a . | sort -n -r | less'
 
-alias vim='mvim -v'
+# use neovim
+alias vim='nvim'
+
+# or use macvim (works with system clipboard)
+#alias vim='mvim -v'
+
 
 alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
 
@@ -93,7 +98,6 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
 
 # docker / docker-machine / docker-compose
 #denv=docker-machine env dev
-
 
 alias per='ssh agdr "dokku perrier rake db:tail"'
 
