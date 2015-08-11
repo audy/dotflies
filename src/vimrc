@@ -33,19 +33,21 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 "
 
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
+Plugin 'honza/dockerfile.vim'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim' " needed for gist-vim
 Plugin 'mhinz/vim-tmuxify'
 Plugin 'moll/vim-node'
+Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'honza/dockerfile.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
