@@ -82,9 +82,6 @@ fi
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/opt/nginx/sbin:$HOME/.local/bin:$PATH
-
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
@@ -106,8 +103,8 @@ then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 #eval "$(pyenv virtualenv-init -)"
 #export PATH="$HOME/.rbenv/bin:$PATH"
@@ -116,13 +113,12 @@ export PATH="$RBENV_ROOT/bin:$RBENV_ROOT/shims:$PATH"
 #export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
 # for gems installed by Homebrew Ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+# make sure $PATH goes first!
+export PATH="$PATH:/usr/local/opt/ruby/bin"
 
 # GOPATH
 export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
 export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
-
-# rbenv shim
 
 # so CPAN installs modules to ~/perl5
 #:eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
@@ -142,6 +138,6 @@ PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 
 # torch stuff
-export PATH=/Users/austin/torch/install/bin:$PATH  # Added automatically by torch-dist
-export LD_LIBRARY_PATH=/Users/austin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
-export DYLD_LIBRARY_PATH=/Users/austin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
+#export PATH=/Users/austin/torch/install/bin:$PATH  # Added automatically by torch-dist
+#export LD_LIBRARY_PATH=/Users/austin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
+#export DYLD_LIBRARY_PATH=/Users/austin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
