@@ -4,6 +4,10 @@ options(repos=c("http://cran.us.r-project.org"))
 
 options(prompt="R> ")
 
+# autocomplete in require()
+# https://twitter.com/JennyBryan/status/631012796235276288
+utils::rc.settings(ipck=TRUE)
+
 if (interactive()) {
 
   #library(colorout)
