@@ -117,3 +117,6 @@ alias denv='eval $(docker-machine env dev)'
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
+
+
+alias dash="echo open dash://"
