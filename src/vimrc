@@ -217,6 +217,10 @@ nnoremap zO zczO
 " Plugins
 "
 
+" Enable Rainbow Parentheses
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
