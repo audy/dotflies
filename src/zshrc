@@ -144,3 +144,4 @@ PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 #export PATH=/Users/austin/torch/install/bin:$PATH  # Added automatically by torch-dist
 #export LD_LIBRARY_PATH=/Users/austin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
 #export DYLD_LIBRARY_PATH=/Users/austin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
+export PATH="/usr/local/sbin:$PATH"
