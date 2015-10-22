@@ -43,6 +43,9 @@ alias b='bundle exec'
 alias ls='ls -G'
 alias l='ls -lash'
 
+alias c='clear'
+alias cl='c && l'
+
 # switch to random mac address (en0)
 function switchmac () {
   sudo ifconfig en0 ether $(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;') && sudo ifconfig en0 down && sudo ifconfig en0 up
