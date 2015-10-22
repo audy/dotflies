@@ -1,3 +1,6 @@
+# store history FOR-EV-ER
+HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"
+
 #
 # LOOKS
 #
