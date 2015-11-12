@@ -102,8 +102,6 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
 
 # docker / docker-machine / docker-compose
 
-alias per='ssh agdr "dokku perrier rake db:tail"'
-
 # docker/docker-machine
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
