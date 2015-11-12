@@ -28,6 +28,9 @@ alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 
 # misc git
 alias gp='git push'
+alias gm='git checkout master'
+alias gc='git checkout'
+alias ga='git add'
 alias gb='git checkout -b'
 alias gs='git status -sb'
 alias gap='git add -p'
@@ -39,6 +42,14 @@ alias b='bundle exec'
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
+
+alias c='clear'
+alias cl='c && l'
+
+# switch to random mac address (en0)
+function switchmac () {
+  sudo ifconfig en0 ether $(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;') && sudo ifconfig en0 down && sudo ifconfig en0 up
+}
 
 # recursive directory listing
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
@@ -74,12 +85,6 @@ alias r='R --silent'
 # find largest files in pwd
 alias big='du  -a . | sort -n -r | less'
 
-# use neovim
-
-# or use macvim (works with system clipboard)
-#alias vim='mvim -v'
-
-
 alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
 
 colors() {
@@ -103,6 +108,7 @@ alias per='ssh agdr "dokku perrier rake db:tail"'
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
+
 function denv() {
   if [ -z "$1" ]; then
     eval "$(docker-machine env $1)"
@@ -110,3 +116,5 @@ function denv() {
     eval "$(docker-machine env aws)"
   fi
 }
+
+alias dash="echo open dash://"

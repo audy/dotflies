@@ -48,6 +48,9 @@ Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'rust-lang/rust.vim'
+Plugin 'hylang/vim-hy'
+Plugin 'luochen1990/rainbow'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -213,6 +216,10 @@ nnoremap zO zczO
 "
 " Plugins
 "
+
+" Enable Rainbow Parentheses
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
