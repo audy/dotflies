@@ -48,6 +48,7 @@ def parse_args():
     parser.add_argument('--log', default='/dev/stderr',
 						help='log file (default=stderr)')
     parser.add_argument('--output', default='/dev/stdout')
+	parser.add_argument('--input', default='/dev/stdin')
     return parser.parse_args()
 
 
