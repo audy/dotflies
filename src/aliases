@@ -96,12 +96,17 @@ alias rsy="rsync --archive --compress --delete --progress"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
 
 # docker / docker-machine / docker-compose
-#denv=docker-machine env dev
 
 alias per='ssh agdr "dokku perrier rake db:tail"'
 
 # docker/docker-machine
-alias denv='eval $(docker-machine env dev)'
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
+function denv() {
+  if [ -z "$1" ]; then
+    eval "$(docker-machine env $1)"
+  else
+    eval "$(docker-machine env aws)"
+  fi
+}
