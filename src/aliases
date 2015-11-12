@@ -75,7 +75,6 @@ alias r='R --silent'
 alias big='du  -a . | sort -n -r | less'
 
 # use neovim
-alias vim='nvim'
 
 # or use macvim (works with system clipboard)
 #alias vim='mvim -v'
