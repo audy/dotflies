@@ -1,5 +1,8 @@
 # store history FOR-EV-ER
-HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"
+export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d.%H.%M.%S)_$$"
+export SAVEHIST=100
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 
 #
 # LOOKS
