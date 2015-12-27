@@ -73,17 +73,22 @@ settitle() {
 
 emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
 
-getprompt() {
+get_left_prompt() {
   if [ ! -z $SSH_CLIENT ]; then
     hostname=`hostname`
   fi
   echo -n "${hostname}${emoji}  "
 }
 
+git_branch() {
+  echo -n $(git symbolic-ref HEAD | cut -d'/' -f 3)
+}
+
 settitle $emoji
 
-PROMPT=$(getprompt)
+PROMPT=$(get_left_prompt)
 RPROMPT='%c'
+
 
 # solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -186,19 +191,7 @@ export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Ho
 
 export DOCKER_HOST=tcp://127.0.0.1:2375
 
-# for GNU OCTAVE
-PATH="$PATH:/usr/texbin"
-
-# node version manager
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
-# $(docker-machine env dev)
-
 PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 
-# torch stuff
-#export PATH=/Users/austin/torch/install/bin:$PATH  # Added automatically by torch-dist
-#export LD_LIBRARY_PATH=/Users/austin/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
-#export DYLD_LIBRARY_PATH=/Users/austin/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
 export PATH="/usr/local/sbin:$PATH"
