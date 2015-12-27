@@ -97,10 +97,6 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 # COMPLETION
 #
 
-## cache autocomplete
-#zstyle ':completion:*' use-cache on
-#zstyle ':completion:*' cache-path ~/.zsh/cache
-
 # fuzzy matching
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
