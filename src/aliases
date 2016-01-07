@@ -108,11 +108,7 @@ alias dm='docker-machine'
 alias d='docker'
 
 function denv() {
-  if [ -z "$1" ]; then
-    eval "$(docker-machine env $1)"
-  else
-    eval "$(docker-machine env aws)"
-  fi
+  eval "$(docker-machine env dev)"
 }
 
 alias dash="echo open dash://"
