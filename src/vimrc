@@ -36,6 +36,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'junegunn/seoul256.vim'
+
+Plug 'hdima/python-syntax'
+
 call plug#end()
 
 filetype plugin indent on    " required
@@ -67,9 +70,9 @@ set guioptions-=L
 
 " xxx if you edit sensitive documents, they will be stored here in
 " plain-text!!
-"set undodir=~/.vim/tmp/undo//     " undo files
-"set backupdir=~/.vim/tmp/backup// " backups
-"set directory=~/.vim/tmp/swap//   " swap files
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
 
 set backup
 set noswapfile
