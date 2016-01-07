@@ -1,14 +1,17 @@
-" vimrc
-"
-" austin g. davis-richardson
-"
-" most of the things here are taken from others
+" ~./vimrc of Dr. Austin Richardson
 
-" startup screen
+"
+" INIT
+"
 
-" STFU
+" quiet
 set noerrorbells
 set vb t_vb=
+set novisualbell
+set t_vb=
+
+" disable visual bell in MacVim
+autocmd! GUIEnter * set vb t_vb=
 
 set shell=bash\ -i
 
@@ -17,42 +20,24 @@ set mouse=vin " lazy man
 filetype off
 set nocompatible
 
-" fold comments with zM
-autocmd FileType ruby,eruby
-      \ set foldmethod=expr |
-      \ set foldexpr=getline(v:lnum)=~'^\\s*#'
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" utility
+Plug 'SirVer/ultisnips'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" usability
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
 
-"
-" Plugins
-"
+" utility
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'SirVer/ultisnips'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/dockerfile.vim'
-Plugin 'jcfaria/Vim-R-plugin'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim' " needed for gist-vim
-Plugin 'mhinz/vim-tmuxify'
-Plugin 'moll/vim-node'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'rust-lang/rust.vim'
-Plugin 'hylang/vim-hy'
-Plugin 'luochen1990/rainbow'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
-call vundle#end()            " required
+Plug 'junegunn/seoul256.vim'
+call plug#end()
+
 filetype plugin indent on    " required
 
 " leader/local leader
@@ -63,8 +48,6 @@ let maplocalleader = ","
 set t_Co=256
 syntax enable
 
-"set textwidth=80
-
 " set background depending on iTerm profile
 if $ITERM_PROFILE == 'light'
   set background=light
@@ -72,37 +55,27 @@ else
   set background=dark
 endif
 
-set background=dark
-
-let g:solarized_visibility="high"    "default value is normal
-let g:solarized_hitrail=1    "default value is 0
 syntax enable
-colorscheme solarized
-
-" disable visual bell in MacVim
-autocmd! GUIEnter * set vb t_vb=
-set noerrorbells
-set novisualbell
-set t_vb=
+colorscheme seoul256
 
 " disable GUI scrollbar in MacVim
 set guioptions-=L
 
-"
-" misc.
+
+" BASICS
 "
 
 " xxx if you edit sensitive documents, they will be stored here in
 " plain-text!!
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
+"set undodir=~/.vim/tmp/undo//     " undo files
+"set backupdir=~/.vim/tmp/backup// " backups
+"set directory=~/.vim/tmp/swap//   " swap files
 
 set backup
 set noswapfile
 
 set autoindent
-set tabstop=4
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -127,15 +100,6 @@ set ruler
 set rnu
 set numberwidth=3
 
-" return to same line when you reopen vim
-augroup line_return
-  au!
-  au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \     execute 'normal! g`"zvzz' |
-    \ endif
-augroup END
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -150,17 +114,8 @@ set ttimeoutlen=10
 au FocusLost *:silent! wall
 
 "
-" Custom Highlights
+" SHORTCUTS
 "
-
-" todo.md
-
-"
-" Shortcuts
-"
-
-" Clean trailing whitespace
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Kill window
 nnoremap q :q<cr>
@@ -168,25 +123,14 @@ nnoremap q :q<cr>
 " Wrap
 nnoremap <leader>W :set wrap!<cr>
 
-" the fucking clipboard
+" system clipboard
 set clipboard=unnamed
 
 " Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
-" Formatting, TextMate-style
-nnoremap Q gqip
-vnoremap Q gq
-
-" Reformat line.
-nnoremap ql gqq
-
-" Select (charwise) the contents of the current line, excluding indentation.
-" " Great for pasting Python lines into REPLs.
-nnoremap vv ^vg_
-
 "
-" Searching & Movement
+" MOVEMENT & SEARCH
 "
 
 " Use sane regexes.
@@ -207,19 +151,6 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-" enable just enough folding to annoy me if
-" I nest too deeply
-set foldlevelstart=6
-
-nnoremap zO zczO
-
-"
-" Plugins
-"
-
-" Enable Rainbow Parentheses
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -230,11 +161,8 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules'
   \ }
 
-" tmuxify
-let g:tmuxify_pane_split = '-v' " start vertical pane
-
 "
-" Language-specific settings
+" LANGUAGE-SPECIFIC SETTINGS
 "
 
 " Markdown
@@ -255,28 +183,4 @@ au BufRead,BufNewFile *.go set filetype=go
 au FileType python set shiftwidth=4 tabstop=4
 
 " Ruby
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-" R
-
-"" vim-r-plugin
-let vimrplugin_r_path='/usr/local/bin'
-let vimrplugin_vim_wd = 1 " Start vim in vim's working directory not buffer's
-let vimrplugin_assign = 0 " don't automatically convert underscores to <-
-let vimrplugin_r_args = "--no-save --quiet"
-
-fun! s:DetectRscript()
-  if tolower(getline(1)) == '#!/usr/bin/env rscript'
-    set ft=R
-  endif
-endfun
-
-vmap <Space> <Plug>RDSendSelection
-nmap <Space> <Plug>RDSendLine
-
-autocmd BufNewFile,BufRead * call s:DetectRscript()
+"

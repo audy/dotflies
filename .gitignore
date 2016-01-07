@@ -1,4 +1,4 @@
 .DS_Store
 src/vim/.netrwhist
-src/vim/bundle
+src/vim/plugged
 src/vim/tmp
