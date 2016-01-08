@@ -1,8 +1,11 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 ROOT=$PWD
+
+# overwrite existing files? *DANGER*
+: ${FORCE:=false}
 
 link_files () {
   rm -rf $2
@@ -13,16 +16,18 @@ link_files () {
 install_dotfiles () {
   echo 'installing dotfiles'
 
-  for source in `find src/ -maxdepth 2 -mindepth 1`
-  do
+  for source in `find src/ -maxdepth 2 -mindepth 1`; do
 
-    dest="$HOME/.$(basename $source)"
+    dest="${HOME}/.$(basename ${source})"
+    
+    if [ ${FORCE} != true ]; then
+      rm -rf ${dest}
+    fi
 
-    if [ ! -e $dest ]
-    then
-      link_files $source $dest
+    if [ ! -e ${dest} ]; then
+      link_files ${source} ${dest}
     else
-      echo "$source already exists! Skipping $dest"
+      echo "${source} already exists! Skipping ${dest}"
     fi
 
   done
