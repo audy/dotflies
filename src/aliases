@@ -112,3 +112,5 @@ function denv() {
 }
 
 alias dash="echo open dash://"
+
+alias venv=". venv/bin/activate"
