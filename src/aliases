@@ -110,3 +110,5 @@ alias d='docker'
 alias denv='eval $(docker-machine env dev)'
 
 alias dash="echo open dash://"
+
+alias hist="cat ~/.history/*"
