@@ -7,3 +7,9 @@ of Austin G. Davis-Richardson
 ├── local/ # scripts
 └── src/   # actual . files
 ```
+
+## Installation
+
+(OSX + Ubuntu)
+
+`curl https://git.io/vu9Do | bash`
