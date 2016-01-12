@@ -31,7 +31,11 @@ alias gp='git push'
 alias gm='git checkout master'
 alias gc='git checkout'
 alias ga='git add'
-alias gb='git checkout -b'
+# pretty list branches, sorted by date
+alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+
+alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
+
 alias gs='git status -sb'
 alias gap='git add -p'
 alias gad="git add '$1' && git commit -m \"+ '$1'\""
