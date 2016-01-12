@@ -4,6 +4,8 @@ export SAVEHIST=100
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
+export PATH="/usr/local/sbin:$PATH"
+
 #
 # LOOKS
 #
