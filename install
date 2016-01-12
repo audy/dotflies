@@ -20,7 +20,7 @@ install_dotfiles () {
 
     dest="${HOME}/.$(basename ${source})"
     
-    if [ ${FORCE} != true ]; then
+    if [ ${FORCE} == true ]; then
       rm -rf ${dest}
     fi
 
