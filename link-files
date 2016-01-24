@@ -34,6 +34,3 @@ install_dotfiles () {
 }
 
 install_dotfiles
-
-echo "linking local to ~/.local"
-echo `ln -sv local ~/.local`
