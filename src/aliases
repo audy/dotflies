@@ -27,10 +27,13 @@ alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgree
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 
 # misc git
+alias g='git'
 alias gp='git push'
 alias gm='git checkout master'
 alias gc='git checkout'
 alias ga='git add'
+alias gr='git reset'
+alias gd='git diff'
 # pretty list branches, sorted by date
 alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
 
