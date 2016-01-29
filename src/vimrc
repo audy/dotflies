@@ -1,144 +1,45 @@
-" ~./vimrc of Dr. Austin Richardson
 
-"
-" INIT
-"
-
-" quiet
+set nocompatible
 set noerrorbells
-set vb t_vb=
 set novisualbell
-set t_vb=
+set encoding=utf-8
 
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
 
 set shell=bash\ -i
 
-set mouse=vin " lazy man
-
 filetype off
-set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-" utility
 Plug 'SirVer/ultisnips'
-
-" usability
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-surround'
-
-" utility
-Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
-
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
-Plug 'junegunn/seoul256.vim'
-
 Plug 'hdima/python-syntax'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
 filetype plugin indent on    " required
 
-" leader/local leader
-let mapleader = " "
-let maplocalleader = ","
-
-" colors
-set t_Co=256
-syntax enable
-
-" set background depending on iTerm profile
-if $ITERM_PROFILE == 'light'
-  set background=light
-else
-  set background=dark
-endif
-
-syntax enable
-colorscheme seoul256
-
 " disable GUI scrollbar in MacVim
 set guioptions-=L
 
-
-" BASICS
+"
+" Behavior
 "
 
-" xxx if you edit sensitive documents, they will be stored here in
-" plain-text!!
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
-
-set backup
-set noswapfile
-
-set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-
-set encoding=utf-8
-
-set undofile
-set undoreload=10000
-
-set ttyfast
-
-set showbreak=↪
-
-set autowrite
-set autoread
-
-set shiftround
-set colorcolumn=+1
-
-" relative line numbers
-set ruler
-set rnu
-set numberwidth=3
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-" Don't try to highlight lines longer than 800 characters.
-set synmaxcol=800
-
-set notimeout
-set ttimeout
-set ttimeoutlen=10
-
-" save when focus lost
-au FocusLost *:silent! wall
+set clipboard=unnamed " use system clipboard
+set autowrite " autosave
+set autoread " autoupdate
+set backspace=indent,eol,start " backspace over anything
+set mouse=vin " lazy man
 
 "
-" SHORTCUTS
+" Search
 "
-
-" Kill window
-nnoremap q :q<cr>
-
-" Wrap
-nnoremap <leader>W :set wrap!<cr>
-
-" system clipboard
-set clipboard=unnamed
-
-" Clean trailing whitespace
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-
-"
-" MOVEMENT & SEARCH
-"
-
-" Use sane regexes.
-nnoremap / /\v
-vnoremap / /\v
+set incsearch " use incremental searching
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
@@ -149,20 +50,60 @@ nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
 
-" Easier to type, and I never use the default behavior.
-noremap H ^
-noremap L $
-vnoremap L g_
+"
+" Display
+"
 
+set background=dark
+set rnu " relative line numbers
+set numberwidth=3
+set showbreak=↪
 
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=1024
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
-let g:ctrlp_custom_ignore = {
-  \ 'dir': 'node_modules'
-  \ }
+set ttyfast
+
+set t_Co=256
+syntax enable
+
+let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+colorscheme hybrid
+
+"
+" Text Formatting
+"
+
+set nobackup
+set noswapfile
+
+set autoindent " automatically indent new lines
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set nosmarttab " fuck tabs
+set nowrap " dont autowrap lines
+set expandtab " expand tabs to spaces
+
+set synmaxcol=800 " max highlight line width
+
+" save when focus lost
+au FocusLost *:silent! wall
+
+"
+" Mappings
+"
+
+" leader/local leader
+let mapleader = " "
+let maplocalleader = ","
+
+" Kill window
+nnoremap q :q<cr>
+
+" Wrap selection
+nnoremap <leader>W :set wrap!<cr>
+
+" Clean trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 "
 " LANGUAGE-SPECIFIC SETTINGS
@@ -185,5 +126,15 @@ au BufRead,BufNewFile *.go set filetype=go
 " Python
 au FileType python set shiftwidth=4 tabstop=4
 
-" Ruby
 "
+" Plugin Settings
+"
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files=1024
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules'
+  \ }
