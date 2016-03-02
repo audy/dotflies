@@ -7,10 +7,12 @@ RUN apt-get install -y \
   vim \
   zsh
 
-ADD . /root/
-WORKDIR root
+ADD . /root/.dotfiles
+WORKDIR /root/.dotfiles
 
 ENV term=xterm
 RUN ./bootstrap.sh
+
+WORKDIR /root
 
 ENTRYPOINT ["/bin/zsh"]
