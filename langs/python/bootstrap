@@ -1,6 +1,0 @@
-#!/bin/bash
-
-pyenv install 2.7
-pyenv global 2.7
-
-pip install -r python-requirements.txt
