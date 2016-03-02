@@ -2,17 +2,17 @@
 
 of Austin G. Davis-Richardson
 
-```
-├── langs/ # language-specific bootstrap scripts
-├── local/ # scripts
-└── src/   # actual . files
-```
-
 ## Installation
+
+(Docker)
+
+```bash
+docker run -ti audy/dotfiles
+```
 
 (OSX + Ubuntu)
 
-```
+```bash
 curl -L https://git.io/vu9Do > install.sh
 chmod +x install.sh
 # read install.sh carefully
