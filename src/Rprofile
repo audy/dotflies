@@ -10,8 +10,6 @@ utils::rc.settings(ipck=TRUE)
 
 if (interactive()) {
 
-  #library(colorout)
-
   # zap() removes all variables in current session
   # from http://r.789695.n4.nabble.com/How-to-Clear-all-variables-stored-in-current-and-previous-sessions-td873058.html
   zap <- function() rm(list=ls(all=TRUE))
@@ -79,14 +77,6 @@ if (interactive()) {
       }
     }
   }
-
-
-   if(interactive()){
-       library(colorout)
-       library(setwidth)
-       options(vimcom.verbose = 1) # optional
-       library(vimcom)
-   }
 
 
   cat("\014")
