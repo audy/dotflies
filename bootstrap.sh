@@ -9,6 +9,8 @@ git clone https://github.com/audy/dotflies.git ~/.dotflies
 
 cd ~/.dotflies && ./link-files
 
+mkdir -p ~/.history
+
 # install vim plugins
 
 vim -E -c 'PlugInstall' -c 'qa!' || true
