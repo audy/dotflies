@@ -51,6 +51,9 @@ let maplocalleader = ","
 set t_Co=256
 syntax enable
 
+" eyesight
+set guifont=Menlo\ Regular:h14
+
 " set background depending on iTerm profile
 if $ITERM_PROFILE == 'light'
   set background=light
