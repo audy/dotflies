@@ -8,62 +8,32 @@ setopt SHARE_HISTORY
 # LOOKS
 #
 
+# folor $color shortcuts
+autoload -U colors && colors
 export TERM='xterm-256color'
 
 EMOJI=(
 ☕️
-⛈
-⛏
-🌍
-🌞
-🌭
-🌮
-🌯
-🌶
 🍄
-🍔
 🍕
-🍣
 🍪
-🍻
-🍿
 🎨
-🏎
-🏹
 🐌
-🐓
-🐞
 🐦
-🐧
-🐭
-🐳
 🐶
-🐷
-🐸
-🐼
-🐿
 👽
 💀
 💎
 💜
 💩
 💰
-💾
-📸
-🔬
 🔮
-🕵
-🕹
 🙃
 🚀
-🛠
-🛰
 🤑
 🤖
 🦀
-🦃
 🦄
-🧀
 )
 
 settitle() {
