@@ -6,7 +6,7 @@
 [github]
 	user = audy
 [core]
-	excludesfile = ~/.cvsignore
+	excludesfile = /Users/austin/.gitignore_global
 	quotepath = false
 [filter "media"]
 	clean = git-media-clean %f
