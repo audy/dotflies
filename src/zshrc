@@ -60,8 +60,6 @@ settitle $emoji
 PROMPT=$(get_left_prompt)
 RPROMPT="%{$fg[magenta]%}%c%{$reset_color%}"
 
-# solarized lscolors (https://github.com/seebi/dircolors-solarized/issues/10)
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 #
 # COMPLETION
