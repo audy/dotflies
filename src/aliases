@@ -115,6 +115,11 @@ function denv() {
   eval "$(docker-machine env dev)"
 }
 
+function ddenv() {
+  echo "using docker daemon ${1}"
+  eval "$(docker-machine env ${1})"
+}
+
 alias dash="echo open dash://"
 
 alias venv=". venv/bin/activate"
