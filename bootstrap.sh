@@ -10,4 +10,4 @@ git clone https://github.com/audy/dotflies.git ~/.dotflies
 cd ~/.dotflies && ./install
 
 # install vim plugins
-vim -E -c "PlugInstall" -c "qa!"
+screen 'vim -E -c "PlugInstall" -c "qa!" > /dev/null'
