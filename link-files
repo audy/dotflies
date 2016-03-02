@@ -20,7 +20,7 @@ install_dotfiles () {
 
     dest="${HOME}/.$(basename ${source})"
     
-    if [ ${FORCE} != true ]; then
+    if [ ${FORCE} == true ]; then
       rm -rf ${dest}
     fi
 
@@ -34,6 +34,3 @@ install_dotfiles () {
 }
 
 install_dotfiles
-
-echo "linking local to ~/.local"
-echo `ln -sv local ~/.local`

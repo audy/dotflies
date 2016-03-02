@@ -7,7 +7,8 @@ set -euo pipefail
 
 git clone https://github.com/audy/dotflies.git ~/.dotflies
 
-cd ~/.dotflies && ./install
+cd ~/.dotflies && ./link-files
 
 # install vim plugins
-screen 'vim -E -c "PlugInstall" -c "qa!" > /dev/null'
+
+vim -E -c 'PlugInstall' -c 'qa!'

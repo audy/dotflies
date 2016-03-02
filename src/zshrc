@@ -4,6 +4,8 @@ export SAVEHIST=100
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
+export PATH="/usr/local/sbin:$PATH"
+
 #
 # LOOKS
 #
@@ -151,11 +153,7 @@ export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
 
 # so CPAN installs modules to ~/perl5
 #:eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
-export DOCKER_HOST=tcp://127.0.0.1:2375
 
 PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 
-export PATH="/usr/local/sbin:$PATH"
