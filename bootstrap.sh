@@ -11,4 +11,4 @@ cd ~/.dotflies && ./link-files
 
 # install vim plugins
 
-vim -E -c 'PlugInstall' -c 'qa!'
+vim -E -c 'PlugInstall' -c 'qa!' || true
