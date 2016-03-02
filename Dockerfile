@@ -10,7 +10,6 @@ RUN apt-get install -y \
 ADD . /root/.dotfiles
 WORKDIR /root/.dotfiles
 
-ENV term=xterm
 RUN ./bootstrap.sh
 
 WORKDIR /root
