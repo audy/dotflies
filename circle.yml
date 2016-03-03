@@ -8,4 +8,4 @@ dependencies:
 
 test:
   override:
-    - docker run audy/dotfiles
+    - docker run audy/dotfiles -c "hello, world!"
