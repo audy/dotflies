@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build --tag audy/dotfiles .
+
+test:
+  override:
+    - docker run audy/dotfiles
