@@ -60,6 +60,7 @@ nnoremap <c-o> <c-o>zz
 set guifont=Menlo\ Regular:h14
 
 " disable GUI scrollbar in MacVim
+set guioptions-=r
 set guioptions-=L
 set background=dark
 set rnu " relative line numbers

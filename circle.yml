@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build --tag audy/dotfiles .
+
+test:
+  override:
+    - docker run audy/dotfiles -c 'echo "hello, world!"'
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push audy/dotfiles
