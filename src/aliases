@@ -1,5 +1,114 @@
 # vim: ft=sh
 
+#
+# BASH/ZSH
+#
+
+# lazy ls
+alias ls='ls -G'
+alias l='ls -lash'
+
+alias c='clear'
+alias cl='c && l'
+
+#
+# GIT
+#
+
+# pretty git logs
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+# misc git
+alias g='git'
+alias gp='git push'
+alias gm='git checkout master'
+alias gc='git checkout'
+alias ga='git add'
+alias gr='git reset'
+alias gd='git diff'
+
+# pretty list branches, sorted by date
+alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+
+alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
+
+alias gs='git status -sb'
+alias gap='git add -p'
+alias gad="git add '$1' && git commit -m \"+ '$1'\""
+
+
+#
+# MAX OS
+#
+
+# hide desktop icons (mac os x)
+alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+
+alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+
+# find largest files in pwd
+alias big='du  -a . | sort -n -r | less'
+
+alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
+
+
+#
+# DOCKER DOCKER DOCKER DOCKER DOCKER DOCKER
+#
+
+# docker/docker-machine
+alias dst='docker-machine start dev'
+alias dm='docker-machine'
+alias d='docker'
+
+function denv() {
+  eval "$(docker-machine env dev)"
+}
+
+function ddenv() {
+  echo "using docker daemon ${1}"
+  eval "$(docker-machine env ${1})"
+}
+
+#
+# PYTHON
+#
+
+alias venv=". venv/bin/activate"
+
+#
+# RUBY
+#
+
+alias b='bundle exec'
+
+#
+# PROGRAM SHORTCUTS
+#
+
+alias mux='tmuxinator'
+alias news="newsbeuter"
+alias mutt="cd ~/Downloads && mutt"
+
+#
+# MISC/TOOLS
+#
+
+# show active network listeners
+alias netlisteners='lsof -i -P | grep LISTEN'
+
+# Display image with tput
+function image() {
+  convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
+}
+
+colors() {
+  for i in {0..255} ; do
+      printf "\x1b[38;5;${i}mcolour${i}\n"
+  done
+}
+
 # extract most known archives with one command
 extract () {
     if [ -f $1 ] ; then
@@ -22,107 +131,9 @@ extract () {
      fi
 }
 
-# pretty git logs
-alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-
-# misc git
-alias g='git'
-alias gp='git push'
-alias gm='git checkout master'
-alias gc='git checkout'
-alias ga='git add'
-alias gr='git reset'
-alias gd='git diff'
-# pretty list branches, sorted by date
-alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
-
-alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
-
-alias gs='git status -sb'
-alias gap='git add -p'
-alias gad="git add '$1' && git commit -m \"+ '$1'\""
-
-# bundler
-alias b='bundle exec'
-
-# lazy ls
-alias ls='ls -G'
-alias l='ls -lash'
-
-alias c='clear'
-alias cl='c && l'
-
 # switch to random mac address (en0)
 function switchmac () {
   sudo ifconfig en0 ether $(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;') && sudo ifconfig en0 down && sudo ifconfig en0 up
 }
 
-# recursive directory listing
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
-
-# show active network listeners
-alias netlisteners='lsof -i -P | grep LISTEN'
-
-alias e=$EDITOR
-
-# what's my ip?
-alias ip="curl icanhazip.com"
-
-# open file in read-only mode in vim.
-alias view="vim -p -R"
-
-# Display image with tput
-function image() {
-convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
-}
-
-alias mux='tmuxinator'
-
-# hide desktop icons (mac os x)
-alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
-
-alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
-
-# for vim-r-plugin, need to run vim server
-alias vimr='/usr/local/bin/vim --servername VIM'
-
-alias r='R --silent'
-
-# find largest files in pwd
-alias big='du  -a . | sort -n -r | less'
-
-alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
-
-colors() {
-  for i in {0..255} ; do
-      printf "\x1b[38;5;${i}mcolour${i}\n"
-  done
-}
-
-alias news="newsbeuter"
-alias mutt="cd ~/Downloads && mutt"
-
-alias rsy="rsync --archive --compress --delete --progress"
-
-alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy && catsay --cat random copied key"
-
-# docker / docker-machine / docker-compose
-
-# docker/docker-machine
-alias dst='docker-machine start dev'
-alias dm='docker-machine'
-alias d='docker'
-
-function denv() {
-  eval "$(docker-machine env dev)"
-}
-
-function ddenv() {
-  echo "using docker daemon ${1}"
-  eval "$(docker-machine env ${1})"
-}
-
-alias dash="echo open dash://"
-
-alias venv=". venv/bin/activate"
+alias weather='curl -L wttr.in'
