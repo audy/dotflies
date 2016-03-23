@@ -36,6 +36,7 @@ alias gr='git reset'
 alias gd='git diff'
 # pretty list branches, sorted by date
 alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+alias gbh='gb | head'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
