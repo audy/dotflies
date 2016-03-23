@@ -61,6 +61,17 @@ alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushca
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
+alias db='docker build'
+
+# interactive session inside of docker container
+function de() {
+  docker run \
+    --entrypoint /bin/bash \
+    --env TERM=xterm \
+    --tty \
+    --interactive \
+    ${1}
+}
 
 function denv() {
   eval "$(docker-machine env dev)"
