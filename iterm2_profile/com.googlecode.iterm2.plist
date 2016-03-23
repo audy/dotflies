@@ -2692,17 +2692,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>348 245 599 519 0 0 1280 800 </string>
+	<string>348 318 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 13 1274 764 0 0 1280 777 </string>
+	<string>315 165 650 451 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3 8 1258 769 0 0 1280 777 </string>
+	<string>3 598 650 451 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>3 26 1274 751 0 0 1280 777 </string>
+	<string>267 179 1442 791 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>5 310 650 451 0 0 1280 777 </string>
+	<string>331 103 1258 876 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>5 2 1274 774 0 0 1280 777 </string>
+	<string>347 302 1410 672 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>856 285 986 638 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3493,13 +3495,15 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>466448480.49106503</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>475196335.25594097</real>
+	<real>480387145.09889197</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -3560,7 +3564,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-01T21:28:53Z</date>
+	<date>2016-03-23T00:52:03Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
