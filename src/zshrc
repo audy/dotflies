@@ -48,8 +48,10 @@ emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
 get_left_prompt() {
   if [ ! -z $SSH_CLIENT ]; then
     hostname=`hostname`
+    echo -n "(${hostname}) ${emoji}  "
+  else
+    echo -n "${emoji}  "
   fi
-  echo -n "${hostname}${emoji}  "
 }
 
 git_branch() {
