@@ -2656,7 +2656,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotflies/iterm2_profile</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2694,15 +2694,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>974 595 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 26 954 1031 0 0 1920 1057 </string>
+	<string>0 42 946 735 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>963 582 690 475 0 0 1920 1057 </string>
+	<string>615 38 1042 730 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>615 293 690 475 0 0 1920 1057 </string>
+	<string>459 199 1002 662 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>331 103 1258 876 0 0 1920 1057 </string>
+	<string>331 494 690 475 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>347 302 1410 672 0 0 1920 1057 </string>
+	<string>295 153 690 475 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>856 285 986 638 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2884,9 +2884,9 @@
 				<real>0.086937598884105682</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
-			<false/>
+			<true/>
 			<key>Background Image Location</key>
-			<string></string>
+			<string>/Users/austin/Documents/hmm.png</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -2903,7 +2903,7 @@
 			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
-			<real>0.30000001192092896</real>
+			<real>0.14253555689102565</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -3576,7 +3576,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-25T18:50:16Z</date>
+	<date>2016-03-29T23:10:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3615,7 +3615,7 @@
 	<key>UseCompactLabel</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
-	<true/>
+	<false/>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
