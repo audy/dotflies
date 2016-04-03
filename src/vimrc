@@ -11,6 +11,9 @@ set shell=bash\ -i
 
 filetype off
 
+" custom file extensions
+au BufNewFile,BufRead *.tsc set filetype=typescript
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
@@ -18,6 +21,7 @@ Plug 'hdima/python-syntax'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 call plug#end()
 
