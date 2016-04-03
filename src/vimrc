@@ -17,7 +17,7 @@ au BufNewFile,BufRead *.tsc set filetype=typescript
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'hdima/python-syntax'
+Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
