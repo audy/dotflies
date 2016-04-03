@@ -149,3 +149,5 @@ function switchmac () {
 }
 
 alias weather='curl -L wttr.in'
+
+alias wiki='telnet telnet.wmflabs.org'
