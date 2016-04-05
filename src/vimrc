@@ -18,6 +18,7 @@ Plug 'hdima/python-syntax'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
