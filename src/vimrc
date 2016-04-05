@@ -108,12 +108,6 @@ au FocusLost *:silent! wall
 let mapleader = " "
 let maplocalleader = ","
 
-" emacs movement keybindings in insert mode
-imap <C-a> <C-o>0
-imap <C-e> <C-o>$
-map <C-e> $
-map <C-a> 0
-
 " Kill window
 nnoremap q :q<cr>
 
