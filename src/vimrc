@@ -13,6 +13,7 @@ filetype off
 
 " custom file extensions
 au BufNewFile,BufRead *.tsc set filetype=typescript
+au BufNewFile,BufRead *.coffee set filetype=coffeescript
 
 call plug#begin('~/.vim/plugged')
 
@@ -22,6 +23,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 
 call plug#end()
 
