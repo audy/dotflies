@@ -11,14 +11,19 @@ set shell=bash\ -i
 
 filetype off
 
+" custom file extensions
+au BufNewFile,BufRead *.tsc set filetype=typescript
+au BufNewFile,BufRead *.coffee set filetype=coffeescript
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'hdima/python-syntax'
+Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 
 call plug#end()
 
@@ -104,12 +109,6 @@ au FocusLost *:silent! wall
 " leader/local leader
 let mapleader = " "
 let maplocalleader = ","
-
-" emacs movement keybindings in insert mode
-imap <C-a> <C-o>0
-imap <C-e> <C-o>$
-map <C-e> $
-map <C-a> 0
 
 " Kill window
 nnoremap q :q<cr>
