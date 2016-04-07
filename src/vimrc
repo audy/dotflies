@@ -12,18 +12,21 @@ set shell=bash\ -i
 filetype off
 
 " custom file extensions
-au BufNewFile,BufRead *.tsc set filetype=typescript
 au BufNewFile,BufRead *.coffee set filetype=coffeescript
+au BufNewFile,BufRead *.jbuilder set filetype=ruby
+au BufNewFile,BufRead *.ts set filetype=typescript
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'kien/ctrlp.vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 
 call plug#end()
 
