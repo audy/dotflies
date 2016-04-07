@@ -2694,17 +2694,21 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>974 595 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 42 946 735 0 0 1920 1057 </string>
+	<string>183 186 1554 718 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>615 38 1042 730 0 0 1920 1057 </string>
+	<string>1387 310 530 747 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>459 199 1002 662 0 0 1920 1057 </string>
+	<string>419 382 690 475 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>331 494 690 475 0 0 1920 1057 </string>
+	<string>0 0 1280 800 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>295 153 690 475 0 0 1280 777 </string>
+	<string>443 480 690 475 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>856 285 986 638 0 0 1920 1057 </string>
+	<string>963 4 954 1053 0 0 1920 1057 </string>
+	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2885,8 +2889,6 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
-			<key>Background Image Location</key>
-			<string>/Users/austin/Documents/hmm.png</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -3576,7 +3578,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-29T23:10:38Z</date>
+	<date>2016-04-06T20:01:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
