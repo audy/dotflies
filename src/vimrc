@@ -72,7 +72,7 @@ set guifont=Menlo\ Regular:h14
 set guioptions-=r
 set guioptions-=L
 set background=dark
-set rnu " relative line numbers
+"set rnu " relative line numbers
 set numberwidth=3
 set showbreak=↪
 
