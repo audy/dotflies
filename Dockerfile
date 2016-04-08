@@ -19,7 +19,7 @@ WORKDIR /root
 
 RUN git \
   clone \
-  https://github.com/audy/scratch.git .scratch && cd .scratch scratch && ./install
+  https://github.com/audy/scratch.git .scratch && cd .scratch && ./install
 
 
 ENTRYPOINT ["/bin/zsh"]
