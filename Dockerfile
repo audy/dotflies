@@ -15,4 +15,11 @@ RUN ./bootstrap.sh
 
 WORKDIR /root
 
+# also download `scratch` scripts
+
+RUN git \
+  clone \
+  https://github.com/audy/scratch.git .scratch && cd .scratch scratch && ./install
+
+
 ENTRYPOINT ["/bin/zsh"]
