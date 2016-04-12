@@ -151,3 +151,16 @@ function switchmac () {
 alias weather='curl -L wttr.in'
 
 alias wiki='telnet telnet.wmflabs.org'
+
+#
+# INTERNET
+#
+
+alias myip="curl -4 http://icanhazip.com"
+alias myip6="curl http://icanhazip.com"
+
+#
+# SECURIDAD
+#
+
+alias vpn='sudo openvpn ~/.config.ovpn'
