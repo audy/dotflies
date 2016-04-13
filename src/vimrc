@@ -152,6 +152,7 @@ au FileType python set shiftwidth=4 tabstop=4
 "
 
 " CtrlP
+let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=1024
