@@ -51,6 +51,8 @@ set mouse=vin " lazy man
 " Search
 "
 set incsearch " use incremental searching
+set ic " base case sensitive, unless not
+set smartcase " be case insensitive, or don't
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
