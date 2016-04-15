@@ -15,6 +15,7 @@ filetype off
 au BufNewFile,BufRead *.coffee set filetype=coffeescript
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.ts set filetype=typescript
+au BufNewFile,BufRead *.go set filetype=go
 
 call plug#begin('~/.vim/plugged')
 
@@ -137,12 +138,6 @@ let g:markdown_fenced_languages = ['sh', 'css', 'javascript', 'python', 'ruby', 
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_initial_foldlevel=1
 
-"
-" Filetypes
-"
-
-" Go
-au BufRead,BufNewFile *.go set filetype=go
 
 " Python
 au FileType python set shiftwidth=4 tabstop=4
