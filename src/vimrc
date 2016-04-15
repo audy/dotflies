@@ -52,6 +52,8 @@ set mouse=vin " lazy man
 " Search
 "
 set incsearch " use incremental searching
+set ic " base case sensitive, unless not
+set smartcase " be case insensitive, or don't
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
@@ -150,6 +152,7 @@ au FileType python set shiftwidth=4 tabstop=4
 "
 
 " CtrlP
+let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=1024

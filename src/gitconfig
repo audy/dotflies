@@ -3,6 +3,7 @@
 [user]
 	name = Austin Davis-Richardson
 	email = harekrishna@gmail.com
+	signingkey = 0FE4A28B
 [github]
 	user = audy
 [core]
@@ -19,3 +20,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[commit]
+	gpgsign = true

@@ -1,5 +1,6 @@
-# ~/.dotfiles [![Circle CI](https://circleci.com/gh/audy/dotflies.svg?style=svg)](https://circleci.com/gh/audy/dotflies)
+# ~/.dotflies [![Circle CI](https://circleci.com/gh/audy/dotflies.svg?style=svg)](https://circleci.com/gh/audy/dotflies)
 
+![~/. (fly)](./logo.png?raw=true)
 
 of Austin G. Davis-Richardson
 
