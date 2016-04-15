@@ -24,10 +24,10 @@ Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 call plug#end()
 
