@@ -20,3 +20,5 @@ chmod +x install.sh
 # read install.sh carefully
 ./install.sh
 ```
+
+<abbr>bloop</abbr>
