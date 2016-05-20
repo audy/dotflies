@@ -8,7 +8,7 @@ dependencies:
 
 test:
   override:
-    - docker run audy/dotfiles -c 'echo "hello, world!"'
+    - docker run audy/dotfiles -c 'echo "hello, world!" | catsay --cat random'
 
 deployment:
   hub:
