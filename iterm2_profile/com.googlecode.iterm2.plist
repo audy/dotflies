@@ -1826,9 +1826,9 @@
 	<key>MaxVertically</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Code/dotflies</string>
+	<string>~/Code/dotflies/iterm2_profile</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>{712, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1864,7 +1864,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>90 161 592 584 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>144 66 850 642 0 0 1366 745 </string>
+	<string>0 0 1366 768 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>315 327 1268 635 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2651,7 +2651,7 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>484948774.22167403</real>
+	<real>485412038.72855198</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2685,6 +2685,7 @@
 		<string>0013</string>
 		<string>0014</string>
 		<string>0015</string>
+		<string>0016</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -2734,7 +2735,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/austin/Code/dotflies</string>
+	<string>/Users/austin/Code/dotflies/iterm2_profile</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2752,7 +2753,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-14T19:59:33Z</date>
+	<date>2016-05-20T04:40:37Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
