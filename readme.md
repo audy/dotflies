@@ -20,3 +20,7 @@ chmod +x install.sh
 # read install.sh carefully
 ./install.sh
 ```
+
+## GPG
+
+Commits should be signed with key `0FE4A28B`.
