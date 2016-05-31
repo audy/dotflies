@@ -26,6 +26,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
