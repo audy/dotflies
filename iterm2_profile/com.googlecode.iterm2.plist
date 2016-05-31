@@ -1824,7 +1824,13 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MaxVertically</key>
+<<<<<<< Updated upstream
 	<true/>
+=======
+	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
+>>>>>>> Stashed changes
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Code/dotflies/iterm2_profile</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1860,6 +1866,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
+<<<<<<< Updated upstream
 	<string>269 284 606 456 0 0 1366 745 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>90 161 592 584 0 0 1366 745 </string>
@@ -1869,6 +1876,15 @@
 	<string>315 327 1268 635 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>4 244 810 501 0 0 1366 745 </string>
+=======
+	<string>348 318 606 456 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>7 6 1270 765 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 202 850 575 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>988 574 690 475 0 0 1920 1057 </string>
+>>>>>>> Stashed changes
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>312 -765 1356 739 307 -768 1366 745 </string>
 	<key>NeverWarnAboutShortLivedSessions_35E3CBA0-3183-4A5E-AF12-39AA6D7AE9F9</key>
@@ -2471,7 +2487,11 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
+<<<<<<< Updated upstream
 			<string>Menlo-Regular 16</string>
+=======
+			<string>mononoki-Regular 18</string>
+>>>>>>> Stashed changes
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2753,7 +2773,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+<<<<<<< Updated upstream
 	<date>2016-05-20T04:40:37Z</date>
+=======
+	<date>2016-05-20T16:22:03Z</date>
+>>>>>>> Stashed changes
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>

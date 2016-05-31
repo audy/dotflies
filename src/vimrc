@@ -1,4 +1,3 @@
-
 set nocompatible
 set noerrorbells
 set novisualbell
@@ -20,13 +19,12 @@ au BufNewFile,BufRead *.go set filetype=go
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'hdima/python-syntax', { 'for': 'python' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 Plug 'kien/ctrlp.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
