@@ -149,7 +149,7 @@ function switchmac () {
 }
 
 alias weather='curl -L wttr.in'
-alias moon='wttr.in/Moon'
+alias moon='curl -L wttr.in/Moon'
 
 alias wiki='telnet telnet.wmflabs.org'
 
