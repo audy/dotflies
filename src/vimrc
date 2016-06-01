@@ -43,7 +43,6 @@ set clipboard=unnamed " use system clipboard
 set autowrite " autosave
 set autoread " autoupdate
 set backspace=indent,eol,start " backspace over anything
-set mouse=vin " lazy man
 
 "
 " Search
