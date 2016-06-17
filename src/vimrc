@@ -16,6 +16,9 @@ au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.go set filetype=go
 
+" always use system ruby
+let g:ruby_path = ['/usr/bin/ruby']
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
