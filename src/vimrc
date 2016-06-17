@@ -77,6 +77,8 @@ set showbreak=↪
 
 set ttyfast
 
+set number
+
 set t_Co=256
 syntax enable
 
