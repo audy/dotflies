@@ -17,7 +17,7 @@ au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.go set filetype=go
 
 " always use system ruby
-let g:ruby_path = ['/usr/bin/ruby']
+let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
