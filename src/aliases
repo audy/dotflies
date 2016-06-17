@@ -165,3 +165,22 @@ alias myip6="curl http://icanhazip.com"
 #
 
 alias vpn='sudo openvpn ~/.config.ovpn'
+
+#
+# TILDE TOWN
+#
+
+function tilde-tun () {
+  if [ -e ~/.tilde_ssh_pid ]
+  then
+    echo "stopping tilde tunnel"
+    kill `cat ~/.tilde_ssh_pid`
+    rm ~/.tilde_ssh_pid
+  else
+    echo "starting tilde tunnel"
+    nohup ssh -N town -L localhost:6667:localhost:6667 &
+    echo $! > ~/.tilde_ssh_pid
+  fi
+}
+
+function tild-down
