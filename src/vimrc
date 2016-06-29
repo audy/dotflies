@@ -28,6 +28,7 @@ Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-abolish'
 
 call plug#end()
 
