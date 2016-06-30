@@ -12,7 +12,7 @@ of Austin G. Davis-Richardson
 docker run -ti audy/dotfiles
 ```
 
-(OSX + Ubuntu)
+(OSX or Ubuntu)
 
 ```bash
 curl -L https://git.io/vu9Do > install.sh
