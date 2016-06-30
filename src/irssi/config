@@ -1,11 +1,12 @@
 chatnets = {
-  "agdr.org" = { type = "IRC"; nick = "audy_"; realname = "audy"; };
+  "austinfanclub.com" = { type = "IRC"; nick = "audy_"; realname = "audy"; };
+  "austinfanclub.com" = { type = "IRC"; };
 };
 
 servers = (
   {
-    address = "agdr.org";
-    chatnet = "agdr.org";
+    address = "austinfanclub.com";
+    chatnet = "austinfanclub.com";
     port = "6565";
     use_ssl = "yes";
     ssl_verify = "no";
@@ -21,7 +22,7 @@ settings = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
   };
-  core = { 
+  core = {
     real_name = "Austin Richardson";
     user_name = "audy";
     nick = "audy";
@@ -30,16 +31,12 @@ settings = {
 };
 
 channels = (
-  { name = "#heyaudy"; chatnet = "agdr.org"; autojoin = "yes"; }
+  { name = "#heyaudy"; chatnet = "austinfanclub.com"; autojoin = "yes"; }
 );
 
-ignores = (
-  { level = "JOINS PARTS QUITS NICKS"; }
-);
+ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 
-windows = {
-  1 = { immortal = "yes"; name="(status)"; level = "ALL"; };
-}
+windows = { 1 = { immortal = "yes"; name = "(status)"; level = "ALL"; }; };
 
 aliases = {
   ATAG = "WINDOW SERVER";
