@@ -106,5 +106,8 @@ aliases = {
   8 = "WINDOW GOTO 8";
   9 = "WINDOW GOTO 9";
   10 = "WINDOW GOTO 10";
+  11 = "WINDOW GOTO 11";
+  12 = "WINDOW GOTO 12";
+  13 = "WINDOW GOTO 13";
 };
 

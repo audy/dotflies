@@ -11,6 +11,10 @@ alias l='ls -lash'
 alias c='clear'
 alias cl='c && l'
 
+function note () {
+  vim $(date "+%Y-%m-%d.md")
+}
+
 #
 # GIT
 #

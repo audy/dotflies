@@ -7,7 +7,8 @@ RUN apt-get install -y \
   tmux \
   vim \
   zsh \
-  ruby
+  ruby \
+  irssi
 
 RUN gem install catsay
 
