@@ -2,13 +2,14 @@
 
 cask_args appdir: '/Applications'
 
-brew 'vim'
-brew 'zsh'
-brew 'git'
-brew 'pass'
 brew 'docker'
+brew 'git'
+brew 'irssi'
+brew 'pass'
 brew 'rbenv'
 brew 'ruby-build'
+brew 'vim'
+brew 'zsh'
 
 tap 'caskroom/cask'
 
