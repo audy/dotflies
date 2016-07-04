@@ -3,6 +3,8 @@
 cask_args appdir: '/Applications'
 
 brew 'docker'
+brew 'docker-compose'
+brew 'docker-machine'
 brew 'git'
 brew 'irssi'
 brew 'pass'
