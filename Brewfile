@@ -13,8 +13,9 @@ brew 'zsh'
 
 tap 'caskroom/cask'
 
+cask 'bitbar'
+cask 'droplr'
 cask 'google-chrome'
 cask 'gpgtools'
+cask 'minecraft'
 cask 'spectacle'
-cask 'droplr'
-cask 'bitbar'
