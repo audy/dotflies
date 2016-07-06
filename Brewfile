@@ -13,6 +13,7 @@ brew 'ruby-build'
 brew 'vim'
 brew 'zsh'
 brew 'mplayer'
+brew 'newsbeuter'
 
 tap 'caskroom/cask'
 
