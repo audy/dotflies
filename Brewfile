@@ -2,6 +2,8 @@
 
 cask_args appdir: '/Applications'
 
+brew 'python'
+brew 'ruby'
 brew 'docker'
 brew 'docker-compose'
 brew 'docker-machine'
@@ -13,6 +15,11 @@ brew 'ruby-build'
 brew 'vim'
 brew 'zsh'
 brew 'mplayer'
+brew 'htop'
+brew 'newsbeuter'
+brew 'wget'
+brew 'the_silver_searcher'
+brew 'tmux'
 
 tap 'caskroom/cask'
 
@@ -24,3 +31,6 @@ cask 'minecraft'
 cask 'slack'
 cask 'spectacle'
 cask 'vlc'
+cask 'atom'
+cask 'transmission'
+#cask 'flux' # breaks Emoji & Symbols input ☹️
