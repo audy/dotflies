@@ -155,8 +155,6 @@ function switchmac () {
 alias weather='curl -L wttr.in'
 alias moon='curl -L wttr.in/Moon'
 
-alias npr="mplayer http://streams.kqed.org/kqedradio"
-
 alias wiki='telnet telnet.wmflabs.org'
 
 #
