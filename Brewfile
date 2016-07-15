@@ -34,4 +34,3 @@ cask 'spectacle'
 cask 'vlc'
 cask 'atom'
 cask 'transmission'
-#cask 'flux' # breaks Emoji & Symbols input ☹️
