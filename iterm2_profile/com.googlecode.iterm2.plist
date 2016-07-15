@@ -2694,7 +2694,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 284 606 456 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 370 610 375 0 0 1366 745 </string>
+	<string>0 0 1366 768 0 0 1366 745 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 0 1366 768 0 0 1366 745 </string>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
@@ -3356,7 +3358,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Smart Selection Rules</key>
