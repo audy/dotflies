@@ -6,7 +6,6 @@ setopt SHARE_HISTORY
 
 export PATH="/usr/local/sbin:$PATH"
 
-export DYLD_INSERT_LIBRARIES="/usr/local/lib/libstderred.dylib${DYLD_INSERT_LIBRARIES:+:$DYLD_INSERT_LIBRARIES}"
 #
 # LOOKS
 #
