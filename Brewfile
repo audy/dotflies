@@ -18,6 +18,7 @@ brew 'mplayer'
 brew 'htop'
 brew 'newsbeuter'
 brew 'wget'
+brew 'nmap'
 brew 'the_silver_searcher'
 brew 'tmux'
 
