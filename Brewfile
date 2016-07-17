@@ -4,6 +4,7 @@ cask_args appdir: '/Applications'
 
 brew 'python'
 brew 'ruby'
+brew 'node'
 brew 'docker'
 brew 'docker-compose'
 brew 'docker-machine'
@@ -24,6 +25,7 @@ brew 'tmux'
 
 tap 'caskroom/cask'
 
+cask 'cyberduck'
 cask 'bitbar'
 cask 'droplr'
 cask 'google-chrome'
