@@ -39,7 +39,6 @@ filetype plugin indent on    " required
 let mapleader = " "
 let maplocalleader = ","
 
-
 "
 " Behavior
 "
