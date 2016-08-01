@@ -119,9 +119,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
-# Load Tmuxinator, if you are using it
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 export EDITOR='vim'
 
 if [ -f ~/.aliases ]
