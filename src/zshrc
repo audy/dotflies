@@ -63,10 +63,8 @@ git_branch() {
 
 settitle $emoji
 
-
 PROMPT=$(get_left_prompt)
 RPROMPT="%{$fg[magenta]%}%c%{$reset_color%}"
-
 
 #
 # COMPLETION
