@@ -118,6 +118,11 @@ au FocusLost *:silent! wall
 let mapleader = " "
 let maplocalleader = ","
 
+" better tab navigatioj
+nmap <silent> <C-t> :tabnext<CR>
+nmap <silent> <C-r> :tabprev<CR>
+nmap <silent> <C-e> :tabnew<CR>
+
 " Kill window
 nnoremap q :q<cr>
 
