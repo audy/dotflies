@@ -21,6 +21,12 @@ chmod +x install.sh
 ./install.sh
 ```
 
+For macOS-specific settings:
+
+```bash
+./macos.sh # requires reboot
+```
+
 ## GPG
 
 Commits should be signed with key `0FE4A28B`.
