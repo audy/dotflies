@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
+Plug 'skalnik/vim-vroom', { 'for': 'ruby' }
 
 call plug#end()
 
@@ -152,6 +153,11 @@ au FileType python set shiftwidth=4 tabstop=4
 "
 " Plugin Settings
 "
+
+" Vroom
+
+let g:vroom_use_spring = 1
+let g:vroom_use_binstubs = 1
 
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings

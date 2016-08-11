@@ -2,7 +2,7 @@
 
 cask_args appdir: '/Applications'
 
-brew 'python'
+brew 'python3'
 brew 'ruby'
 brew 'node'
 brew 'docker'
@@ -22,6 +22,11 @@ brew 'wget'
 brew 'nmap'
 brew 'the_silver_searcher'
 brew 'tmux'
+brew 'gnupg'
+brew 'keybase'
+brew 'redis'
+brew 'postgresql'
+brew 'tree'
 
 tap 'caskroom/cask'
 
@@ -37,3 +42,4 @@ cask 'vlc'
 cask 'atom'
 cask 'transmission'
 cask 'torbrowser'
+cask 'paintbrush'
