@@ -1,3 +1,6 @@
+[alias]
+  c = commit -m
+  a = add
 [color]
 	ui = true
 [user]

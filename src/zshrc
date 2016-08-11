@@ -6,6 +6,9 @@ setopt SHARE_HISTORY
 
 export PATH="/usr/local/sbin:$PATH"
 
+# beep, beep
+if [ -f ~/.secrets ]; then; source ~/.secrets; fi
+
 #
 # LOOKS
 #
@@ -85,8 +88,10 @@ unsetopt correct_all
 # brew install zsh-syntax-highlighting
 if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 then
+  export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
 
 if [ -e /usr/local/bin/rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
@@ -103,3 +108,13 @@ export PATH=$PATH:/usr/local/share/npm/bin
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
 export PATH="$PATH:/usr/local/opt/ruby/bin"
+
+# GOPATH
+export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
+
+# so CPAN installs modules to ~/perl5
+#:eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+
+PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;

@@ -30,6 +30,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
 Plug 'skalnik/vim-vroom', { 'for': 'ruby' }
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 
@@ -38,7 +39,6 @@ filetype plugin indent on    " required
 " leader/local leader
 let mapleader = " "
 let maplocalleader = ","
-
 
 "
 " Behavior
@@ -118,6 +118,11 @@ au FocusLost *:silent! wall
 " leader/local leader
 let mapleader = " "
 let maplocalleader = ","
+
+" better tab navigatioj
+nmap <silent> <C-t> :tabnext<CR>
+nmap <silent> <C-r> :tabprev<CR>
+nmap <silent> <C-e> :tabnew<CR>
 
 " Kill window
 nnoremap q :q<cr>
