@@ -102,14 +102,3 @@ fi
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
 export PATH="$PATH:/usr/local/opt/ruby/bin"
-
-# GOPATH
-export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
-export GOPATH=/usr/local/Cellar/go/1.2.1/libexec/bin
-
-# so CPAN installs modules to ~/perl5
-#:eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-
-PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
-
