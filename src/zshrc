@@ -97,8 +97,8 @@ fi
 # LANGUAGE-SPECIFIC SETTINGS
 #
 
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+# NPM
+export PATH=$PATH:/usr/local/share/npm/bin
 
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
