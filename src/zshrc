@@ -54,72 +54,24 @@ get_left_prompt() {
   fi
 }
 
-git_branch() {
-  echo -n $(git symbolic-ref HEAD | cut -d'/' -f 3)
-}
-
 settitle $emoji
-
 
 PROMPT=$(get_left_prompt)
 RPROMPT="%{$fg[magenta]%}%c%{$reset_color%}"
-
 
 #
 # COMPLETION
 #
 
-# fuzzy matching
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# match anywhere in filename
+# tab-complete anywhere in filename
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit
 compinit
 
-# search through history by typing up and down
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
-
 #
 # KEY BINDINGS
 #
-
-bindkey ' ' magic-space                               # [Space] - do history expansion
-
-bindkey -e                                 # emacs mode
-bindkey '^[[1;5C' forward-word             # [Ctrl-RightArrow] - move forward one word
-bindkey '^[[1;5D' backward-word            # [Ctrl-LeftArrow] - move backward one word
-
-bindkey '^?' backward-delete-char          # [Backspace] - delete backward
-if [[ "${terminfo[kdch1]}" != "" ]]; then
-  bindkey "${terminfo[kdch1]}" delete-char # [Delete] - delete forward
-else
-  bindkey "^[[3~" delete-char
-  bindkey "^[3;5~" delete-char
-  bindkey "\e[3~" delete-char
-fi
-
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
-  bindkey "${terminfo[kcuu1]}" up-line-or-search      # start typing + [Up-Arrow] - fuzzy find history forward
-fi
-if [[ "${terminfo[kcud1]}" != "" ]]; then
-  bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
-fi
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# NPM
-export PATH=$PATH:/usr/local/share/npm/bin
-
-# Load Tmuxinator, if you are using it
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export EDITOR='vim'
 
