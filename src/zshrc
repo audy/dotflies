@@ -93,8 +93,9 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-#eval "$(pyenv virtualenv-init -)"
-#export PATH="$HOME/.rbenv/bin:$PATH"
+#
+# LANGUAGE-SPECIFIC SETTINGS
+#
 
 #export PYENV_ROOT="$HOME/.pyenv"
 #export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
