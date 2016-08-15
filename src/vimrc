@@ -49,6 +49,18 @@ set autowrite " autosave
 set autoread " autoupdate
 set backspace=indent,eol,start " backspace over anything
 
+" undo
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set undofile
+set undoreload=10000
+set autowrite
+set autoread
+
+set backup
+set noswapfile
 "
 " Search
 "
