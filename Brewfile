@@ -30,6 +30,7 @@ brew 'tree'
 brew 'vim'
 brew 'wget'
 brew 'zsh'
+brew 'coreutils'
 
 tap 'homebrew/science'
 
