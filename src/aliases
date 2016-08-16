@@ -20,7 +20,8 @@ alias c='clear'
 alias cl='c && l'
 
 function note () {
-  vim $(date "+%Y-%m-%d.md")
+  title=${1:-untitled}
+  vim $(date "+%Y-%m-%d-${title}.md")
 }
 
 #
