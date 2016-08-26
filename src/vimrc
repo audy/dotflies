@@ -30,6 +30,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
 Plug 'chrisbra/Colorizer'
+Plug 'metakirby5/codi.vim'
 
 call plug#end()
 
