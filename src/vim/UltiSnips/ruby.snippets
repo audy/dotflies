@@ -1,3 +1,18 @@
+snippet scraper
+#!/usr/bin/env ruby
+
+require 'http'
+require 'awesome_print'
+require 'pry'
+require 'nokogiri'
+
+request = HTTP.get("http://example.com")
+page = Nokogiri::HTML(request.body.to_s)
+page.css('.selector').each do |item|
+  puts item.text
+end
+endsnippet
+
 snippet rspec
 require 'spec_helper'
 
