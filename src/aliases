@@ -4,6 +4,8 @@
 # BASH/ZSH
 #
 
+alias todo='vim ~/todo.md'
+
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
