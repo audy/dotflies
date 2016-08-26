@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
+Plug 'skalnik/vim-vroom', { 'for': 'ruby' }
 Plug 'chrisbra/Colorizer'
 Plug 'metakirby5/codi.vim'
 
@@ -49,6 +50,18 @@ set autowrite " autosave
 set autoread " autoupdate
 set backspace=indent,eol,start " backspace over anything
 
+" undo
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set undofile
+set undoreload=10000
+set autowrite
+set autoread
+
+set backup
+set noswapfile
 "
 " Search
 "
@@ -158,6 +171,11 @@ au FileType python set shiftwidth=4 tabstop=4
 "
 " Plugin Settings
 "
+
+" Vroom
+
+let g:vroom_use_spring = 1
+let g:vroom_use_binstubs = 1
 
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
