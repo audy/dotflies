@@ -32,7 +32,6 @@ brew 'tree'
 brew 'vim'
 brew 'wget'
 brew 'zsh'
-brew 'coreutils'
 
 tap 'homebrew/science'
 
@@ -52,3 +51,4 @@ cask 'torbrowser'
 cask 'transmission'
 cask 'vlc'
 cask 'little-snitch'
+cask 'dropbox'
