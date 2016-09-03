@@ -3,6 +3,7 @@
 cask_args appdir: '/Applications'
 
 brew 'awscli'
+brew 'coreutils'
 brew 'docker'
 brew 'docker-compose'
 brew 'docker-machine'
