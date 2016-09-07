@@ -62,6 +62,20 @@ set autoread
 
 set backup
 set noswapfile
+
+" return to same line when you reopen vim
+augroup line_return
+  au!
+  au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
+augroup END
+
+
+" save when focus lost
+au FocusLost *:silent! wall
+
 "
 " Search
 "

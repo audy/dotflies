@@ -22,7 +22,8 @@ alias c='clear'
 alias cl='c && l'
 
 function note () {
-  vim $(date "+%Y-%m-%d.md")
+  title=${1:-untitled}
+  vim $(date "+%Y-%m-%d-${title}.md")
 }
 
 #
@@ -61,7 +62,7 @@ alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && kill
 # find largest files in pwd
 alias big='du  -a . | sort -n -r | less'
 
-alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
+alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
 
 #
