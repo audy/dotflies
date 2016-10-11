@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
+Plug 'danchoi/ri.vim', { 'for': 'ruby' }
 Plug 'chrisbra/Colorizer'
 Plug 'metakirby5/codi.vim'
 
