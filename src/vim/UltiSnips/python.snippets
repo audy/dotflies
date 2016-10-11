@@ -113,3 +113,35 @@ endsnippet
 snippet logging
 logging.basicConfig(filename='/dev/stderr', level=logging.INFO)
 endsnippet
+
+snippet download
+import urllib.request
+request.urlretrieve('url', 'filename')
+endsnippet
+
+snippet iter_sam
+def iter_sam(handle):
+    '''
+    As defined by:
+    https://samtools.github.io/hts-specs/SAMv1.pdf
+    '''
+
+    for line in handle:
+        if line[0] == '@':
+            continue
+        else:
+            line = line.strip().split("\t")
+            yield {
+                'qname': line[0],
+                'flag': line[1],
+                'rname': line[2],
+                'pos': line[3],
+                'mapq': line[4],
+                'cigar': line[5],
+                'rnext': line[6],
+                'pnext': line[7],
+                'tlen': line[8],
+                'seq': line[9],
+                'qual': line[10]
+            }
+endsnippet
