@@ -2,20 +2,3 @@
 
 # hosted on Amazon
 options(repos = c(CRAN = "http://cran.rstudio.com"))
-
-# autocomplete in require()
-# credit: https://twitter.com/JennyBryan/status/631012796235276288
-utils::rc.settings(ipck=TRUE)
-
-options(
-  stringsAsFactors=FALSE,
-  options(prompt="R> "),
-  show.error.locations=TRUE,
-)
-
-if (interactive()) {
-  # zap() removes all variables in current session
-  # from http://r.789695.n4.nabble.com/How-to-Clear-all-variables-stored-in-current-and-previous-sessions-td873058.html
-  zap <- function() rm(list=ls(all=TRUE))
-  cat("\014")
-}
