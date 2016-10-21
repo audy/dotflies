@@ -27,10 +27,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim' " Gist
-Plug 'tpope/vim-surround' " sd(, sa(, etc...
-Plug 'justinmk/vim-sneak' " s{char}{char} and S{char}{char} to move
-Plug 'sheerun/vim-polyglot' " language pack
-Plug 'tpope/vim-abolish'    " smart replace
+Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
+Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char} to move
+Plug 'sheerun/vim-polyglot'                     " language pack
+Plug 'tpope/vim-abolish'                        " smart replace
+Plug 'godlygeek/tabular'                        " Tab /=
 
 call plug#end()
 
