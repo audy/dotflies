@@ -26,15 +26,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'kien/ctrlp.vim'
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
-Plug 'tpope/vim-surround'
-Plug 'justinmk/vim-sneak'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-abolish'
-Plug 'danchoi/ri.vim', { 'for': 'ruby' }
-Plug 'chrisbra/Colorizer'
-Plug 'metakirby5/codi.vim'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim' " Gist
+Plug 'tpope/vim-surround' " sd(, sa(, etc...
+Plug 'justinmk/vim-sneak' " s{char}{char} and S{char}{char} to move
+Plug 'sheerun/vim-polyglot' " language pack
+Plug 'tpope/vim-abolish'    " smart replace
 
 call plug#end()
 
