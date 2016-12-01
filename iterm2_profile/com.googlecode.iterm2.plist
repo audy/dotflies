@@ -2655,10 +2655,14 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotflies/iterm2_profile</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 521}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2690,13 +2694,23 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>522 115 572 238 0 0 1366 745 </string>
+	<string>262 170 728 385 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 284 606 456 0 0 1366 745 </string>
+	<string>348 318 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>338 137 690 475 0 0 1366 745 </string>
+	<string>3 22 1274 751 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 270 690 475 0 0 1366 745 </string>
+	<string>3 22 1274 751 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>-333 1244 1226 611 -336 800 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>279 1027 890 543 -336 800 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>-330 1102 1274 747 -336 800 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>3 22 1274 751 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>320 42 690 475 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
@@ -3353,6 +3367,8 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Send New Output Alert</key>
+			<false/>
 			<key>Set Local Environment Vars</key>
 			<true/>
 			<key>Shortcut</key>
@@ -3486,6 +3502,12 @@
 			<string>/Users/austin</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncInstallationId</key>
+	<string>9F21D976-1786-4AA1-A0BD-1868EB115BD5</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3495,7 +3517,11 @@
 	<key>NoSyncSuppressAnnyoingBellOffer</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>489184989.48588997</real>
+	<real>475538450.91211802</real>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>466448480.49106503</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>480387145.09889197</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -3564,9 +3590,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-20T17:31:14Z</date>
-	<key>SUSendProfileInfo</key>
-	<false/>
+	<date>2016-11-18T08:05:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
