@@ -8,7 +8,8 @@ RUN apt-get install -y \
   vim \
   zsh \
   ruby \
-  irssi
+  irssi \
+  moreutils
 
 RUN gem install catsay
 
