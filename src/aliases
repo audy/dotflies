@@ -17,6 +17,9 @@ function pushover () {
 function finished () {
   terminal-notifier -title "bloop" -message "$(echo !#)"
 }
+
+alias mf='mdfind -name'
+
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
