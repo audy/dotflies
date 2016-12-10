@@ -80,6 +80,7 @@ alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
 alias db='docker build'
+alias dc='docker-compose'
 
 # interactive session inside of docker container
 function de() {
