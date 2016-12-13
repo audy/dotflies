@@ -131,6 +131,10 @@ alias netlisteners='lsof -i -P | grep LISTEN'
 alias v='vim'
 alias vi='vim'
 
+# removes trailing whitespace from all files in a directory recursively
+# from http://stackoverflow.com/questions/149057/how-to-remove-trailing-whitespace-of-all-files-recursively
+alias ws='find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i '' -E "s/[[:space:]]*$//"'
+
 # Display image with tput
 function image() {
   convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
