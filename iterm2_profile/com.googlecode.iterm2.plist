@@ -2692,11 +2692,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>522 115 572 238 0 0 1366 745 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 284 606 456 0 0 1366 745 </string>
+	<string>269 285 606 456 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>338 137 690 475 0 0 1366 745 </string>
+	<string>0 0 1366 768 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 270 690 475 0 0 1366 745 </string>
+	<string>0 0 1366 768 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>186 20 690 475 0 0 1366 745 </string>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
@@ -3486,6 +3488,10 @@
 			<string>/Users/austin</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3564,7 +3570,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-20T17:31:14Z</date>
+	<date>2016-12-14T04:57:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
