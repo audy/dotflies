@@ -14,6 +14,12 @@ function pushover () {
     https://api.pushover.net/1/messages.json
 }
 
+function finished () {
+  terminal-notifier -title "bloop" -message "$(echo !#)"
+}
+
+alias mf='mdfind -name'
+
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
@@ -74,6 +80,7 @@ alias dst='docker-machine start dev'
 alias dm='docker-machine'
 alias d='docker'
 alias db='docker build'
+alias dc='docker-compose'
 
 # interactive session inside of docker container
 function de() {
@@ -123,6 +130,10 @@ alias netlisteners='lsof -i -P | grep LISTEN'
 
 alias v='vim'
 alias vi='vim'
+
+# removes trailing whitespace from all files in a directory recursively
+# from http://stackoverflow.com/questions/149057/how-to-remove-trailing-whitespace-of-all-files-recursively
+alias ws='find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i '' -E "s/[[:space:]]*$//"'
 
 # Display image with tput
 function image() {
