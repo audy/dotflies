@@ -32,6 +32,7 @@ Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char
 Plug 'sheerun/vim-polyglot'                     " language pack
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
+Plug 'lepture/vim-jinja'
 
 call plug#end()
 
