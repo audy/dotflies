@@ -41,3 +41,14 @@ source 'https://rubygems.org'
 
 gem '$0'
 endsnippet
+
+# quickly slurp up a csv into an array of hashes
+snippet csv
+csv =
+  File.open('$1') do |handle|
+    header = handle.gets.strip.split(',')
+    handle.map do |line|
+      Hash[header.zip(line.strip.split("\t"))]
+    end
+  end
+endsnippet
