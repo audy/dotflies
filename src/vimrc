@@ -32,6 +32,8 @@ Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char
 Plug 'sheerun/vim-polyglot'                     " language pack
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
+Plug 'lepture/vim-jinja'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -41,7 +43,7 @@ filetype plugin indent on    " required
 let mapleader = " "
 let maplocalleader = ","
 
-" okay
+" lazy
 set mouse=vin
 
 "
@@ -117,9 +119,18 @@ set number
 set t_Co=256
 syntax enable
 
-let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-colorscheme hybrid
+let iterm_profile=$ITERM_PROFILE
+
+if iterm_profile == 'Dark'
+  set background=dark
+  let g:hybrid_custom_term_colors = 1
+  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+  colorscheme hybrid
+else
+  set background=light
+  colorscheme solarized
+endif
+" solarized
 
 "
 " Text Formatting

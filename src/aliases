@@ -6,6 +6,10 @@
 
 alias todo='vim ~/todo.md'
 
+function htmlstrip() {
+  sed 's/<[^>]\+>//g'
+}
+
 function pushover () {
   curl \
     --form-string "token=${PUSHOVER_TOKEN}" \
