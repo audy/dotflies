@@ -113,6 +113,8 @@ alias venv=". venv/bin/activate"
 #
 
 alias b='bundle exec'
+alias ftest='bin/rspec --tag focus'
+alias mtest='bin/rspec --tag ~@type:feature'
 
 #
 # PROGRAM SHORTCUTS
