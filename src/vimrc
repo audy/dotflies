@@ -41,6 +41,9 @@ filetype plugin indent on    " required
 let mapleader = " "
 let maplocalleader = ","
 
+" okay
+set mouse=vin
+
 "
 " Behavior
 "
