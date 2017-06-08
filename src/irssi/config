@@ -10,6 +10,7 @@ servers = (
     port = "6565";
     use_ssl = "yes";
     ssl_verify = "no";
+    password = "clint0n";
     autoconnect = "yes";
   }
 );

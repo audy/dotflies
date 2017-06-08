@@ -33,7 +33,9 @@ alias cl='c && l'
 
 function note () {
   title=${1:-untitled}
-  vim $(date "+%Y-%m-%d-${title}.md")
+  path="$(date "+%Y-%m-%d-${title}.md")"
+  echo "# ${title}" >> "${path}"
+  vim "${path}"
 }
 
 #
@@ -55,7 +57,7 @@ alias gbh='gb | head'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
-alias gs='git status -sb'
+alias gs='git status -sb .'
 alias gap='git add -p'
 alias gad="git add '$1' && git commit -m \"+ '$1'\""
 
@@ -225,3 +227,9 @@ codi() {
     hi NonText ctermfg=0 |\
     Codi $syntax" "$@"
 }
+
+#
+# BIOINFORMATICS
+#
+
+alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
