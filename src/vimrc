@@ -121,14 +121,14 @@ syntax enable
 
 let iterm_profile=$ITERM_PROFILE
 
-if iterm_profile == 'Dark'
-  set background=dark
-  let g:hybrid_custom_term_colors = 1
-  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-  colorscheme hybrid
-else
+if iterm_profile == 'Light'
   set background=light
   colorscheme solarized
+else
+  set background=dark
+  colorscheme hybrid
+  let g:hybrid_custom_term_colors = 1
+  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 endif
 " solarized
 

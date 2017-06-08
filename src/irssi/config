@@ -37,7 +37,10 @@ channels = (
 
 ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 
-windows = { 1 = { immortal = "yes"; name = "(status)"; level = "ALL"; }; };
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = { name = "hilight"; sticky = "yes"; };
+};
 
 aliases = {
   ATAG = "WINDOW SERVER";
