@@ -1,0 +1,16 @@
+-- quiet startup
+\set QUIET 1
+
+-- display nulls
+\pset null '¤'
+
+-- custom prompt
+\set PROMPT1 '%[%033[1m%][%/] # '
+
+\set HISTFILE ~/.psql_history- :DBNAME
+
+--- display how long things took to query
+\timing
+
+-- automatic nice table formatting
+\x auto
