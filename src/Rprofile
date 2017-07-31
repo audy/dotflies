@@ -4,3 +4,11 @@
 
 # hosted on Amazon
 options(repos = c(CRAN = "https://cran.rstudio.com"))
+
+if(interactive()) {
+  library(colorout)
+  options(editor="vim")
+  options(prompt="Я> ")
+  options(width=80)
+  options(stringsAsFactors=FALSE)
+}
