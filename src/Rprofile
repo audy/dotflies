@@ -1,4 +1,6 @@
 #!/usr/bin/env Rscript
 
+# vim: ft=R
+
 # hosted on Amazon
 options(repos = c(CRAN = "http://cran.rstudio.com"))
