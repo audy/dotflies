@@ -173,6 +173,9 @@ nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 " LANGUAGE-SPECIFIC SETTINGS
 "
 
+" R
+autocmd BufNewFile,BufRead *.R set shiftwidth=2
+
 " Markdown
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
