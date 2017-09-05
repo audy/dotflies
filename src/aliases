@@ -4,6 +4,9 @@
 # BASH/ZSH
 #
 
+alias vim='nvim'
+alias vi='nvim'
+
 alias todo='vim ~/todo.md'
 
 function htmlstrip() {
@@ -98,6 +101,7 @@ function de() {
     --interactive \
     ${1}
 }
+
 
 function denv() {
   eval "$(docker-machine env dev)"
@@ -236,3 +240,5 @@ codi() {
 #
 
 alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
+
+alias knit="Rscript -e 'knitr::render_markdown($1)'"
