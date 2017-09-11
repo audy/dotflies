@@ -36,7 +36,6 @@ Plug 'vim-python/python-syntax'
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'lepture/vim-jinja'
-Plug 'altercation/vim-colors-solarized'
 Plug 'hkupty/iron.nvim'
 
 call plug#end()
