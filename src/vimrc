@@ -22,6 +22,9 @@ au BufNewFile,BufRead *.go set filetype=go
 " always use system ruby
 let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
+" always use python3 (for iron.nvim)
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
@@ -34,6 +37,7 @@ Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'lepture/vim-jinja'
 Plug 'altercation/vim-colors-solarized'
+Plug 'hkupty/iron.nvim'
 
 call plug#end()
 
