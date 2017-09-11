@@ -32,7 +32,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim' " Gist
 Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
 Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char} to move
-Plug 'sheerun/vim-polyglot'                     " language pack
+Plug 'vim-python/python-syntax'
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'lepture/vim-jinja'
