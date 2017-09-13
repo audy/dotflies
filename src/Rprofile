@@ -1,4 +1,13 @@
 #!/usr/bin/env Rscript
 
+# vim: ft=R
+
 # hosted on Amazon
-options(repos = c(CRAN = "http://cran.rstudio.com"))
+options(repos = c(CRAN = "https://cran.rstudio.com"))
+
+if(interactive()) {
+  options(editor="vim")
+  options(prompt="r> ")
+  options(width=80)
+  options(stringsAsFactors=FALSE)
+}

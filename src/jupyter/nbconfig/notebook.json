@@ -1,5 +1,6 @@
 {
-  "load_extensions": {
-    "vim_binding/vim_binding": true
+  "load_extensions": {},
+  "Notebook": {
+    "Header": false
   }
 }

@@ -9,13 +9,13 @@ ROOT=$PWD
 
 link_files () {
   rm -rf $2
-  ln -vs `pwd`/$1 $2
-  echo "Linked $1 to $2"
+  ln -s `pwd`/$1 $2
+  red='\033[0;32m'
+  nc='\033[0m'
+  echo -e "${red}---> linked $1 to $2${nc}"
 }
 
 install_dotfiles () {
-  echo 'installing dotfiles'
-
   for source in `find src/ -maxdepth 2 -mindepth 1`; do
 
     dest="${HOME}/.$(basename ${source})"
@@ -27,7 +27,7 @@ install_dotfiles () {
     if [ ! -e ${dest} ]; then
       link_files ${source} ${dest}
     else
-      echo "${source} already exists! Skipping ${dest}"
+      echo "---> skipping ${dest}"
     fi
 
   done

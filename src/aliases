@@ -4,6 +4,9 @@
 # BASH/ZSH
 #
 
+alias vim='nvim'
+alias vi='nvim'
+
 alias todo='vim ~/todo.md'
 
 function htmlstrip() {
@@ -31,9 +34,13 @@ alias l='ls -lash'
 alias c='clear'
 alias cl='c && l'
 
+alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu'
+
 function note () {
   title=${1:-untitled}
-  vim $(date "+%Y-%m-%d-${title}.md")
+  path="$(date "+%Y-%m-%d-${title}.md")"
+  echo "# ${title}" >> "${path}"
+  vim "${path}"
 }
 
 #
@@ -56,7 +63,7 @@ alias gbh='gb | head'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
-alias gs='git status -sb'
+alias gs='git status -sb .'
 alias gap='git add -p'
 alias gad="git add '$1' && git commit -m \"+ '$1'\""
 
@@ -96,6 +103,7 @@ function de() {
     --interactive \
     ${1}
 }
+
 
 function denv() {
   eval "$(docker-machine env dev)"
@@ -228,3 +236,11 @@ codi() {
     hi NonText ctermfg=0 |\
     Codi $syntax" "$@"
 }
+
+#
+# BIOINFORMATICS
+#
+
+alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
+
+alias knit="Rscript -e 'knitr::render_markdown($1)'"

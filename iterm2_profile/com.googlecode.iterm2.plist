@@ -2704,21 +2704,21 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>652 499 620 392 0 0 1920 1058 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>468 466 770 429 0 0 1920 1058 </string>
+	<string>936 622 796 473 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>155 474 592 584 0 0 1920 1058 </string>
+	<string>183 459 592 584 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1280 800 0 0 1280 778 </string>
+	<string>4 0 1240 778 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1280 800 0 0 1280 778 </string>
+	<string>4 0 1916 1058 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>4 121 1240 937 0 0 1920 1058 </string>
+	<string>0 0 1920 1080 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>965 0 952 1058 0 0 1920 1058 </string>
+	<string>4 121 1240 937 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 0 1920 1080 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>348 106 1240 937 0 0 1920 1058 </string>
+	<string>0 0 1920 1080 0 0 1920 1058 </string>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
@@ -2921,7 +2921,7 @@
 				<real>1</real>
 			</dict>
 			<key>Badge Text</key>
-			<string>🌑</string>
+			<string></string>
 			<key>Blend</key>
 			<real>0.14253555689102565</real>
 			<key>Blink Allowed</key>
@@ -4334,6 +4334,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -4369,6 +4371,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/austin/dotflies/iterm2_profile</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -4379,16 +4383,18 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>RunJobsInServers</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml?shard=81</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=81</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-28T02:00:22Z</date>
+	<date>2017-07-11T21:46:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4398,7 +4404,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -4407,6 +4413,8 @@
 	<real>0.40000000596046448</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
+	<key>SuppressRestartAnnouncement</key>
+	<true/>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
@@ -4431,7 +4439,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1487789184</real>
+	<real>1493058048</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -4453,6 +4461,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170321-nightly</string>
+	<string>3.1.beta.5</string>
 </dict>
 </plist>
