@@ -12,7 +12,6 @@ autocmd! GUIEnter * set vb t_vb=
 set shell=bash\ -i
 
 filetype off
-
 " custom file extensions
 au BufNewFile,BufRead *.coffee set filetype=coffeescript
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
@@ -42,6 +41,8 @@ filetype plugin indent on    " required
 " leader/local leader
 let mapleader = " "
 let maplocalleader = ","
+
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " lazy
 set mouse=vin
