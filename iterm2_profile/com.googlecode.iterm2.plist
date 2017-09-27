@@ -2666,11 +2666,17 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
+<<<<<<< HEAD
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
+=======
+	<string>~/Desktop/images</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 459}</string>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2679,6 +2685,7 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+<<<<<<< HEAD
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -2702,11 +2709,31 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+=======
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>307</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
 	<dict>
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+<<<<<<< HEAD
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>678 499 620 392 0 0 1920 1058 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -2723,8 +2750,30 @@
 	<string>342 61 1240 937 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>7 0 952 1058 0 0 1920 1058 </string>
+=======
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>522 115 572 238 0 0 1366 745 </string>
+	<key>NSWindow Frame Preferences</key>
+	<string>606 591 606 456 0 0 1920 1058 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>337 68 1250 922 0 0 1920 1058 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>337 68 1250 922 0 0 1920 1058 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>58 0 1250 746 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>4 0 1250 746 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>228 0 1250 746 0 0 1366 746 </string>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>0 0 1920 1080 0 0 1920 1058 </string>
+	<string>249 0 1250 746 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>270 0 1250 746 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>291 0 1250 746 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 8</key>
+	<string>312 0 1250 746 0 0 1366 746 </string>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_13C77B79-DB88-4E84-A611-EB3E95A3606C_selection</key>
@@ -2912,7 +2961,7 @@
 				<real>0.086937598884105682</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
-			<true/>
+			<false/>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -4311,6 +4360,7 @@
 			<key>Working Directory</key>
 			<string>/Users/austin</string>
 		</dict>
+<<<<<<< HEAD
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
@@ -5973,14 +6023,79 @@
 		</dict>
 		<key>Gesture,ThreeFingerSwipeUp,,</key>
 		<dict>
+=======
+	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>489184989.48588997</real>
+	<key>OnlyWhenMoreTabs</key>
+	<true/>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenBookmark</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
+	<key>PassOnControlClick</key>
+	<false/>
+	<key>PasteFromClipboard</key>
+	<false/>
+	<key>PointerActions</key>
+	<dict>
+		<key>Button,1,1,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kContextMenuPointerAction</string>
+		</dict>
+		<key>Button,2,1,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kPasteFromClipboardPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeDown,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kPrevWindowPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeLeft,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kPrevTabPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeRight,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kNextTabPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeUp,,</key>
+		<dict>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 			<key>Action</key>
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/austin/dotflies/iterm2_profile</string>
+<<<<<<< HEAD
 	<key>Print In Black And White</key>
 	<true/>
+=======
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -5991,18 +6106,29 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+<<<<<<< HEAD
 	<key>RunJobsInServers</key>
 	<false/>
+=======
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
+<<<<<<< HEAD
 	<string>https://iterm2.com/appcasts/testing.xml?shard=81</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
 	<date>2017-09-05T17:39:10Z</date>
+=======
+	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2017-09-13T16:27:44Z</date>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -6021,8 +6147,6 @@
 	<real>0.40000000596046448</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
-	<key>SuppressRestartAnnouncement</key>
-	<true/>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
@@ -6046,8 +6170,6 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1493058048</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -6069,6 +6191,10 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
+<<<<<<< HEAD
 	<string>3.1.beta.9</string>
+=======
+	<string>2.9.git.27f3561ecf</string>
+>>>>>>> 01acab978bbae82fe3d84bbadb5e0a2d6877256a
 </dict>
 </plist>
