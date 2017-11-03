@@ -37,6 +37,7 @@ Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'lepture/vim-jinja'
 Plug 'hkupty/iron.nvim'
 Plug 'mbbill/undotree'
+Plug 'Shougo/deoplete.nvim'
 
 call plug#end()
 
