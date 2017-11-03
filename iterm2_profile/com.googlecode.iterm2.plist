@@ -2700,13 +2700,13 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 285 606 456 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1366 768 0 0 1366 746 </string>
+	<string>0 0 1920 1080 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1366 768 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>4 0 1250 746 0 0 1366 746 </string>
+	<string>337 68 1250 922 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>4 0 1250 746 0 0 1366 746 </string>
+	<string>370 68 1250 922 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>228 0 1250 746 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -5176,7 +5176,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-21T14:39:16Z</date>
+	<date>2017-11-03T16:54:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
