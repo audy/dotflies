@@ -119,6 +119,8 @@ function ddenv() {
 #
 
 alias venv=". venv/bin/activate"
+alias p="python3"
+alias nose="python3 -m nose"
 
 #
 # RUBY
