@@ -111,6 +111,10 @@ fi
 # LANGUAGE-SPECIFIC SETTINGS
 #
 
+# Python
+
+PIPENV_COLORBLIND=1
+
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
