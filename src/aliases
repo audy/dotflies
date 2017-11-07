@@ -4,8 +4,9 @@
 # BASH/ZSH
 #
 
-alias vim='nvim'
-alias vi='nvim'
+alias vim='/usr/local/bin/vim'
+alias vi='vim'
+alias v='vim'
 
 alias todo='vim ~/todo.md'
 
