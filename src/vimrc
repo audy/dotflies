@@ -212,7 +212,7 @@ let g:vroom_use_binstubs = 1
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=1024
+let g:ctrlp_max_files=2048
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|venv)$',
