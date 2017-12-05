@@ -65,7 +65,13 @@ alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refnam
 
 alias gs='git status -sb .'
 alias gap='git add -p'
-alias gad="git add '$1' && git commit -m \"+ '$1'\""
+
+function gad() {
+  git add $1
+  git commit -m "+ $1"
+}
+
+
 
 
 #
