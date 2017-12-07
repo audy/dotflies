@@ -1,4 +1,5 @@
-" Use Vim settings, rather than Vi settings (much better!).
+"
+"Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -212,9 +213,9 @@ let g:vroom_use_binstubs = 1
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=2048
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|venv)$',
   \ 'file': '\v\.(exe|so|dll|png|jpeg|jpg|gif|pdf)$',
   \ }
+let g:ctrlp_max_files=4096
