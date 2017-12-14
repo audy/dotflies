@@ -101,12 +101,6 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-if [ -e /usr/local/bin/rbenv ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init - )"
-fi
-
 #
 # LANGUAGE-SPECIFIC SETTINGS
 #
