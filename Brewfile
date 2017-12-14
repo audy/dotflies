@@ -2,31 +2,37 @@
 
 cask_args appdir: '/Applications'
 
-brew 'awscli'
-brew 'coreutils'
-brew 'git'
-brew 'gnupg'
-brew 'heroku'
-brew 'htop'
-brew 'irssi'
-brew 'moreutils'
-brew 'mplayer'
-brew 'newsbeuter'
-brew 'nmap'
-brew 'node'
-brew 'pass'
-brew 'postgresql'
-brew 'python3'
-brew 'rbenv'
-brew 'redis'
-brew 'ruby'
-brew 'ruby-build'
-brew 's3cmd'
-brew 'the_silver_searcher'
-brew 'tmux'
-brew 'tree'
-brew 'vim'
-brew 'wget'
-brew 'zsh'
-
 tap 'homebrew/science'
+
+%w{
+awscli
+coreutils
+docker
+docker-compose
+docker-machine
+git
+gnupg
+heroku
+htop
+irssi
+jq
+moreutils
+mplayer
+newsbeuter
+nmap
+node
+pass
+postgresql
+python3
+rbenv
+redis
+ruby
+ruby-build
+s3cmd
+the_silver_searcher
+tmux
+tree
+vim
+wget
+zsh
+}.each { |p| brew(p) }
