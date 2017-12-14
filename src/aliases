@@ -8,6 +8,8 @@ alias vim='/usr/local/bin/vim'
 alias vi='vim'
 alias v='vim'
 
+alias c-="cd .."
+
 alias todo='vim ~/todo.md'
 
 function htmlstrip() {
