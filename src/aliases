@@ -12,6 +12,11 @@ alias c-="cd .."
 
 alias todo='vim ~/todo.md'
 
+# open lab notebook
+function science() {
+  cd ~/Code/lab-notebook && rake edit
+}
+
 function htmlstrip() {
   sed 's/<[^>]\+>//g'
 }
