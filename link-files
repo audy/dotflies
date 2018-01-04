@@ -18,7 +18,7 @@ link_files () {
 install_dotfiles () {
   for source in `find src/ -maxdepth 2 -mindepth 1`; do
 
-    dest="${HOME}/.${source#src//}"
+    dest="${HOME}/.${source#src/}"
     if [ ${FORCE} == true ]; then
       rm -rf ${dest}
     fi
