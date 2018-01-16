@@ -2712,21 +2712,21 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>332 289 620 392 0 0 1280 778 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>204 230 796 473 0 0 1280 800 </string>
+	<string>204 230 796 473 0 0 1280 778 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>183 459 592 584 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 0 1240 778 0 0 1280 778 </string>
+	<string>340 49 1240 936 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1276 778 0 0 1280 778 </string>
+	<string>524 218 872 623 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>20 0 1240 778 0 0 1280 778 </string>
+	<string>340 73 1240 912 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>504 -7 1240 912 0 0 1920 1058 </string>
+	<string>340 85 1240 912 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>58 2 1216 776 0 0 1280 778 </string>
+	<string>228 73 1464 912 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>58 2 1216 776 0 0 1280 778 </string>
+	<string>0 0 1920 1080 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
 	<string>58 36 1216 742 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
@@ -6008,7 +6008,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-05T18:07:23Z</date>
+	<date>2018-01-11T20:54:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -6047,7 +6047,6 @@
 	<integer>10</integer>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Profiles</string>
 		<string>Notes</string>
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
