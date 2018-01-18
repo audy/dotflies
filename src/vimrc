@@ -39,6 +39,8 @@ Plug 'lepture/vim-jinja'
 Plug 'hkupty/iron.nvim'
 Plug 'mbbill/undotree'
 Plug 'Shougo/deoplete.nvim'
+Plug 'mindriot101/vim-yapf'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
