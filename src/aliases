@@ -43,13 +43,6 @@ alias cl='c && l'
 
 alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu'
 
-function note () {
-  title=${1:-untitled}
-  path="$(date "+%Y-%m-%d-${title}.md")"
-  echo "# ${title}" >> "${path}"
-  vim "${path}"
-}
-
 #
 # GIT
 #
