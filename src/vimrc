@@ -35,6 +35,7 @@ Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char
 Plug 'vim-python/python-syntax'
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'godlygeek/tabular'                        " Tab /=
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 filetype plugin indent on    " required
@@ -199,7 +200,12 @@ au FileType python set shiftwidth=4 tabstop=4
 " Plugin Settings
 "
 
-" Vroom
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 
 " CtrlP
