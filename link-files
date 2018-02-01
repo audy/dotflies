@@ -18,7 +18,16 @@ link_files () {
 install_dotfiles () {
   for source in `find src/ -maxdepth 2 -mindepth 1`; do
 
-    dest="${HOME}/.${source#src//}"
+    # macOS
+    case "$(uname -s)" in
+      Darwin*)
+        dest="${HOME}/.${source#src//}"
+      ;;
+      Linux*)
+        dest="${HOME}/.${source#src/}"
+      ;;
+    esac
+
     if [ ${FORCE} == true ]; then
       rm -rf ${dest}
     fi
