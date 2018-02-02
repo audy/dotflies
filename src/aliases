@@ -11,6 +11,8 @@ alias c-="cd .."
 
 alias todo='vim ~/todo.md'
 
+alias mtrek='telnet mtrek.com 1701'
+
 # open lab notebook
 function science() {
   cd ~/Code/lab-notebook && rake edit
