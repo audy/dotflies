@@ -5,6 +5,14 @@
 # hosted on Amazon
 options(repos = c(CRAN = "https://cran.rstudio.com"))
 
+
+# rice
+options(
+  rice.color_scheme = "native",
+  rice.editing_mode = "vi",
+  rice.complete_while_typing = FALSE
+)
+
 if(interactive()) {
   options(editor="vim")
   options(prompt="r> ")
