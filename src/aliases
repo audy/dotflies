@@ -11,6 +11,8 @@ alias c-="cd .."
 
 alias todo='vim ~/todo.md'
 
+alias mtrek='telnet mtrek.com 1701'
+
 # open lab notebook
 function science() {
   cd ~/Code/lab-notebook && rake edit
@@ -56,6 +58,7 @@ alias lgg='git log --graph --all --decorate --stat --date=iso'
 alias g='git'
 alias gp='git push'
 alias ga='git add'
+alias gc='git commit'
 
 # pretty list branches, sorted by date
 alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
