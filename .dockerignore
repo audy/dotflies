@@ -1,4 +1,8 @@
-.DS_Store
-src/vim/.netrwhist
-src/vim/plugged
-src/vim/tmp
+*
+!Brewfile
+!Hybrid.terminal
+!macos.sh
+!bootstrap.sh
+!iterm2_profile/
+!link-files
+!src/
