@@ -1,15 +1,16 @@
 FROM ubuntu:latest
 
-RUN apt-get update
-
-RUN apt-get install -y \
-  git \
-  tmux \
-  vim \
-  zsh \
-  ruby \
-  irssi \
-  moreutils
+RUN \
+  apt-get update \
+  && apt-get install -y \
+    git \
+    tmux \
+    vim \
+    zsh \
+    ruby \
+    irssi \
+    moreutils \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN gem install catsay
 
