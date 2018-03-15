@@ -1,4 +1,4 @@
-# ~/.dotflies [![Circle CI](https://circleci.com/gh/audy/dotflies.svg?style=svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
+# ~/.dotflies [![CircleCI](https://img.shields.io/circleci/project/github/audy/dotflies.svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
 
 
 ![~/. (fly)](./logo.png?raw=true)
