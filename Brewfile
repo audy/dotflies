@@ -2,33 +2,15 @@
 
 cask_args appdir: '/Applications'
 
-tap 'homebrew/science'
-
 %w{
-awscli
 coreutils
-docker
-docker-compose
-docker-machine
 git
-gnupg
-heroku
-htop
-irssi
 jq
-moreutils
-mplayer
-newsbeuter
-nmap
-node
-pass
-postgresql
-python3
+htop
+python
 rbenv
-redis
 ruby
 ruby-build
-s3cmd
 the_silver_searcher
 tmux
 tree
