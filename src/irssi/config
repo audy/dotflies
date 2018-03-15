@@ -1,16 +1,14 @@
 chatnets = {
   "austinfanclub.com" = { type = "IRC"; nick = "audy_"; realname = "audy"; };
-  "austinfanclub.com" = { type = "IRC"; };
 };
 
 servers = (
   {
-    address = "austinfanclub.com";
     chatnet = "austinfanclub.com";
+    address = "austinfanclub.com";
     port = "6565";
     use_ssl = "yes";
     ssl_verify = "no";
-    password = "clint0n";
     autoconnect = "yes";
   }
 );
@@ -21,18 +19,21 @@ settings = {
     window_check_level_first = "yes";
     theme = "molokai.theme";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
-    bell_beeps = "yes";
   };
   core = {
     real_name = "Austin Richardson";
-    user_name = "audy";
-    nick = "audy";
+    user_name = "audy_";
+    nick = "audy_";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
 
 channels = (
-  { name = "#heyaudy"; chatnet = "austinfanclub.com"; autojoin = "yes"; }
+  {
+    name = "#heyaudy";
+    chatnet = "austinfanclub.com";
+    autojoin = "yes";
+  }
 );
 
 ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );

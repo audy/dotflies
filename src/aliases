@@ -7,6 +7,9 @@
 alias vi='vim'
 alias v='vim'
 
+# so I can use ghi when I'm in a directory w/ a .ruby-version
+alias ghi='/usr/local/bin/ghi'
+
 alias c-="cd .."
 
 alias todo='vim ~/todo.md'

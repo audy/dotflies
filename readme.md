@@ -1,4 +1,5 @@
-# ~/.dotflies [![Circle CI](https://circleci.com/gh/audy/dotflies.svg?style=svg)](https://circleci.com/gh/audy/dotflies)
+# ~/.dotflies [![CircleCI](https://img.shields.io/circleci/project/github/audy/dotflies.svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
+
 
 ![~/. (fly)](./logo.png?raw=true)
 
@@ -12,7 +13,7 @@ of Austin G. Davis-Richardson
 docker run -ti audy/dotfiles
 ```
 
-(OSX or Ubuntu)
+(OSX or Debian/Ubuntu)
 
 ```bash
 curl -L https://git.io/vu9Do > install.sh
