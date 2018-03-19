@@ -23,7 +23,7 @@ au BufNewFile,BufRead *.go set filetype=go
 let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 " always use python3 (for iron.nvim)
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python'
 
 call plug#begin('~/.vim/plugged')
 
