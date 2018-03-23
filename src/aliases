@@ -110,6 +110,7 @@ alias dm='docker-machine'
 alias d='docker'
 alias db='docker build'
 alias dc='docker-compose'
+alias dockernuke="docker ps -a | awk '{print \$NF}' | xargs -I {} docker rm {}"
 
 # interactive session inside of docker container
 function de() {
