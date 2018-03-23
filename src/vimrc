@@ -38,8 +38,8 @@ Plug 'mindriot101/vim-yapf'
 Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
 Plug 'vim-python/python-syntax'
-Plug 'bioSyntax/bioSyntax-vim'
 Plug 'fatih/vim-go'
+Plug 'faceleg/delete-surrounding-function-call.vim'
 
 call plug#end()
 
