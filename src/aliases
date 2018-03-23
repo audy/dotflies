@@ -37,6 +37,11 @@ function finished () {
   terminal-notifier -title "bloop" -message "$(echo !#)"
 }
 
+# extract sequences from a fastq file
+function fqseqs () {
+  awk 'NR%2 == 0 && NR%4 != 0'
+}
+
 alias mf='mdfind -name'
 
 # lazy ls
