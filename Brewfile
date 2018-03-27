@@ -22,6 +22,7 @@ zsh
 %w{
 1password
 iterm2
+minecraft
 docker
 google-chrome
 slack
