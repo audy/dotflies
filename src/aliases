@@ -4,6 +4,22 @@
 # BASH/ZSH
 #
 
+function prox() {
+  case "${1}" in
+  on)
+    echo "enabling proxy"
+    sudo networksetup -setsocksfirewallproxy "Wi-Fi" localhost 9050
+    ;;
+  off)
+    echo "disabling proxy"
+    sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off \
+    ;;
+  *)
+    echo "usage: prox on|off"
+  esac
+}
+
+
 alias vi='vim'
 alias v='vim'
 
