@@ -271,3 +271,6 @@ codi() {
 alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
 
 alias knit="Rscript -e 'knitr::render_markdown($1)'"
+
+alias last="awk '{print \$NF}'"
+alias xi="xargs -I \{}"
