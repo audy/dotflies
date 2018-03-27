@@ -18,3 +18,11 @@ vim
 wget
 zsh
 }.each { |p| brew(p) }
+
+%w{
+1password
+iterm2
+docker
+google-chrome
+slack
+}.each { |p| cask(p) }
