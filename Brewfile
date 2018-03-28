@@ -5,10 +5,14 @@ cask_args appdir: '/Applications'
 %w{
 coreutils
 git
-jq
 htop
+irssi
+jq
+postgres
+pwgen
 python
 rbenv
+redis
 ruby
 ruby-build
 the_silver_searcher
@@ -21,9 +25,9 @@ zsh
 
 %w{
 1password
-iterm2
-minecraft
 docker
 google-chrome
+iterm2
+minecraft
 slack
 }.each { |p| cask(p) }
