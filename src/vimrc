@@ -27,7 +27,6 @@ let g:python3_host_prog = '/usr/local/bin/python'
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'hkupty/iron.nvim'
 Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char} to move
