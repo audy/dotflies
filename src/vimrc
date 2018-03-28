@@ -39,6 +39,7 @@ Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
 Plug 'vim-python/python-syntax'
 Plug 'bioSyntax/bioSyntax-vim'
 Plug 'fatih/vim-go'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
