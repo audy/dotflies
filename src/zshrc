@@ -15,6 +15,10 @@ if [ -f ~/.secrets ]; then; source ~/.secrets; fi
 # fix delete key
 bindkey "^[[3~" delete-char
 
+# j
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+
 #
 # LOOKS
 #

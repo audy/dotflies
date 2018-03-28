@@ -53,6 +53,11 @@ function finished () {
   terminal-notifier -title "bloop" -message "$(echo !#)"
 }
 
+# extract sequences from a fastq file
+function fqseqs () {
+  awk 'NR%2 == 0 && NR%4 != 0'
+}
+
 alias mf='mdfind -name'
 
 # lazy ls
@@ -121,6 +126,7 @@ alias dm='docker-machine'
 alias d='docker'
 alias db='docker build'
 alias dc='docker-compose'
+alias dockernuke="docker ps -a | awk '{print \$NF}' | xargs -I {} docker rm {}"
 
 # interactive session inside of docker container
 function de() {
@@ -281,3 +287,6 @@ codi() {
 alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
 
 alias knit="Rscript -e 'knitr::render_markdown($1)'"
+
+alias last="awk '{print \$NF}'"
+alias xi="xargs -I \{}"

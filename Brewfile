@@ -2,33 +2,19 @@
 
 cask_args appdir: '/Applications'
 
-tap 'homebrew/science'
-
 %w{
-awscli
 coreutils
-docker
-docker-compose
-docker-machine
 git
-gnupg
-heroku
 htop
 irssi
 jq
-moreutils
-mplayer
-newsbeuter
-nmap
-node
-pass
-postgresql
-python3
+postgres
+pwgen
+python
 rbenv
 redis
 ruby
 ruby-build
-s3cmd
 the_silver_searcher
 tmux
 tree
@@ -36,3 +22,12 @@ vim
 wget
 zsh
 }.each { |p| brew(p) }
+
+%w{
+1password
+docker
+google-chrome
+iterm2
+minecraft
+slack
+}.each { |p| cask(p) }
