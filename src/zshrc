@@ -116,6 +116,9 @@ PIPENV_COLORBLIND=1
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
+# go
+export PATH=$PATH:$HOME/go/bin
+
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
 export PATH="$PATH:/usr/local/opt/ruby/bin"
