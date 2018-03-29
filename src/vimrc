@@ -23,11 +23,10 @@ au BufNewFile,BufRead *.go set filetype=go
 let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 " always use python3 (for iron.nvim)
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python'
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'hkupty/iron.nvim'
 Plug 'justinmk/vim-sneak'                       " s{char}{char} and S{char}{char} to move
@@ -39,6 +38,7 @@ Plug 'tpope/vim-abolish'                        " smart replace
 Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
 Plug 'vim-python/python-syntax'
 Plug 'fatih/vim-go'
+Plug 'wakatime/vim-wakatime'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 
 call plug#end()
