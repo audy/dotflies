@@ -18,20 +18,23 @@ link_files () {
 install_dotfiles () {
   for source in `find src/ -maxdepth 2 -mindepth 1`; do
 
-    # macOS
     case "$(uname -s)" in
-      Darwin*)
-        dest="${HOME}/.${source#src//}"
-      ;;
+      # just one slash for linux
       Linux*)
         dest="${HOME}/.${source#src/}"
       ;;
+      # macOS likes to have an extra slash
+      Darwin*)
+        dest="${HOME}/.${source#src//}"
+      ;;
     esac
 
+    # this kills the dot files
     if [ ${FORCE} == true ]; then
       rm -rf ${dest}
     fi
 
+    # dont overwrite anything that is already there
     if [ ! -e ${dest} ]; then
       link_files ${source} ${dest}
     else
