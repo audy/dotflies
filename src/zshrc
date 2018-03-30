@@ -1,6 +1,6 @@
 # store history FOR-EV-ER
-export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d.%H.%M.%S)_$$"
-export SAVEHIST=100
+export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
+export SAVEHIST=100000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
