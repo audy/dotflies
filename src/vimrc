@@ -2,12 +2,16 @@
 " The Very Basics
 "
 
+set nocompatible
+
 set encoding=utf-8
+
+" leader/local leader
+let mapleader = " "
+let maplocalleader = ","
 
 syntax enable
 set t_Co=256
-
-set nocompatible
 
 set noerrorbells
 set novisualbell
@@ -53,6 +57,7 @@ set undoreload=10000
 " clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
+
 "
 " Everything after this is for Fancy Stuff™
 "
@@ -94,13 +99,7 @@ call plug#end()
 
 filetype plugin indent on    " required
 
-" leader/local leader
-let mapleader = " "
-let maplocalleader = ","
-
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
-
 
 " return to same line when you reopen vim
 augroup line_return
