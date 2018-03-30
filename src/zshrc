@@ -116,7 +116,7 @@ get_left_prompt() {
 
 # right prompt: current dir
 PROMPT=$(get_left_prompt)
-RPROMPT="%{$fg[magenta]%}%c%{$reset_color%}"
+RPROMPT="%{%F{magenta}%}%c%{%F{7}%}"
 
 # tab-complete anywhere in filename
 zstyle ':completion:*' completer _complete
