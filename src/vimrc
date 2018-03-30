@@ -12,7 +12,7 @@ set nocompatible
 set noerrorbells
 set novisualbell
 
-set autoindent " automatically indent new lines
+set autoindent
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -75,7 +75,6 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 " always use python3 (for iron.nvim)
 let g:python3_host_prog = '/usr/local/bin/python'
-
 
 "
 " Time For Plugins!
