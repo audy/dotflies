@@ -9,7 +9,7 @@ Austin G. Davis-Richardson
 ### macOS or GNU/Linux
 
 ```bash
-curl -L https://git.io/vu9Do > install.sh
+curl -L https://raw.githubusercontent.com/audy/dotflies/master/install.sh > install.sh
 chmod +x install.sh
 # read install.sh carefully
 ./install.sh
