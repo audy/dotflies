@@ -9,9 +9,6 @@ export PATH="/usr/local/sbin:$PATH"
 # beep, beep
 if [ -f ~/.secrets ]; then; source ~/.secrets; fi
 
-# z
-. /usr/local/etc/profile.d/z.sh
-
 # fix delete key
 bindkey "^[[3~" delete-char
 
