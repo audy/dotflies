@@ -4,7 +4,7 @@ Austin G. Davis-Richardson
 
 ![~/. (fly)](./logo.png?raw=true)
 
-## What
+## Preview
 
 It looks something like this
 
