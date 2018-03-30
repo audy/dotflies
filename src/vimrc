@@ -11,6 +11,7 @@ let mapleader = " "
 let maplocalleader = ","
 
 syntax enable
+set synmaxcol=800 " avoid syntax highlighting on large lines
 set t_Co=256
 
 set noerrorbells
@@ -21,10 +22,13 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+nnoremap q :q<cr> " kill window with q
+
 set backspace=indent,eol,start " backspace over anything
 
 " language-specific whitespace things
 au FileType python set shiftwidth=4 tabstop=4
+autocmd BufNewFile,BufRead *.R set shiftwidth=2
 
 set expandtab " expand tabs to spaces
 set nosmarttab " no tabs to begin with
@@ -57,10 +61,32 @@ set undoreload=10000
 " clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
+" return to same line when you reopen vim
+augroup line_return
+  au!
+  au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
+augroup END
 
 "
 " Everything after this is for Fancy Stuff™
 "
+
+"
+" Search
+"
+set incsearch " use incremental searching
+set ic " base case sensitive, unless not
+set smartcase " be case insensitive, or don't
+
+" colorscheme
+set background=dark
+colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
+
 
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
@@ -74,6 +100,7 @@ au BufNewFile,BufRead *.coffee set filetype=coffeescript
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
 " always use system ruby
 let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
@@ -97,100 +124,21 @@ Plug 'faceleg/delete-surrounding-function-call.vim'
 
 call plug#end()
 
-filetype plugin indent on    " required
-
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
-" return to same line when you reopen vim
-augroup line_return
-  au!
-  au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \     execute 'normal! g`"zvzz' |
-    \ endif
-augroup END
-
-" save when focus lost
-au FocusLost *:silent! wall
-
-"
-" Search
-"
-set incsearch " use incremental searching
-set ic " base case sensitive, unless not
-set smartcase " be case insensitive, or don't
-
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Same when jumping around
-nnoremap g; g;zz
-nnoremap g, g,zz
-nnoremap <c-o> <c-o>zz
-
-"
-" Display
-"
-
-" eyesight
-set guifont=Menlo\ Regular:h14
-
-" disable GUI scrollbar in MacVim
-set guioptions-=r
-set guioptions-=L
-set background=dark
-
-"set rnu " relative line numbers
-set numberwidth=3
-set showbreak=↪
-
-
-let iterm_profile=$ITERM_PROFILE
-
-if iterm_profile == 'Light'
-  set background=light
-  colorscheme solarized
-else
-  set background=dark
-  colorscheme hybrid
-  let g:hybrid_custom_term_colors = 1
-  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-endif
-
-set synmaxcol=800 " max highlight line width
 
 "
 " Mappings
 "
 
-" leader/local leader
-let mapleader = " "
-let maplocalleader = ","
-
-" Kill window
-nnoremap q :q<cr>
-
 " Wrap selection
 nnoremap <leader>W :set wrap!<cr>
-
-
-"
-" LANGUAGE-SPECIFIC SETTINGS
-"
-
-" R
-autocmd BufNewFile,BufRead *.R set shiftwidth=2
-
-" Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" language-specific syntax highlighting in markdown ''' blocks
-let g:markdown_fenced_languages = ['sh', 'css', 'javascript', 'python', 'ruby', 'xml']
 
 "
 " Plugin Settings
 "
+
+" language-specific syntax highlighting in markdown ''' blocks
+let g:markdown_fenced_languages = ['sh', 'css', 'javascript', 'python', 'ruby', 'xml']
 
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
