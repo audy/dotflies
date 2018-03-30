@@ -2,7 +2,7 @@
 !Brewfile
 !Hybrid.terminal
 !macos.sh
-!bootstrap.sh
+!install.sh
 !iterm2_profile/
 !link-files
 !src/
