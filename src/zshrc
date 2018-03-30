@@ -1,6 +1,9 @@
 # be colorful
 export TERM='xterm-256color'
 
+# vim keybindings
+bindkey -v
+
 # store history in daily logs
 export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
 export SAVEHIST=100000
@@ -123,3 +126,4 @@ zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit
 compinit
+
