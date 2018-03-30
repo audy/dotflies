@@ -1,18 +1,69 @@
 "
-"Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" The Very Basics
+"
+
+set encoding=utf-8
+
+syntax enable
+set t_Co=256
+
 set nocompatible
 
 set noerrorbells
 set novisualbell
-set encoding=utf-8
+
+set autoindent " automatically indent new lines
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+set backspace=indent,eol,start " backspace over anything
+
+" language-specific whitespace things
+au FileType python set shiftwidth=4 tabstop=4
+
+set expandtab " expand tabs to spaces
+set nosmarttab " no tabs to begin with
+set nowrap " dont autowrap lines
+
+set mouse=vin
+
+set clipboard=unnamed " use system clipboard
+
+" use version control for version control
+set autowrite
+set autoread
+
+set backup
+set noswapfile
+
+set ttyfast " I think this is turbo mode?
+set number
+
+set autowrite
+set autoread
+
+" undo
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set undofile
+set undoreload=10000
+
+" clean trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+
+"
+" Everything after this is for Fancy Stuff™
+"
 
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
 
-set shell=bash\ -i
+" highlight pesky invisible chars
+syntax match nonascii "[^\x00-\x7F]"
+highlight nonascii guibg=Red ctermbg=2
 
-filetype off
 " custom file extensions
 au BufNewFile,BufRead *.coffee set filetype=coffeescript
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
@@ -25,6 +76,11 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 " always use python3 (for iron.nvim)
 let g:python3_host_prog = '/usr/local/bin/python'
 
+
+"
+" Time For Plugins!
+"
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'godlygeek/tabular'                        " Tab /=
@@ -34,8 +90,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'lepture/vim-jinja'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim' " Gist
 Plug 'mindriot101/vim-yapf'
-Plug 'tpope/vim-abolish'                        " smart replace
-Plug 'tpope/vim-surround'                       " sd(, sa(, etc...
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax'
 Plug 'fatih/vim-go'
 Plug 'wakatime/vim-wakatime'
@@ -51,30 +107,7 @@ let maplocalleader = ","
 
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-" lazy
-set mouse=vin
 
-"
-" Behavior
-"
-
-set clipboard=unnamed " use system clipboard
-set autowrite " autosave
-set autoread " autoupdate
-set backspace=indent,eol,start " backspace over anything
-
-" undo
-
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
-set undofile
-set undoreload=10000
-set autowrite
-set autoread
-
-set backup
-set noswapfile
 
 " return to same line when you reopen vim
 augroup line_return
@@ -115,16 +148,11 @@ set guifont=Menlo\ Regular:h14
 set guioptions-=r
 set guioptions-=L
 set background=dark
+
 "set rnu " relative line numbers
 set numberwidth=3
 set showbreak=↪
 
-set ttyfast
-
-set number
-
-set t_Co=256
-syntax enable
 
 let iterm_profile=$ITERM_PROFILE
 
@@ -137,27 +165,8 @@ else
   let g:hybrid_custom_term_colors = 1
   let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
 endif
-" solarized
-
-"
-" Text Formatting
-"
-
-set nobackup
-set noswapfile
-
-set autoindent " automatically indent new lines
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set nosmarttab " fuck tabs
-set nowrap " dont autowrap lines
-set expandtab " expand tabs to spaces
 
 set synmaxcol=800 " max highlight line width
-
-" save when focus lost
-au FocusLost *:silent! wall
 
 "
 " Mappings
@@ -173,8 +182,6 @@ nnoremap q :q<cr>
 " Wrap selection
 nnoremap <leader>W :set wrap!<cr>
 
-" Clean trailing whitespace
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 "
 " LANGUAGE-SPECIFIC SETTINGS
@@ -184,34 +191,14 @@ nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 autocmd BufNewFile,BufRead *.R set shiftwidth=2
 
 " Markdown
-
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " language-specific syntax highlighting in markdown ''' blocks
 let g:markdown_fenced_languages = ['sh', 'css', 'javascript', 'python', 'ruby', 'xml']
 
-" can't figure out how to get markdown folding working anyway...
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_initial_foldlevel=1
-
-" autowrap text when editing markdown
-autocmd Filetype markdown setlocal textwidth=79
-autocmd Filetype markdown set wrap
-
-" Python
-au FileType python set shiftwidth=4 tabstop=4
-
 "
 " Plugin Settings
 "
-
-" vim-easy-align
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
