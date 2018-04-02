@@ -1,8 +1,8 @@
 # be colorful
 export TERM='xterm-256color'
 
-# vim keybindings
-bindkey -v
+# emacs keybindings
+bindkey -e
 
 # store history in daily logs
 export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
