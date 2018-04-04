@@ -4,10 +4,11 @@
 # BASH/ZSH
 #
 
-
-
 alias vi='vim'
 alias v='vim'
+
+alias last="awk '{print \$NF}'"
+alias xi="xargs -I \{}"
 
 # so I can use ghi when I'm in a directory w/ a .ruby-version
 alias ghi='/usr/local/bin/ghi'
@@ -16,6 +17,7 @@ alias c-="cd .."
 
 alias todo='vim ~/todo.md'
 
+# startrek
 alias mtrek='telnet mtrek.com 1701'
 
 # open lab notebook
@@ -35,25 +37,10 @@ function pushover () {
     https://api.pushover.net/1/messages.json
 }
 
-function finished () {
-  terminal-notifier -title "bloop" -message "$(echo !#)"
-}
-
-# extract sequences from a fastq file
-function fqseqs () {
-  awk 'NR%2 == 0 && NR%4 != 0'
-}
-
-alias mf='mdfind -name'
 
 # lazy ls
 alias ls='ls -G'
 alias l='ls -lash'
-
-alias c='clear'
-alias cl='c && l'
-
-alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu'
 
 #
 # GIT
@@ -120,6 +107,9 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 # DOCKER DOCKER DOCKER DOCKER DOCKER DOCKER
 #
 
+# easy ubuntu
+alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu'
+
 # docker/docker-machine
 alias dst='docker-machine start dev'
 alias dm='docker-machine'
@@ -136,11 +126,6 @@ function de() {
     --tty \
     --interactive \
     ${1}
-}
-
-
-function denv() {
-  eval "$(docker-machine env dev)"
 }
 
 function ddenv() {
@@ -182,9 +167,6 @@ alias mutt="cd ~/Downloads && mutt"
 
 # show active network listeners
 alias netlisteners='lsof -i -P | grep LISTEN'
-
-alias v='vim'
-alias vi='vim'
 
 # removes trailing whitespace from all files in a directory recursively
 # from http://stackoverflow.com/questions/149057/how-to-remove-trailing-whitespace-of-all-files-recursively
@@ -228,7 +210,7 @@ function switchmac () {
   sudo ifconfig en0 ether $(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;') && sudo ifconfig en0 down && sudo ifconfig en0 up
 }
 
-
+# summary of next-generation sequencing technologies
 alias ngs="curl --silent 'https://docs.google.com/spreadsheets/d/1GMMfhyLK0-q8XkIo3YxlWaZA5vVMuhU1kg41g4xLkXc/export?gid=4&format=csv' | grep -v '^#' | grep -v '^\"' | column -t -s\, | less -S"
 
 alias weather='curl -L wttr.in'
@@ -268,18 +250,6 @@ function tilde-tun () {
 
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 
-codi() {
-  local syntax="${1:-python}"
-  shift
-  vim -c \
-    "let g:startify_disable_at_vimenter = 1 |\
-    set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi $syntax" "$@"
-}
-
 #
 # BIOINFORMATICS
 #
@@ -288,5 +258,7 @@ alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
 
 alias knit="Rscript -e 'knitr::render_markdown($1)'"
 
-alias last="awk '{print \$NF}'"
-alias xi="xargs -I \{}"
+# extract sequences from a fastq file
+function fqseqs () {
+  awk 'NR%2 == 0 && NR%4 != 0'
+}
