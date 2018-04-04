@@ -1,4 +1,6 @@
+<center>
 # `audy/dotflies` [![CircleCI](https://img.shields.io/circleci/project/github/audy/dotflies.svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
+</center>
 
 Austin G. Davis-Richardson
 
