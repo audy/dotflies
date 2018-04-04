@@ -4,20 +4,6 @@
 # BASH/ZSH
 #
 
-function prox() {
-  case "${1}" in
-  on)
-    echo "enabling proxy"
-    sudo networksetup -setsocksfirewallproxy "Wi-Fi" localhost 9050
-    ;;
-  off)
-    echo "disabling proxy"
-    sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off \
-    ;;
-  *)
-    echo "usage: prox on|off"
-  esac
-}
 
 
 alias vi='vim'
@@ -99,11 +85,25 @@ function gad() {
 }
 
 
-
-
 #
 # MAX OS
 #
+
+# enable/disable socks proxy on 9050
+function prox() {
+  case "${1}" in
+  on)
+    echo "enabling proxy"
+    sudo networksetup -setsocksfirewallproxy "Wi-Fi" localhost 9050
+    ;;
+  off)
+    echo "disabling proxy"
+    sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off \
+    ;;
+  *)
+    echo "usage: prox on|off"
+  esac
+}
 
 # hide desktop icons (mac os x)
 alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
