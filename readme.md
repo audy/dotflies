@@ -1,33 +1,35 @@
-# ~/.dotflies [![CircleCI](https://img.shields.io/circleci/project/github/audy/dotflies.svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
+# `audy/dotflies` [![CircleCI](https://img.shields.io/circleci/project/github/audy/dotflies.svg)](https://circleci.com/gh/audy/dotflies) ![Docker Pulls](https://img.shields.io/docker/pulls/audy/dotfiles.svg)
 
+Austin G. Davis-Richardson
 
 ![~/. (fly)](./logo.png?raw=true)
 
-of Austin G. Davis-Richardson
+## Preview
+
+It looks something like this
+
+![!/. (preview)](./preview.png?raw=true)
 
 ## Installation
 
-(Docker)
+### macOS or GNU/Linux
 
 ```bash
-docker run -ti audy/dotfiles
-```
-
-(OSX or Debian/Ubuntu)
-
-```bash
-curl -L https://git.io/vu9Do > install.sh
+curl -L https://raw.githubusercontent.com/audy/dotflies/master/install.sh > install.sh
 chmod +x install.sh
 # read install.sh carefully
 ./install.sh
 ```
-
-For macOS-specific settings:
+### macOS-specific enhancements
 
 ```bash
 ./macos.sh # requires reboot
 ```
 
-## GPG
+### Docker
 
-Commits should be signed with key `0FE4A28B`.
+Try it before you buy it
+
+```bash
+docker run -ti audy/dotfiles
+```

@@ -1,123 +1,31 @@
-# store history FOR-EV-ER
-export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d.%H.%M.%S)_$$"
-export SAVEHIST=100
+# be colorful
+export TERM='xterm-256color'
+
+# emacs keybindings
+bindkey -e
+
+# store history in daily logs
+export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
+export SAVEHIST=100000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
-export PATH="/usr/local/sbin:$PATH"
-
-# beep, beep
-if [ -f ~/.secrets ]; then; source ~/.secrets; fi
-
-# z
-. /usr/local/etc/profile.d/z.sh
-
-# fix delete key
-bindkey "^[[3~" delete-char
-
-# j
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-
-#
-# LOOKS
-#
-
-# folor $color shortcuts
-autoload -U colors && colors
-export TERM='xterm-256color'
-
-EMOJI=(
-☕️
-🍄
-🍕
-🍪
-🎨
-🐌
-🐦
-🐶
-👽
-💀
-💎
-💜
-💩
-💰
-🔮
-🙃
-🚀
-🤑
-🤖
-🦀
-🦄
-)
-
-settitle() {
-  # set iTerm2 window title
-  echo -ne "\e]1;$1\a"
-}
-
-emoji="$EMOJI[$RANDOM%$#EMOJI+1]"
-
-get_left_prompt() {
-  if [ ! -z $SSH_CLIENT ]; then
-    hostname=`hostname`
-    echo -n "(${hostname}) ${emoji}  "
-  else
-    echo -n "${emoji}  "
-  fi
-}
-
-settitle $emoji
-
-PROMPT=$(get_left_prompt)
-RPROMPT="%{$fg[magenta]%}%c%{$reset_color%}"
-
-#
-# COMPLETION
-#
-
-# tab-complete anywhere in filename
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
-autoload -Uz compinit
-compinit
-
-#
-# KEY BINDINGS
-#
-
+# vim
 export EDITOR='vim'
 
-if [ -f ~/.aliases ]
-then
-  source ~/.aliases
-fi
-
-unsetopt correct_all
-
-# brew install zsh-syntax-highlighting
-if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
-then
-  export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
+# very important path-related things
+export PATH="/usr/local/sbin:$PATH"
 
 if [ -e /usr/local/bin/rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
-#
-# LANGUAGE-SPECIFIC SETTINGS
-#
-
-# Python
-
-PIPENV_COLORBLIND=1
-
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
+
+# go
+export PATH=$PATH:$HOME/go/bin
 
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
@@ -128,3 +36,94 @@ export PATH="$PATH:/usr/local/opt/ruby/bin"
 
 PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
+
+
+# nothing to see here
+[ -f ~/.secrets ] && source ~/.secrets
+
+# aliases
+[ -f ~/.aliases ] && . ~/.aliases
+
+# j
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+#
+# Prompt
+#
+
+EMOJIS=(
+☁️
+☎️
+☕️
+⛈
+⛵️
+⛺️
+🌎
+🌨
+🍄
+🍉
+🍕
+🍪
+🍷
+🎨
+🐌
+🐔
+🐛
+🐝
+🐞
+🐦
+🐴
+🐶
+🐹
+👽
+💀
+💎
+💜
+💝
+💩
+💰
+🔬
+🔭
+🔮
+🙃
+🙄
+🚀
+🚬
+🛸
+🤑
+🤖
+🤮
+🤷
+🥝
+🦀
+🦄
+🦄
+)
+
+# emoji-based terminal helps me remember where I am
+emoji="$EMOJIS[$RANDOM%$#EMOJIS+1]"
+
+# sets iTerm2 window title
+echo -ne "\e]1;${emoji}\a"
+
+# left prompt
+get_left_prompt() {
+  # show hostname if ssh'd
+  if [ ! -z $SSH_CLIENT ]; then
+    hostname=`hostname`
+    echo -n "(${hostname}) ${emoji}  "
+  else
+    echo -n "${emoji}  "
+  fi
+}
+
+# right prompt: current dir
+PROMPT=$(get_left_prompt)
+RPROMPT="%{%F{magenta}%}%c%{%F{7}%}"
+
+# tab-complete anywhere in filename
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
+

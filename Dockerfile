@@ -17,7 +17,7 @@ RUN gem install catsay
 ADD . /root/.dotfiles
 WORKDIR /root/.dotfiles
 
-RUN ./bootstrap.sh
+RUN ./install.sh
 
 WORKDIR /root
 
