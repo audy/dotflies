@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 Pry.config.page = false
 Pry.config.theme = "pry-modern"
 
