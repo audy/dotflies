@@ -225,7 +225,10 @@ extract () {
 
 # switch to random mac address (en0)
 function switchmac () {
-  sudo ifconfig en0 ether $(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;') && sudo ifconfig en0 down && sudo ifconfig en0 up
+  newmac=$(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;')
+  echo "changing mac address to ${newmac}"
+  sudo ifconfig en0 ether ${newmac} && sudo ifconfig en0 down && sudo ifconfig en0 up
+  echo "your mac address is now $(ifconfig en0 | grep ether | awk '{print $2}')"
 }
 
 
