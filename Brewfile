@@ -6,6 +6,7 @@ cask_args appdir: '/Applications'
 coreutils
 git
 htop
+inetutils
 irssi
 jq
 postgres
