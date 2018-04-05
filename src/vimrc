@@ -48,9 +48,6 @@ set noswapfile
 set ttyfast " I think this is turbo mode?
 set number
 
-set autowrite
-set autoread
-
 " undo
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
