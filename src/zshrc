@@ -119,7 +119,7 @@ get_left_prompt() {
 
 # right prompt: current dir
 PROMPT=$(get_left_prompt)
-RPROMPT="%{%F{magenta}%}%c%{%F{7}%}"
+RPROMPT="%{%F{magenta}%}%c%{%F{default}%}"
 
 # tab-complete anywhere in filename
 zstyle ':completion:*' completer _complete
