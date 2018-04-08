@@ -110,7 +110,7 @@ let g:python3_host_prog = '/usr/local/bin/python'
 "
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
