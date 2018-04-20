@@ -117,6 +117,7 @@ alias d='docker'
 alias db='docker build'
 alias dc='docker-compose'
 alias dockernuke="docker ps -a | grep -v NAMES | awk '{print \$NF}' | xargs -I {} docker rm {}"
+alias dockerkill="docker ps -a | awk '{print $1}' | xargs -I {} docker kill -f {}"
 
 # interactive session inside of docker container
 function de() {
