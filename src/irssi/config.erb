@@ -9,6 +9,7 @@ servers = (
     port = "6565";
     use_ssl = "yes";
     ssl_verify = "no";
+    password="<%= ENV['IRSSI_PASSWORD'] %>";
     autoconnect = "yes";
   }
 );
@@ -24,6 +25,7 @@ settings = {
     real_name = "Austin Richardson";
     user_name = "audy_";
     nick = "audy_";
+    nick = "audy";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };

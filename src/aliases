@@ -7,6 +7,9 @@
 alias vi='vim'
 alias v='vim'
 
+# so I can use environment variables in my irssi config
+alias irssi='irssi --config=<(erb ~/.irssi/config.erb)'
+
 alias last="awk '{print \$NF}'"
 alias xi="xargs -I \{}"
 
