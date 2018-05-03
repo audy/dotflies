@@ -108,7 +108,7 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 #
 
 # easy ubuntu
-alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu'
+alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu:18.04'
 
 # docker/docker-machine
 alias dst='docker-machine start dev'
