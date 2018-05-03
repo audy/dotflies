@@ -15,10 +15,7 @@ It looks something like this
 ### macOS or GNU/Linux
 
 ```bash
-curl -L https://raw.githubusercontent.com/audy/dotflies/master/install.sh > install.sh
-chmod +x install.sh
-# read install.sh carefully
-./install.sh
+curl https://raw.githubusercontent.com/audy/dotflies/master/install.sh | sh -
 ```
 ### macOS-specific enhancements
 

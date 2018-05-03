@@ -1,9 +1,8 @@
-#!/bin/bash
-
+#!/bin/sh
 # this script will download and install my dotfiles
 # (works on ubuntu/mac os x)
 
-set -euo pipefail
+set -e
 
 git clone https://github.com/audy/dotflies.git ~/.dotflies
 
