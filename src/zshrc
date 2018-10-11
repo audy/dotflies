@@ -33,7 +33,8 @@ fi
 export PATH=$PATH:/usr/local/share/npm/bin
 
 # go
-export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH:/bin
 
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
