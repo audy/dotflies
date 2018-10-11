@@ -10,7 +10,7 @@
 [github]
 	user = audy
 [core]
-	excludesfile = /Users/austin/.gitignore_global
+	excludesfile = /Users/austin/.gitignore
 	quotepath = false
 [filter "media"]
 	clean = git-media-clean %f
