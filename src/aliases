@@ -39,9 +39,15 @@ alias todo='vim ~/todo.md'
 # startrek
 alias mtrek='telnet mtrek.com 1701'
 
+# cleanup whiteboard image
+# (https://gist.github.com/lelandbatey/8677901)
+function whiteboard () {
+  convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2"
+}
+
 # open lab notebook
 function science() {
-  cd ~/Code/lab-notebook && rake edit
+  cd ~/Code/lab-notebook && rake $1
 }
 
 function htmlstrip() {
