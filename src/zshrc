@@ -24,6 +24,11 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -e /usr/local/bin/pyenv ]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
