@@ -81,15 +81,17 @@ alias g='git'
 alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
-
-# pretty list branches, sorted by date
-alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+alias gsu='git status --untracked-files=no'
+alias gap='git add -p'
+alias gs='git status -sb .'
 alias gbh='gb | head'
+alias gr='git reset'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
-alias gs='git status -sb .'
-alias gap='git add -p'
+# pretty list branches, sorted by date
+alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+
 
 function gad() {
   git add $1
