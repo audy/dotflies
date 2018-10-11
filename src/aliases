@@ -6,6 +6,20 @@ alias miniconda='source /Users/austin/miniconda3/bin/activate'
 # BASH/ZSH
 #
 
+# show number of files in each directory
+function count () {
+  find . -type d -print0 | while read -d '' -r dir; do
+      files=("$dir"/*)
+      printf "%5d files in directory %s\n" "${#files[@]}" "$dir"
+  done
+}
+
+# show columns in a CSV file
+function columns () {
+  head -n 1 $1 | tr ',' '\n'
+}
+
+alias f='mdfind -name'
 alias vi='vim'
 alias v='vim'
 
