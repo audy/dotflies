@@ -1,6 +1,9 @@
 # be colorful
 export TERM='xterm-256color'
 
+# added by Miniconda3 installer
+#export PATH="/Users/austin/miniconda3/bin:$PATH"
+
 # emacs keybindings
 bindkey -e
 
