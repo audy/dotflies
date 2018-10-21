@@ -162,7 +162,7 @@ alias mtest='bin/rspec --tag ~@type:feature'
 #
 
 alias mux='tmuxinator'
-alias news="newsbeuter"
+alias news="newsboat"
 alias mutt="cd ~/Downloads && mutt"
 
 #
