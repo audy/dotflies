@@ -20,12 +20,10 @@ export EDITOR='vim'
 export PATH="/usr/local/sbin:$PATH"
 
 if [ -e /usr/local/bin/rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
 if [ -e /usr/local/bin/pyenv ]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
 fi
 
