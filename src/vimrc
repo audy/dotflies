@@ -113,12 +113,16 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
+Plug 'ambv/black'
 
 call plug#end()
 
 "
 " Plugin Settings
 "
+
+" auto-format python code
+autocmd BufWritePre *.py execute ':Black'
 
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
