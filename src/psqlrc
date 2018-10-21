@@ -11,6 +11,3 @@
 
 --- display how long things took to query
 \timing
-
--- automatic nice table formatting
-\x auto

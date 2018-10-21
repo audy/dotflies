@@ -1,9 +1,25 @@
 # vim: ft=sh
 
+alias miniconda='source /Users/austin/miniconda3/bin/activate'
+
 #
 # BASH/ZSH
 #
 
+# show number of files in each directory
+function count () {
+  find . -type d -print0 | while read -d '' -r dir; do
+      files=("$dir"/*)
+      printf "%5d files in directory %s\n" "${#files[@]}" "$dir"
+  done
+}
+
+# show columns in a CSV file
+function columns () {
+  head -n 1 $1 | tr ',' '\n'
+}
+
+alias f='mdfind -name'
 alias vi='vim'
 alias v='vim'
 
@@ -23,9 +39,15 @@ alias todo='vim ~/todo.md'
 # startrek
 alias mtrek='telnet mtrek.com 1701'
 
+# cleanup whiteboard image
+# (https://gist.github.com/lelandbatey/8677901)
+function whiteboard () {
+  convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2"
+}
+
 # open lab notebook
 function science() {
-  cd ~/Code/lab-notebook && rake edit
+  cd ~/Code/lab-notebook && rake $1
 }
 
 function htmlstrip() {
@@ -59,15 +81,17 @@ alias g='git'
 alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
-
-# pretty list branches, sorted by date
-alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+alias gsu='git status --untracked-files=no'
+alias gap='git add -p'
+alias gs='git status -sb .'
 alias gbh='gb | head'
+alias gr='git reset'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
-alias gs='git status -sb .'
-alias gap='git add -p'
+# pretty list branches, sorted by date
+alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
+
 
 function gad() {
   git add $1
@@ -261,6 +285,9 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 #
 # BIOINFORMATICS
 #
+
+# hack so I can run figtree on macOS (requires java 1.8)
+alias figtree='jenv shell 1.8 && java -jar $(mdfind -name figtree.jar) $1'
 
 alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
 

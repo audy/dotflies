@@ -1,6 +1,9 @@
 # be colorful
 export TERM='xterm-256color'
 
+# added by Miniconda3 installer
+#export PATH="/Users/austin/miniconda3/bin:$PATH"
+
 # emacs keybindings
 bindkey -e
 
@@ -21,11 +24,17 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -e /usr/local/bin/pyenv ]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
 # go
-export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH:/bin
 
 # for gems installed by Homebrew Ruby
 # make sure $PATH goes first!
@@ -110,6 +119,8 @@ get_left_prompt() {
   if [ ! -z $SSH_CLIENT ]; then
     hostname=`hostname`
     echo -n "(${hostname}) ${emoji}  "
+  elif [ ! -z $VIM ]; then
+    echo -n "%c > "
   else
     echo -n "${emoji}  "
   fi
@@ -124,3 +135,9 @@ zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit
 compinit
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# itermplot
+export ITERMPLOT=rv # dark background
+export MPLBACKEND="module://itermplot"
