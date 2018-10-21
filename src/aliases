@@ -221,6 +221,7 @@ function switchmac () {
 alias ngs="curl --silent 'https://docs.google.com/spreadsheets/d/1GMMfhyLK0-q8XkIo3YxlWaZA5vVMuhU1kg41g4xLkXc/export?gid=4&format=csv' | grep -v '^#' | grep -v '^\"' | column -t -s\, | less -S"
 
 alias weather='curl -L wttr.in'
+alias radar='open https://radar.weather.gov/Conus/full_loop.php'
 alias moon='curl -L wttr.in/Moon'
 
 alias wiki='telnet telnet.wmflabs.org'
