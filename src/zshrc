@@ -29,6 +29,10 @@ if [ -e /usr/local/bin/pyenv ]; then
   eval "$(pyenv init -)"
 fi
 
+if [ -e /usr/local/bin/jenv ]; then
+  eval "$(jenv init -)"
+fi
+
 # NPM
 export PATH=$PATH:/usr/local/share/npm/bin
 
@@ -136,7 +140,6 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 
 # itermplot
 export ITERMPLOT=rv # dark background
