@@ -124,6 +124,9 @@ call plug#end()
 " auto-format python code
 autocmd BufWritePre *.py execute ':Black'
 
+" auto-wrap at line 80 for certain filetypes
+au BufReadPost,BufNewFile *.md,*.txt set tw=79
+
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
