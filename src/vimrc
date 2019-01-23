@@ -107,6 +107,8 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'ambv/black'
+Plug 'vim-python/python-syntax'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
