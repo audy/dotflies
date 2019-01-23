@@ -112,7 +112,6 @@ Plug 'vim-python/python-syntax'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ambv/black'
