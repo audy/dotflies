@@ -125,6 +125,9 @@ call plug#end()
 " auto-format python code
 autocmd BufWritePre *.py execute ':Black'
 
+" auto-format rust code
+autocmd BufWritePre *.rs execute ':%!rustfmt'
+
 " CtrlP
 let g:UltiSnipsNoPythonWarning = 1 " silence python version warnings
 let g:ctrlp_map = '<c-p>'
