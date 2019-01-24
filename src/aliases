@@ -176,9 +176,14 @@ function ddenv() {
 alias python="python3"
 alias pip="pip3"
 
-alias venv=". venv/bin/activate"
-alias p="python3"
-alias nose="python3 -m nose"
+alias pe="pyenv"
+alias pea="pyenv activate"
+
+# I always forget the names of virtualenvs. Use `pwd` as the name:
+function peah() {
+  # TODO: create the virtualenv if it doesn't exist already
+  pyenv activate $(basename `pwd`)
+}
 
 #
 # RUBY
