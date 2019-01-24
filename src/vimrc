@@ -115,6 +115,7 @@ Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ambv/black'
 Plug 'luochen1990/rainbow'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
