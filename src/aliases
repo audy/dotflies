@@ -14,6 +14,13 @@ function count () {
   done
 }
 
+# setup ssh-agent for github
+# TODO: figure out a way to never have to do this again
+function ssha () {
+  eval "$(ssh-agent -s)"
+  ssh-add -K ~/.ssh/id_rsa
+}
+
 # show columns in a CSV file
 function columns () {
   head -n 1 $1 | tr ',' '\n'
