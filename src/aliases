@@ -173,8 +173,6 @@ function ddenv() {
 #
 
 # always use python3
-alias python="python3"
-alias pip="pip3"
 
 alias pe="pyenv"
 alias pea="pyenv activate"
