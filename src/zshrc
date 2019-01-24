@@ -8,11 +8,13 @@ export TERM='xterm-256color'
 bindkey -e
 
 # homebrew pyenv
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
+# i do not care that u deprecated thin
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
 # store history in daily logs
 export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
