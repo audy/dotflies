@@ -110,12 +110,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
-Plug 'ambv/black'
-Plug 'luochen1990/rainbow'
 Plug 'justinmk/vim-sneak'
+
+Plug 'ambv/black', { 'for': 'python' }
+Plug 'luochen1990/rainbow', { 'for': 'python' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'kyuhi/vim-emoji-complete'
 
 call plug#end()
 
