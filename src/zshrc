@@ -7,6 +7,15 @@ export TERM='xterm-256color'
 # emacs keybindings
 bindkey -e
 
+# homebrew pyenv
+# export LDFLAGS="-L/usr/local/opt/zlib/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
+# i do not care that u deprecated thin
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+
 # store history in daily logs
 export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
 export SAVEHIST=100000
@@ -25,10 +34,20 @@ fi
 
 if [ -e /usr/local/bin/pyenv ]; then
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 if [ -e /usr/local/bin/jenv ]; then
   eval "$(jenv init -)"
+fi
+
+
+# rust
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -e ~/.cargo/env ]; then
+  source ~/.cargo/env
 fi
 
 # NPM

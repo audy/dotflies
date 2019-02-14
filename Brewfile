@@ -31,4 +31,6 @@ google-chrome
 iterm2
 minecraft
 slack
+spectacle
+spotify
 }.each { |p| cask(p) }
