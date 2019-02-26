@@ -6,16 +6,12 @@ cask_args appdir: '/Applications'
 coreutils
 git
 htop
-inetutils
-irssi
 jq
 postgres
 pwgen
-python
+pyenv
 rbenv
 redis
-ruby
-ruby-build
 the_silver_searcher
 tmux
 tree
