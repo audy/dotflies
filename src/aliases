@@ -14,6 +14,11 @@ function count () {
   done
 }
 
+# open NCBI's genome page given an NCBI taxid
+function genome() {
+  open "https://www.ncbi.nlm.nih.gov/genome/?term=txid${1}%5BOrganism%3Aexp%5D"
+}
+
 # setup ssh-agent for github
 # TODO: figure out a way to never have to do this again
 function ssha () {
