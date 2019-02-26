@@ -132,6 +132,14 @@ call plug#end()
 " Plugin Settings
 "
 
+" prettier
+
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_async = 1
+
+" which file types to prettify using prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml Prettier
+
 " rainbow
 
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
