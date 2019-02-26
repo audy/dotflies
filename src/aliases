@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-alias miniconda='source /Users/austin/miniconda3/bin/activate'
+alias gcal='gcalcli'
 
 #
 # BASH/ZSH
