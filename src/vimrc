@@ -107,6 +107,8 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'ambv/black'
+Plug 'vim-python/python-syntax'
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
@@ -147,6 +149,8 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 " auto-format python code
 autocmd BufWritePre *.py execute ':Black'
 
+" auto-format rust code
+autocmd BufWritePre *.rs execute ':%!rustfmt'
 " auto-wrap at line 80 for certain filetypes
 au BufReadPost,BufNewFile *.md,*.txt set tw=79
 
