@@ -118,6 +118,13 @@ Plug 'ambv/black', { 'for': 'python' }
 Plug 'luochen1990/rainbow', { 'for': 'python' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'kyuhi/vim-emoji-complete'
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+
+" automattic code fomratting for js, css, html, markdown, yaml, json, etc..
+" (not python)
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plug 'b4b4r07/vim-sqlfmt'
 
 call plug#end()
 
