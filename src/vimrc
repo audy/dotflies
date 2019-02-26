@@ -156,7 +156,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc,node_modules
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|vendor|\.hg|\.svn|build|venv|src)$',
+  \ 'dir':  '\v[\/](\.git|vendor|\.hg|\.svn|build|venv)$',
   \ 'file': '\v\.(exe|so|dll|png|jpeg|jpg|gif|pdf)$',
   \ }
 let g:ctrlp_max_files=10000
