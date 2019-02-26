@@ -6,6 +6,20 @@ alias gcal='gcalcli'
 # BASH/ZSH
 #
 
+# use a remote docker daemon via an SSH tunnel
+function dtun () {
+  # set this up as an alias in ~/.ssh/config
+  machine_name="${1}"
+  socket_path=~/.docker/tunnel/${machine_name}.sock
+  mkdir -p ~/.docker/tunnel/
+  export DOCKER_HOST=unix://${socket_path}
+  echo "Created a socket ${socket_path} to ${machine_name}."
+  echo "Press CTRL-C to destroy."
+  echo "run the following to use ${machine_name} as your Daemon"
+  echo "export DOCKER_HOST=${DOCKER_HOST}"
+  ssh -nNT -L ${socket_path}:/var/run/docker.sock ${machine_name} || rm -f "${socket_path}"
+}
+
 # show number of files in each directory
 function count () {
   find . -type d -print0 | while read -d '' -r dir; do
@@ -160,6 +174,10 @@ alias dc='docker-compose'
 alias dockernuke="docker ps -a | grep -v NAMES | awk '{print \$NF}' | xargs -I {} docker rm {}"
 alias dockerkill="docker ps -a | awk '{print $1}' | xargs -I {} docker kill -f {}"
 
+function dmosh() {
+  mosh --ssh "ssh -l ubuntu -i ~/.docker/machine/machines/${1}/id_rsa" $(docker-machine ip ${1})
+}
+
 # interactive session inside of docker container
 function de() {
   docker run \
@@ -179,8 +197,7 @@ function ddenv() {
 # PYTHON
 #
 
-# always use python3
-
+alias p="python"
 alias pe="pyenv"
 alias pea="pyenv activate"
 
@@ -250,6 +267,16 @@ extract () {
      fi
 }
 
+
+# fetch a random pokemon name
+# i use this to name machines
+function pokemon () {
+  count=$(curl --silent https://pokeapi.co/api/v2/pokemon | jq .count)
+  pokemon_id=$((1 + RANDOM % ${count}))
+  pokemon_data=$(curl --silent https://pokeapi.co/api/v2/pokemon/${pokemon_id})
+  echo "${pokemon_data}" | jq ".forms[0].name"
+}
+
 # switch to random mac address (en0)
 function switchmac () {
   newmac=$(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;')
@@ -262,8 +289,8 @@ function switchmac () {
 alias ngs="curl --silent 'https://docs.google.com/spreadsheets/d/1GMMfhyLK0-q8XkIo3YxlWaZA5vVMuhU1kg41g4xLkXc/export?gid=4&format=csv' | grep -v '^#' | grep -v '^\"' | column -t -s\, | less -S"
 
 alias weather='curl -L wttr.in'
-alias radar='open https://radar.weather.gov/Conus/full_loop.php'
 alias moon='curl -L wttr.in/Moon'
+alias radar='open https://radar.weather.gov/Conus/full_loop.php'
 
 alias wiki='telnet telnet.wmflabs.org'
 
