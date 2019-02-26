@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -277,10 +279,22 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>671 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>254 291 1018 447 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 24 1440 853 0 0 1440 877 </string>
+	<string>0 0 1920 1057 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 0 1920 1057 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>400 430 680 538 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>0 0 1920 1080 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>0 0 1920 1057 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>541 455 680 538 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -924,6 +938,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>79EA5158-9954-4191-90A7-789A4236BD70</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>568579839.12555301</real>
 	<key>OpenArrangementAtStartup</key>
@@ -978,7 +996,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-07T18:51:17Z</date>
+	<date>2019-02-15T17:24:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
@@ -1002,6 +1020,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.7</string>
 </dict>
 </plist>
