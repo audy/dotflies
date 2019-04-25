@@ -1,0 +1,57 @@
+eval "$(rbenv init -)"
+
+# nothing to see here
+. ~/.aliases
+. ~/.secrets
+
+export LSCOLORS="exfxcxdxbxegedabagacad"
+alias ls="ls -lGH"
+
+# mcfly
+if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
+  source "$(brew --prefix)/opt/mcfly/mcfly.bash"
+fi
+
+EMOJI=(
+🌱
+🐰
+👽
+🌵
+🐸
+🦎
+🐍
+🐊
+🦚
+🌿
+🌳
+🌲
+🌴
+☘️
+⛰
+🏔
+🦠
+💚
+♻️
+)
+
+# Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+directory() {
+  echo $(basename $(dirname "$PWD"))/$(basename "$PWD")
+}
+
+emoji="${EMOJI[$RANDOM % ${#EMOJI[@]}]}"
+
+function prompt {
+  local directory_color="\[\033[38;5;72m\]"
+  local branch_color="\[\033[38;5;114m\]"
+  local RESETCOLOR="\[\e[00m\]"
+
+  export PS1="$directory_color[\W]$RESETCOLOR$branch_color\$(parse_git_branch) ${emoji} → $RESETCOLOR"
+}
+prompt
+
+export EDITOR=vim
