@@ -19,6 +19,12 @@ set encoding=utf-8
 let mapleader = " "
 let maplocalleader = ","
 
+"autoclose tags
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+
 syntax enable
 set synmaxcol=800 " avoid syntax highlighting on large lines
 set t_Co=256
