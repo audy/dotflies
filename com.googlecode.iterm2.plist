@@ -280,19 +280,21 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>671 498 620 392 0 0 1920 1057 </string>
+	<string>650 498 620 392 0 0 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>254 291 1018 447 0 0 1440 877 </string>
+	<string>413 469 928 394 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1057 0 0 1920 1057 </string>
+	<string>0 24 1920 1033 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1920 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>400 430 680 538 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 1920 1080 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
+	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 1920 1057 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>0 24 1920 1033 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>541 455 680 538 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -889,16 +891,12 @@
 			</dict>
 			<key>Selection Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14904924668371677</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
+				<real>0.13528014719486237</real>
 				<key>Green Component</key>
-				<real>0.254669189453125</real>
+				<real>0.12312769144773483</real>
 				<key>Red Component</key>
-				<real>0.18553660484258216</real>
+				<real>0.11772145330905914</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -936,6 +934,8 @@
 			<string>/Users/austin</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -1000,7 +1000,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-15T17:24:52Z</date>
+	<date>2019-04-25T18:34:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
@@ -1009,6 +1009,8 @@
 	<true/>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>4</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>TerminalMargin</key>
@@ -1024,6 +1026,10 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.8</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
