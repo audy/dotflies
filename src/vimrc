@@ -109,29 +109,24 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
-" TypeScript / React
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
 Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'justinmk/vim-sneak'
-
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
-
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'kyuhi/vim-emoji-complete'
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-
-" automattic code fomratting for js, css, html, markdown, yaml, json, etc..
-" (not python)
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'b4b4r07/vim-sqlfmt'
+Plug 'vim-python/python-syntax'
+
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -144,8 +139,6 @@ call plug#end()
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 
-" which file types to prettify using prettier
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml Prettier
 
 " rainbow
 
@@ -154,6 +147,7 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 " auto-format python code
 autocmd BufWritePre *.py execute ':Black'
 let g:black_linelength = 100 " OneCodex style
+autocmd BufWritePre *.py execute ':Black'
 
 " python-syntax
 let g:python_highlight_all = 1
