@@ -93,6 +93,26 @@ code.interact(local=locals())
 endsnippet
 
 # bioinformatics
+snippet iter_blast
+    for line in handle:
+        row = line.strip().split("\t")
+
+        yield {
+            "query": row[0],
+            "target": row[1],
+            "percent_identity": float(row[2]),
+            "alignment_length": int(row[3]),
+            "mismatches": int(row[4]),
+            "gap_opens": int(row[5]),
+            "query_start": int(row[6]),
+            "query_end": int(row[7]),
+            "target_start": int(row[8]),
+            "target_end": int(row[9]),
+            "e_value": float(row[10]),
+            "bit_score": float(row[11])
+        }
+
+endsnippet
 
 snippet iter_gff
 
