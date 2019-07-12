@@ -83,6 +83,7 @@ alias ghi='/usr/local/bin/ghi'
 alias c-="cd .."
 
 alias todo='vim ~/todo.md'
+alias scratch='vim ~/scratch.md'
 
 # startrek
 alias mtrek='telnet mtrek.com 1701'
