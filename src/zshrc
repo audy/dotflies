@@ -161,7 +161,4 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 export PATH="$HOME/.jenv/bin:$PATH"
-
-# itermplot
-export ITERMPLOT=rv # dark background
-export MPLBACKEND="module://itermplot"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
