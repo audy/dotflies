@@ -3,6 +3,11 @@ snippet pdb
 import pdb; pdb.set_trace()
 endsnippet
 
+snippet code
+import code
+code.InteractiveConsole(locals=globals()).interact()
+endsnippet
+
 # I always forget how to do this in Python
 # can you blame me?
 snippet flatten
