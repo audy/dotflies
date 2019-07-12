@@ -55,3 +55,19 @@ function prompt {
 prompt
 
 export EDITOR=vim
+
+# i do not care that u deprecated something
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+
+# various environment managers
+if [ -e /usr/local/bin/pyenv ]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+#if [ -e /usr/local/bin/rbenv ]; then
+#  eval "$(rbenv init -)"
+#fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
