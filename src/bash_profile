@@ -1,5 +1,3 @@
-eval "$(rbenv init -)"
-
 # nothing to see here
 . ~/.aliases
 . ~/.secrets
