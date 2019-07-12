@@ -45,7 +45,7 @@ set expandtab " expand tabs to spaces
 set nosmarttab " no tabs to begin with
 set nowrap " dont autowrap lines
 
-set mouse=vin
+set mouse=a
 
 set clipboard=unnamed " use system clipboard
 
