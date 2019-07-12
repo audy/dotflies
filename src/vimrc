@@ -134,10 +134,7 @@ call plug#end()
 " Plugin Settings
 "
 
-" prettier
-
-let g:prettier#autoformat = 0
-let g:prettier#exec_cmd_async = 1
+" autoformat
 
 
 " rainbow
