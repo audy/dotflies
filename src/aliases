@@ -6,6 +6,28 @@ alias gcal='gcalcli'
 # BASH/ZSH
 #
 
+function nigiri () {
+  echo "ahi
+aji
+ebi
+sake
+unagi
+hamachi
+hamachi-toro
+escolar
+saba
+ika
+hotate
+hokigai
+hirame
+kani
+maguro
+tamago
+uni
+umi-masu
+sake-toro" | gshuf | head -n 1
+}
+
 # use a remote docker daemon via an SSH tunnel
 function dtun () {
   # set this up as an alias in ~/.ssh/config
