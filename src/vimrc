@@ -35,6 +35,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+set rnu
+
 nnoremap q :q<cr> " kill window with q
 
 set backspace=indent,eol,start " backspace over anything
