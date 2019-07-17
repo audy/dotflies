@@ -3,3 +3,4 @@ src/vim/.netrwhist
 src/vim/plugged
 src/vim/tmp
 src/vim/black
+src/jupyter/lab
