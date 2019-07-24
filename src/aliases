@@ -368,3 +368,6 @@ alias knit="Rscript -e 'knitr::render_markdown($1)'"
 function fqseqs () {
   awk 'NR%2 == 0 && NR%4 != 0'
 }
+
+# 💖 https://github.com/tomnomnom/gron
+alias ungron="gron --ungron"
