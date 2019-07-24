@@ -11,24 +11,20 @@ if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
 fi
 
 EMOJI=(
-🌱
-🐰
-👽
-🌵
-🐸
-🦎
-🐍
-🐊
-🌿
-🌳
-🌲
-🌴
-☘️
-⛰
-🏔
-🦠
-💚
-♻️
+
+💦
+💧
+💨
+💙
+💎
+🌈
+🌀
+❄️
+🐳
+🚎
+🗻
+✈️
+💠
 )
 
 # https://direnv.net
@@ -46,11 +42,11 @@ directory() {
 emoji="${EMOJI[$RANDOM % ${#EMOJI[@]}]}"
 
 function prompt {
-  local directory_color="\[\033[38;5;72m\]"
-  local branch_color="\[\033[38;5;114m\]"
+  local directory_color="\[\033[38;5;213m\]"
+  local branch_color="\[\033[38;5;200m\]"
   local RESETCOLOR="\[\e[00m\]"
 
-  export PS1="$directory_color[\W]$RESETCOLOR$branch_color\$(parse_git_branch) ${emoji} → $RESETCOLOR"
+  export PS1="$directory_color[\W]$RESETCOLOR$branch_color\$(parse_git_branch) ${emoji} $RESETCOLOR"
 }
 prompt
 
