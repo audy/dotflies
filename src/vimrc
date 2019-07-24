@@ -85,9 +85,6 @@ set incsearch " use incremental searching
 set ic " base case sensitive, unless not
 set smartcase " be case insensitive, or don't
 
-" colorscheme
-set background=dark
-colorscheme hybrid
 
 " highlight pesky invisible chars
 syntax match nonascii "[^\x00-\x7F]"
@@ -125,6 +122,7 @@ Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'b4b4r07/vim-sqlfmt'
 Plug 'vim-python/python-syntax'
+Plug 'haishanh/night-owl.vim'
 
 Plug 'Chiel92/vim-autoformat'
 
@@ -152,6 +150,13 @@ let g:python_highlight_all = 1
 " flake8
 autocmd BufWritePost *.py call flake8#Flake8()
 
+" vim-night-owl
+"
+set background=dark
+colorscheme night-owl
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 " auto-format rust code
 autocmd BufWritePre *.rs execute ':%!rustfmt'
