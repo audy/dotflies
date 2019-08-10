@@ -6,6 +6,9 @@ alias gcal='gcalcli'
 # BASH/ZSH
 #
 
+#work
+alias ss3="~/Code/onecodex-helper/s3-list/search.py"
+
 function nigiri () {
   echo "ahi
 aji
@@ -94,9 +97,13 @@ function whiteboard () {
   convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2"
 }
 
-# open lab notebook
-function science() {
-  cd ~/Code/lab-notebook && rake $1
+# lab notebook
+function lab() {
+  case $1 in
+    new)
+      touch notes.md && vim notes.md
+      ;;
+  esac
 }
 
 function htmlstrip() {
@@ -199,7 +206,7 @@ alias d='docker'
 alias db='docker build'
 alias dc='docker-compose'
 alias dockernuke="docker ps -a | grep -v NAMES | awk '{print \$NF}' | xargs -I {} docker rm {}"
-alias dockerkill="docker ps -a | awk '{print $1}' | xargs -I {} docker kill -f {}"
+alias dockerkill="docker ps -a | awk '{print $1}' | xargs -I {} docker kill {}"
 
 function dmosh() {
   mosh --ssh "ssh -l ubuntu -i ~/.docker/machine/machines/${1}/id_rsa" $(docker-machine ip ${1})
@@ -224,15 +231,11 @@ function ddenv() {
 # PYTHON
 #
 
-alias p="python"
-alias pe="pyenv"
-alias pea="pyenv activate"
-
-# I always forget the names of virtualenvs. Use `pwd` as the name:
-function peah() {
-  # TODO: create the virtualenv if it doesn't exist already
-  pyenv activate $(basename `pwd`)
-}
+alias p='python'
+alias pe='pyenv'
+alias pea='pyenv activate'
+alias pad='pyenv activate $(basename $(pwd))'
+alias pac='pyenv virtualenv $1 $(basename $(pwd))'
 
 #
 # RUBY
@@ -325,8 +328,11 @@ alias wiki='telnet telnet.wmflabs.org'
 # INTERNET
 #
 
-alias myip="curl -4 http://icanhazip.com"
-alias myip6="curl http://icanhazip.com"
+alias myip='curl --silent -4 http://icanhazip.com'
+#alias myip6="curl --silent http://icanhazip.com"
+alias geoip='curl --silent https://freegeoip.app/json/$(myip) | jq'
+
+alias zcat=gzcat
 
 #
 # SECURIDAD

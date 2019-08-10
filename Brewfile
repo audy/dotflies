@@ -18,15 +18,17 @@ tree
 vim
 wget
 zsh
+readline
+xz
 }.each { |p| brew(p) }
 
-%w{
-1password
-docker
-google-chrome
-iterm2
-minecraft
-slack
-spectacle
-spotify
-}.each { |p| cask(p) }
+#%w{
+#1password
+#docker
+#google-chrome
+#iterm2
+#minecraft
+#slack
+#spectacle
+#spotify
+#}.each { |p| cask(p) }
