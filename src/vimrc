@@ -103,7 +103,6 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 "
 
 call plug#begin('~/.vim/plugged')
-
 " general
 Plug 'haishanh/night-owl.vim'
 Plug 'kien/ctrlp.vim'
@@ -117,7 +116,9 @@ Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
+Plug 'vim-python/python-syntax'
 
+Plug 'ruby-formatter/rufo-vim', { 'for': 'ruby' }
 
 " js
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
@@ -125,6 +126,8 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
 call plug#end()
+" Enable rufo (RUby FOrmat)
+let g:rufo_auto_formatting = 1
 
 "
 " Plugin Settings

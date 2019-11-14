@@ -70,6 +70,11 @@ function columns () {
   head -n 1 $1 | tr ',' '\n'
 }
 
+# ctags
+alias ptags="ctags --recurse --languages=python ."
+alias rbtags="ctags --recurse --langauges=ruby ."
+alias jstags="ctags --recurse --languages=javascript ."
+
 alias f='mdfind -name'
 alias vi='vim'
 alias v='vim'
