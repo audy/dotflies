@@ -103,7 +103,7 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 "
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'haishanh/night-owl.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'godlygeek/tabular'                        " Tab /=
