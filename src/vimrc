@@ -121,10 +121,13 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'b4b4r07/vim-sqlfmt'
 Plug 'vim-python/python-syntax'
 Plug 'haishanh/night-owl.vim'
+Plug 'ruby-formatter/rufo-vim'
 
 Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
+" Enable rufo (RUby FOrmat)
+let g:rufo_auto_formatting = 1
 
 "
 " Plugin Settings
