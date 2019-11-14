@@ -9,6 +9,7 @@ alias ls="ls -lGH"
 if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
   source "$(brew --prefix)/opt/mcfly/mcfly.bash"
 fi
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 EMOJI=(
 
@@ -61,9 +62,9 @@ if [ -e /usr/local/bin/pyenv ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-#if [ -e /usr/local/bin/rbenv ]; then
-#  eval "$(rbenv init -)"
-#fi
+if [ -e /usr/local/bin/rbenv ]; then
+  eval "$(rbenv init -)"
+fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
