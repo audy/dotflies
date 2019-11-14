@@ -112,19 +112,17 @@ Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'justinmk/vim-sneak'
 
-" python's
+" py
 Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
 
 
-" javascribpt
+" js
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-
-Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -133,7 +131,6 @@ call plug#end()
 "
 
 " autoformat
-
 
 " rainbow
 
