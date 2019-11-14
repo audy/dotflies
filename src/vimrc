@@ -104,23 +104,25 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'godlygeek/tabular'                        " Tab /=
+" general
+Plug 'haishanh/night-owl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'justinmk/vim-sneak'
+
+" python's
+Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'kyuhi/vim-emoji-complete'
+Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
+
+
+" javascribpt
+Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
+Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'b4b4r07/vim-sqlfmt'
-Plug 'vim-python/python-syntax'
-Plug 'haishanh/night-owl.vim'
 
 Plug 'Chiel92/vim-autoformat'
 
