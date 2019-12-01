@@ -45,6 +45,7 @@ directory() {
 }
 
 emoji="${EMOJI[$RANDOM % ${#EMOJI[@]}]}"
+emoji=':'
 
 function prompt {
   local directory_color="\[\033[38;5;213m\]"
@@ -66,6 +67,7 @@ if [ -e /usr/local/bin/pyenv ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi

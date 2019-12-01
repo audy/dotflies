@@ -19,8 +19,10 @@
 	token = !security find-internet-password -a audy -s github.com -l 'ghi token' -w
 [push]
 	default = simple
+[lfs]
+	fetchexclude = *
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

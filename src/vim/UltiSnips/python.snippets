@@ -5,7 +5,7 @@ endsnippet
 
 snippet code
 import code
-code.InteractiveConsole(locals=globals()).interact()
+code.interact(local=dict(globals(), **locals()))
 endsnippet
 
 # I always forget how to do this in Python

@@ -103,27 +103,27 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 "
 
 call plug#begin('~/.vim/plugged')
+" general
 Plug 'haishanh/night-owl.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'godlygeek/tabular'                        " Tab /=
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'faceleg/delete-surrounding-function-call.vim'
 Plug 'SirVer/ultisnips'
 Plug 'justinmk/vim-sneak'
+
+" py
+Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'kyuhi/vim-emoji-complete'
-Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'b4b4r07/vim-sqlfmt'
+Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
 Plug 'vim-python/python-syntax'
-Plug 'haishanh/night-owl.vim'
-Plug 'ruby-formatter/rufo-vim'
 
-Plug 'Chiel92/vim-autoformat'
+Plug 'ruby-formatter/rufo-vim', { 'for': 'ruby' }
+
+" js
+Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
+Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
 call plug#end()
 " Enable rufo (RUby FOrmat)
@@ -134,7 +134,6 @@ let g:rufo_auto_formatting = 1
 "
 
 " autoformat
-
 
 " rainbow
 
