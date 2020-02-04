@@ -125,9 +125,13 @@ Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
 " Enable rufo (RUby FOrmat)
 let g:rufo_auto_formatting = 1
+
+set laststatus=2
 
 "
 " Plugin Settings
@@ -148,7 +152,7 @@ command Fold execute ':%!fold -w 60 -s %'
 
 " python-syntax
 let g:python_highlight_all = 1
-
+let g:lightline = { 'colorscheme': 'nightowl' }
 " flake8
 "autocmd BufWritePost *.py call flake8#Flake8()
 
