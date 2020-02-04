@@ -7,7 +7,16 @@ alias gcal='gcalcli'
 #
 
 #work
+
+alias qstat='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
+
 alias ss3="~/Code/onecodex-helper/s3-list/search.py"
+
+alias recent="mdfind 'kMDItemContentModificationDate > \$time.yesterday' | grep -v Library"
+
+alias ologs="kubectl logs -c runtime -f"
+
+alias lab="cd ~/Code/lab-notebook/"
 
 function nigiri () {
   echo "ahi
