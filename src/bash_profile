@@ -14,6 +14,9 @@ if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
 fi
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+# don't update homebrew as often
+HOMEBREW_AUTO_UPDATE_SECS=3600
+
 EMOJI=(
 💦
 💧
@@ -22,7 +25,6 @@ EMOJI=(
 💎
 🌈
 🌀
-❄️
 🐳
 🚎
 🗻

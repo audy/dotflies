@@ -208,6 +208,8 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 # DOCKER DOCKER DOCKER DOCKER DOCKER DOCKER
 #
 
+alias kc='kubectl'
+
 # easy ubuntu
 alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu:18.04'
 
