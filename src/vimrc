@@ -29,7 +29,6 @@ set novisualbell
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
 
-
 set autoindent
 set shiftwidth=2
 set softtabstop=2
@@ -101,6 +100,7 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 "
 " Time For Plugins!
 "
+
 
 call plug#begin('~/.vim/plugged')
 " general

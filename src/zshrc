@@ -10,7 +10,6 @@ bindkey -e
 # input fuckery
 bindkey "\e[3~" delete-char # fixes delete key
 
-
 # homebrew pyenv
 # export LDFLAGS="-L/usr/local/opt/zlib/lib"
 # export CPPFLAGS="-I/usr/local/opt/zlib/include"
