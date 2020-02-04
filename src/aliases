@@ -251,6 +251,17 @@ alias pea='pyenv activate'
 alias pad='pyenv activate $(basename $(pwd))'
 alias pac='pyenv virtualenv $1 $(basename $(pwd))'
 
+
+function dark() {
+  osascript -e '
+    tell application "System Events"
+      tell appearance preferences
+        set dark mode to not dark mode
+      end tell
+    end tell
+    '
+}
+
 #
 # RUBY
 #
