@@ -29,7 +29,6 @@ set novisualbell
 " disable visual bell in MacVim
 autocmd! GUIEnter * set vb t_vb=
 
-
 set autoindent
 set shiftwidth=2
 set softtabstop=2
@@ -102,6 +101,7 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 " Time For Plugins!
 "
 
+
 call plug#begin('~/.vim/plugged')
 " general
 Plug 'haishanh/night-owl.vim'
@@ -116,8 +116,8 @@ Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
-Plug 'vim-python/python-syntax'
 
+" ruby
 Plug 'ruby-formatter/rufo-vim', { 'for': 'ruby' }
 
 " js
@@ -125,9 +125,13 @@ Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
 " Enable rufo (RUby FOrmat)
 let g:rufo_auto_formatting = 1
+
+set laststatus=2
 
 "
 " Plugin Settings
@@ -148,7 +152,7 @@ command Fold execute ':%!fold -w 60 -s %'
 
 " python-syntax
 let g:python_highlight_all = 1
-
+let g:lightline = { 'colorscheme': 'nightowl' }
 " flake8
 "autocmd BufWritePost *.py call flake8#Flake8()
 

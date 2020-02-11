@@ -7,7 +7,16 @@ alias gcal='gcalcli'
 #
 
 #work
+
+alias qstat='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
+
 alias ss3="~/Code/onecodex-helper/s3-list/search.py"
+
+alias recent="mdfind 'kMDItemContentModificationDate > \$time.yesterday' | grep -v Library"
+
+alias ologs="kubectl logs -c runtime -f"
+
+alias lab="cd ~/Code/lab-notebook/"
 
 function nigiri () {
   echo "ahi
@@ -243,6 +252,17 @@ alias pe='pyenv'
 alias pea='pyenv activate'
 alias pad='pyenv activate $(basename $(pwd))'
 alias pac='pyenv virtualenv $1 $(basename $(pwd))'
+
+
+function dark() {
+  osascript -e '
+    tell application "System Events"
+      tell appearance preferences
+        set dark mode to not dark mode
+      end tell
+    end tell
+    '
+}
 
 #
 # RUBY

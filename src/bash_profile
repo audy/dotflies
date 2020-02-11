@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# nothing to see here
 . ~/.aliases
+
+# nothing to see here
 . ~/.secrets
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
@@ -17,7 +18,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 HOMEBREW_AUTO_UPDATE_SECS=3600
 
 EMOJI=(
-
 💦
 💧
 💨
