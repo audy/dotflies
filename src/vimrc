@@ -101,15 +101,16 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 " Time For Plugins!
 "
 
-
 call plug#begin('~/.vim/plugged')
+
 " general
 Plug 'haishanh/night-owl.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-surround'
-Plug 'faceleg/delete-surrounding-function-call.vim'
-Plug 'SirVer/ultisnips'
-Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-surround' " da(
+Plug 'faceleg/delete-surrounding-function-call.vim' " dsf
+Plug 'SirVer/ultisnips' " UltiSnipEdit
+Plug 'justinmk/vim-sneak' " s{char}{char} to sneak around
+Plug 'simnalamburt/vim-mundo' " F5 for undo tree
 
 " py
 Plug 'vim-python/python-syntax'
@@ -136,6 +137,10 @@ set laststatus=2
 "
 " Plugin Settings
 "
+
+" mundo -- opens undo tree
+
+nnoremap <F5> :MundoToggle<CR>
 
 " autoformat
 
