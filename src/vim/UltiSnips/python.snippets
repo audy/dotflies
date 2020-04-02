@@ -189,3 +189,24 @@ def iter_sam(handle):
                 'qual': line[10]
             }
 endsnippet
+
+snippet iter_paf
+def iter_paf(handle):
+    for line in handle:
+        row = line.strip().split()
+        yield {
+            "q_name": row[0],
+            "q_len": int(row[1]),
+            "q_start": int(row[2]),
+            "q_end": int(row[3]),
+            "strand": row[4],
+            "s_name": row[5],
+            "s_len": int(row[6]),
+            "s_start": int(row[7]),
+            "s_end": int(row[9]),
+            "n_match": int(row[9]),
+            "map_len": int(row[10]),
+            "map_qual": int(row[11]),
+            "tags": row[12:],
+        }
+endsnippet
