@@ -7,9 +7,14 @@ alias gcal='gcalcli'
 #
 
 #work
-
+alias qdel='kubectl delete pod --force --grace-period=0'
 alias qstat='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
+alias qtop="watch kubectl get pods -o wide --sort-by='{.spec.nodeName}'"
 alias qlogs="kubectl logs -c runtime -f"
+
+function qshell() {
+  kubectl exec ${1} -c sidecar -t -i -- /bin/bash
+}
 
 alias ss3="~/Code/onecodex-helper/s3-list/search.py"
 
