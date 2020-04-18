@@ -552,7 +552,7 @@ c.NotebookApp.open_browser = False
 # c.InlineBackend.figure_format = u''
 
 # A set of figure formats to enable: 'png',  'retina', 'jpeg', 'svg', 'pdf'.
-c.InlineBackend.figure_formats = set(["svg"])
+c.InlineBackend.figure_formats = set(["svg", "retina"])
 
 # Extra kwargs to be passed to fig.canvas.print_figure.
 #
