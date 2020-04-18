@@ -116,6 +116,7 @@ Plug 'vim-python/python-syntax'
 Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', 'for': 'typescript' }
 
 " ruby
 Plug 'ruby-formatter/rufo-vim', { 'for': 'ruby' }
@@ -146,6 +147,7 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 " auto-format python code
 let g:black_linelength = 100 " OneCodex style
 autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.ts execute ':Prettier'
 
 command Align execute ':%!muscle -quiet -in %'
 command Fold execute ':%!fold -w 60 -s %'
