@@ -118,8 +118,6 @@ Plug 'ambv/black', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
 
-" ruby
-Plug 'ruby-formatter/rufo-vim', { 'for': 'ruby' }
 
 " js
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
@@ -129,8 +127,6 @@ Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
-" Enable rufo (RUby FOrmat)
-let g:rufo_auto_formatting = 1
 
 set laststatus=2
 
