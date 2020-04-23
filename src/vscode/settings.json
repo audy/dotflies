@@ -1,0 +1,36 @@
+{
+    "python.pythonPath": "/Users/austin/.pyenv/versions/3.7.3/bin/python3.7",
+    "python.linting.enabled": true,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "[jinja]": {},
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/austin/.pyenv/versions/3.7.4/bin/black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100"
+    ],
+    "[python]": { /* black can't reformat selection -- must reformat entire file */
+        "editor.formatOnPaste": false
+    },
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Night Owl",
+    "pgFormatter.functionCase": "lowercase",
+    "pgFormatter.keywordCase": "lowercase",
+    "workbench.activityBar.visible": false,
+    "editor.minimap.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.codeLens": true,
+    "python.jediEnabled": true,
+    "workbench.statusBar.visible": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.accessibilitySupport": "off",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.quickSuggestions": false,
+    "testExplorer.addToEditorContextMenu": true,
+    "testExplorer.gutterDecoration": true,
+    "testExplorer.codeLens": true,
+    "testExplorer.showOnRun": true,
+    "editor.hover.enabled": false,
+    "window.zoomLevel": 0,
+    "python.dataScience.askForKernelRestart": false
+}
