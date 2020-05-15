@@ -2,6 +2,9 @@
 
 alias gcal='gcalcli'
 
+# SF police scanner
+
+alias scansf="mplayer http://stream.scansf.com:8000/scansf.hp"
 #
 # BASH/ZSH
 #
