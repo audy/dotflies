@@ -113,8 +113,8 @@ Plug 'justinmk/vim-sneak' " s{char}{char} to sneak around
 Plug 'simnalamburt/vim-mundo' " F5 for undo tree
 
 " py
-Plug 'vim-python/python-syntax'
-Plug 'ambv/black', { 'for': 'python' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', 'for': 'typescript' }
