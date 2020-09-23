@@ -51,11 +51,12 @@ emoji="${EMOJI[$RANDOM % ${#EMOJI[@]}]}"
 emoji=':'
 
 function prompt {
-  local directory_color="\[\033[38;5;213m\]"
-  local branch_color="\[\033[38;5;200m\]"
+  local directory_color="\[\033[38;5;13m\]"
+  local branch_color="\[\033[38;5;9m\]"
+  local black="\[\033[38;5;16m\]"
   local RESETCOLOR="\[\e[00m\]"
 
-  export PS1="$directory_color[\W]$RESETCOLOR$branch_color\$(parse_git_branch) ${emoji} $RESETCOLOR"
+  export PS1="$directory_color[\W]${RESETCOLOR}$branch_color\$(parse_git_branch) ${emoji} ${RESETCOLOR}"
 }
 prompt
 
@@ -77,3 +78,5 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
