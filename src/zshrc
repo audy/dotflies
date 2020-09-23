@@ -25,6 +25,13 @@ export SAVEHIST=100000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
+
+# https://direnv.net
+if [[ -e "/usr/local/bin/direnv" ]]
+then
+  eval "$(direnv hook zsh)"
+fi
+
 # vim
 export EDITOR='vim'
 
