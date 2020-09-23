@@ -103,6 +103,8 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-syntastic/syntastic'
+
 " general
 Plug 'haishanh/night-owl.vim'
 Plug 'kien/ctrlp.vim'
@@ -113,8 +115,8 @@ Plug 'justinmk/vim-sneak' " s{char}{char} to sneak around
 Plug 'simnalamburt/vim-mundo' " F5 for undo tree
 
 " py
-Plug 'vim-python/python-syntax'
-Plug 'ambv/black', { 'for': 'python' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', 'for': 'typescript' }
@@ -134,6 +136,10 @@ set laststatus=2
 "
 " Plugin Settings
 "
+
+" syntastic
+let g:syntastic_python_checkers = ['flake8', 'black', 'mypy']
+
 
 " mundo -- opens undo tree
 
