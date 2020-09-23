@@ -9,13 +9,33 @@ alias scansf="mplayer http://stream.scansf.com:8000/scansf.hp"
 # BASH/ZSH
 #
 
-#work
+
+function tmp() {
+  dir=$(mktemp -d)
+  echo "--- you are in a temporary directory: ${dir}"
+  cd ${dir}
+}
+
+# k8s
+
+alias k="kubectl"
+alias qnodes="kubectl get nodes"
 alias qdel='kubectl delete pod --force --grace-period=0'
 alias qstat='kubectl get pods -o wide --sort-by="{.spec.nodeName}"'
 alias qtop="watch kubectl get pods -o wide --sort-by='{.spec.nodeName}'"
 alias qlogs="kubectl logs -c runtime -f"
+alias sclogs="kubectl logs -c sidecar -f"
+
+function kshell() {
+  kubectl exec ${1} -t -i -- /bin/bash
+}
+
 
 function qshell() {
+  kubectl exec ${1} -c runtime -t -i -- /bin/bash
+}
+
+function sidecar() {
   kubectl exec ${1} -c sidecar -t -i -- /bin/bash
 }
 
