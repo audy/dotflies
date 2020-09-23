@@ -221,6 +221,9 @@ alias kc='kubectl'
 # easy ubuntu
 alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu:18.04'
 
+
+alias tf='terraform'
+
 alias dbash='docker run --entrypoint /bin/bash -ti'
 
 # docker/docker-machine
