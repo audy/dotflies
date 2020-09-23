@@ -7,13 +7,21 @@ endif
 " The Very Basics
 "
 
-set conceallevel=2
+set nocompatible
+set encoding=utf-8
+
+" hybrid line numbers
+set number
+set relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " load language-specific files in ~/.vim/ftpplugin/$language.vim
 filetype plugin on
-
-set nocompatible
-set encoding=utf-8
 
 " leader/local leader
 let mapleader = " "
@@ -103,25 +111,27 @@ let g:ruby_path = ['/usr/local/bin/ruby', '/usr/bin/ruby']
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-syntastic/syntastic'
+
 " general
 Plug 'haishanh/night-owl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround' " da(
 Plug 'faceleg/delete-surrounding-function-call.vim' " dsf
-Plug 'SirVer/ultisnips' " UltiSnipEdit
+"Plug 'SirVer/ultisnips' " UltiSnipEdit
 Plug 'justinmk/vim-sneak' " s{char}{char} to sneak around
 Plug 'simnalamburt/vim-mundo' " F5 for undo tree
+Plug 'hashivim/vim-terraform'
 
 " py
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'python' }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', 'for': 'typescript' }
-
 
 " js
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', 'for': 'ts' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'jparise/vim-graphql' , { 'for': 'graphql' }
@@ -135,6 +145,10 @@ set laststatus=2
 "
 " Plugin Settings
 "
+
+" syntastic
+let g:syntastic_python_checkers = ['flake8', 'black', 'mypy']
+
 
 " mundo -- opens undo tree
 
