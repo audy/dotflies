@@ -124,6 +124,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x', '
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'ts' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+Plug 'jparise/vim-graphql' , { 'for': 'graphql' }
 
 Plug 'itchyny/lightline.vim'
 
