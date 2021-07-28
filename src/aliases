@@ -16,6 +16,8 @@ function tmp() {
   cd ${dir}
 }
 
+alias s3="s5cmd"
+
 # k8s
 
 alias k="kubectl"
