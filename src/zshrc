@@ -33,7 +33,8 @@ then
 fi
 
 # vim
-export EDITOR='vim'
+export EDITOR='nvim'
+alias vim=nvim
 
 # very important path-related things
 export PATH="/usr/local/sbin:$PATH"
