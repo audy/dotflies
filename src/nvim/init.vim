@@ -8,22 +8,27 @@ let g:python3_host_prog='/Users/austin.richardson/.pyenv/versions/neovim/bin/pyt
 
 call plug#begin('~/.config/.nvim/plugged')
 
-Plug 'neomake/neomake'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'psf/black', { 'branch': 'stable' }
+# base
+
+Plug 'neomake/neomake' " autodetects mypy, flake8, snakefmt, etc...
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'pechorin/any-jump.vim'
-Plug 'zah/nim.vim'
-Plug 'ianks/vim-tsx'
-Plug 'sbdchd/neoformat'
-Plug 'snakemake/snakemake', {'rtp': 'misc/vim'}
-Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
+Plug 'pechorin/any-jump.vim'
+
+Plug 'ianks/vim-tsx' " typescript
+Plug 'cespare/vim-toml'
+
+# python 
+
+Plug 'sbdchd/neoformat'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'snakemake/snakemake', {'rtp': 'misc/vim'}
 
 call plug#end()
 
@@ -124,24 +129,6 @@ augroup END
 
 set background=dark
 
-"function MyCustomHighlights()
-"  hi semshiLocal           ctermfg=209 
-"  hi semshiGlobal          ctermfg=214 
-"  hi semshiImported        ctermfg=209 cterm=bold
-"  hi semshiParameter       ctermfg=75  
-"  hi semshiParameterUnused ctermfg=117 cterm=underline
-"  hi semshiFree            ctermfg=218 
-"  hi semshiBuiltin         ctermfg=207 
-"  hi semshiAttribute       ctermfg=49  
-"  hi semshiSelf            ctermfg=249 
-"  hi semshiUnresolved      ctermfg=226 cterm=underline
-"  hi semshiSelected        ctermfg=231 ctermbg=161
-"  
-"  hi semshiErrorSign       ctermfg=231 ctermbg=160
-"  hi semshiErrorChar       ctermfg=231 ctermbg=160
-"  sign define semshiError text=E> texthl=semshiErrorSign
-"endfunction
-
 " Disable highlighting of builtins (list, len, etc.) by Vim's own Python
 " syntax highlighter, because that's Semshi's job. If you turn it off, Vim may
 " add incorrect highlights.
@@ -153,7 +140,6 @@ set background=dark
 " additional overhead.)
 let g:semshi#always_update_all_highlights = v:true
 
-
 syntax enable
 colorscheme night-owl
 
@@ -161,7 +147,6 @@ colorscheme night-owl
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-
 
 call deoplete#custom#option({
 \	'auto_complete_delay': 200,
