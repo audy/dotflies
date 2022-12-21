@@ -8,7 +8,7 @@ Austin G. Davis-Richardson
 
 ## Installation
 
-### macOS or GNU/Linux
+### macos or ubuntu
 
 ```bash
 curl https://raw.githubusercontent.com/audy/dotflies/master/install.sh | sh -
