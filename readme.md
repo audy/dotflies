@@ -6,12 +6,6 @@ Austin G. Davis-Richardson
 
 ![~/. (fly)](./logo.png?raw=true)
 
-## Preview
-
-It looks something like this
-
-![!/. (preview)](./preview.png?raw=true)
-
 ## Installation
 
 ### macOS or GNU/Linux
