@@ -11,5 +11,4 @@ cd ~/.dotflies && ./link-files
 mkdir -p ~/.history
 
 # install vim plugins
-
-vim -E -c 'PlugInstall' -c 'qa!' || true
+nvim -E -c 'PlugInstall' -c 'qa!' || true
