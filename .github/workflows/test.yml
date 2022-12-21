@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-12
+    runs-on: [macos-latest, ubuntu-latest]
     steps:
      - uses: actions/checkout@v2
      - name: Install
