@@ -18,6 +18,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'pechorin/any-jump.vim'
+Plug 'f-person/git-blame.nvim'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'ianks/vim-tsx' " typescript
 Plug 'cespare/vim-toml'
