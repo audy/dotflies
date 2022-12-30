@@ -10,17 +10,18 @@ bindkey -e
 # input fuckery
 bindkey "\e[3~" delete-char # fixes delete key
 
-# homebrew pyenv
-# export LDFLAGS="-L/usr/local/opt/zlib/lib"
-# export CPPFLAGS="-I/usr/local/opt/zlib/include"
-# export LDFLAGS="-L/usr/local/opt/zlib/lib"
-# export CPPFLAGS="-I/usr/local/opt/zlib/include"
-
 # i do not care that u deprecated thin
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
 # store history in daily logs
-export HISTFILE="${HOME}/.history/$(date -u +%Y-%m-%d)_$$"
+
+# history doesn't work if the directory doesn't exist yet
+if [[ ! -e "${HOME}/.history" ]]; then
+  mkdir "${HOME}/.history"
+fi
+
+# create one file per month
+export HISTFILE="${HOME}/.history/$(date -u +%Y-%m)"
 export SAVEHIST=100000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
