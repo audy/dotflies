@@ -425,7 +425,7 @@ shell:
   args:
     - --login
     - -c
-    - "tmux"
+    - "tmux attach || tmux"
 
 # Startup directory
 #
