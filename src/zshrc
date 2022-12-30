@@ -86,8 +86,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 # aliases
 [ -f ~/.aliases ] && . ~/.aliases
 
-# j
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 #
 # Prompt
@@ -170,7 +168,5 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 
-export PATH="$HOME/.jenv/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-export PATH="/usr/local/bin/aws:${PATH}"
