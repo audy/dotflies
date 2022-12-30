@@ -419,10 +419,13 @@ font:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+    - -c
+    - "tmux"
 
 # Startup directory
 #
@@ -719,7 +722,11 @@ font:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
+  # don't spawn a new app for every window
+  - { key: N, mods: Command, action: CreateNewWindow }
+  - { key: N, mods: Command|Shift, action: SpawnNewInstance  }
+
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
