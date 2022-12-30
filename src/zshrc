@@ -43,7 +43,8 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-if [ -e /usr/local/bin/pyenv ]; then
+if [ -e $HOME/.pyenv/bin/pyenv ]; then
+  export PATH="${PATH}:$HOME/.pyenv/bin/"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
