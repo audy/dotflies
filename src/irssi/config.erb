@@ -1,15 +1,14 @@
 chatnets = {
-  "falafel.space" = { type = "IRC"; nick = "audy_"; realname = "audy"; };
+  "irc.libera.chat" = { type = "IRC"; nick = "audy_"; realname = "audy"; };
 };
 
 servers = (
   {
-    chatnet = "falafel.space";
-    address = "falafel.space";
-    port = "6565";
+    chatnet = "irc.libera.chat";
+    address = "irc.libera.chat";
+    port = "6697";
     use_ssl = "yes";
-    ssl_verify = "no";
-    password="<%= ENV['IRSSI_PASSWORD'] %>";
+    ssl_verify = "yes";
     autoconnect = "yes";
   }
 );
@@ -31,13 +30,11 @@ settings = {
 
 channels = (
   {
-    name = "#heyaudy";
-    chatnet = "falafel.space";
+    name = "#spaghetti";
+    chatnet = "irc.libera.chat";
     autojoin = "yes";
   }
 );
-
-ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
