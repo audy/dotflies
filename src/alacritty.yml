@@ -174,7 +174,41 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
+# Colors (Night Owl)
+colors:
+   # Default colors
+  primary:
+    background: '#011627'
+    foreground: '#d6deeb'
 
+  cursor:
+    text: '#011627'
+    cursor: '#d6deeb'
+
+  selection:
+    background: '#1b90dd'
+
+   # Normal colors
+  normal:
+    black:   '#011627'
+    red:     '#ef5350'
+    green:   '#22da6e'
+    yellow:  '#c5e478'
+    blue:    '#82aaff'
+    magenta: '#c792ea'
+    cyan:    '#21c7a8'
+    white:   '#ffffff'
+
+   # Bright colors
+  bright:
+    black:   '#575656'
+    red:     '#ef5350'
+    green:   '#22da6e'
+    yellow:  '#ffeb95'
+    blue:    '#82aaff'
+    magenta: '#c792ea'
+    cyan:    '#7fdbca'
+    white:   '#ffffff'
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
