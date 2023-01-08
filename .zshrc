@@ -54,7 +54,6 @@ if [ -e /usr/local/bin/jenv ]; then
   eval "$(jenv init -)"
 fi
 
-
 # rust
 
 export PATH="$HOME/.cargo/bin:$PATH"
