@@ -4,7 +4,7 @@
 
 " to setup virtualenv environment:
 " pipx install neovim pynvim black flake8 mypy isort
-let g:python3_host_prog='/Users/audy/.pyenv/versions/neovim/bin/python'
+let g:python3_host_prog='/Users/austin/.pyenv/versions/neovim/bin/python'
 
 call plug#begin('~/.config/.nvim/plugged')
 
