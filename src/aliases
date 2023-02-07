@@ -8,6 +8,16 @@ alias scansf="mplayer http://stream.scansf.com:8000/scansf.hp"
 #
 # BASH/ZSH
 #
+function fq-dump() {
+echo "--- fetching ${1} and saving to ${2}"
+  fasterq-dump \
+    --split-spot \
+    --seq-defline '@$ac.$sn/$ri $si length=$rl' \
+    --qual-defline '+$ac.$sn/$ri $si length=$rl' \
+    --threads 4 \
+    --outfile "${2}" \
+    "${1}"
+}
 
 
 function tmp() {
