@@ -4,3 +4,4 @@ src/vim/plugged
 src/vim/tmp
 src/vim/black
 src/jupyter/lab
+src/config/gh/hosts.yml
