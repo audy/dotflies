@@ -24,12 +24,19 @@ if [[ ! -e "${HOME}/.history" ]]; then
   mkdir "${HOME}/.history"
 fi
 
+
 # create one file per month
 export HISTFILE="${HOME}/.history/$(date -u +%Y-%m)"
 export SAVEHIST=100000
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 
+# per-direcctory history
+# ctrl-G toggles between global and local history search
+source ~/.config/zsh/per-directory-history.zsh
+
+# fzf shell integration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # https://direnv.net
 if [[ -e "/usr/local/bin/direnv" ]]
@@ -172,5 +179,4 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
