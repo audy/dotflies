@@ -13,26 +13,38 @@ call plug#begin('~/.config/.nvim/plugged')
 Plug 'neomake/neomake' " autodetects mypy, flake8, snakefmt, etc...
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'haishanh/night-owl.vim'
+Plug 'rose-pine/neovim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'pechorin/any-jump.vim'
-Plug 'f-person/git-blame.nvim'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'ianks/vim-tsx' " typescript
 Plug 'cespare/vim-toml'
+Plug 'LukeGoodsell/nextflow-vim'
 
 " python 
 
 Plug 'sbdchd/neoformat'
-"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'snakemake/snakemake', {'rtp': 'misc/vim'}
 
 call plug#end()
+
+
+" configure treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = {},  -- list of language that will be disabled
+  },
+}
+EOF
 
 " stop snakemake plugin from folding everything by default 😖
 set foldlevelstart=99
@@ -59,7 +71,6 @@ command Conf execute "tabe ~/.config/nvim/init.vim"
 "
 " System
 "
-
 
 let mapleader = " "
 let maplocalleader = ","
@@ -108,7 +119,7 @@ set relativenumber
 " don't be cases insensitive if uppercase characters are included in search query
 " setting this applies to Deoplete
 set smartcase 
-set termguicolors
+
 
 
 " highlight pesky invisible chars
@@ -130,6 +141,9 @@ augroup END
 "
 
 set background=dark
+" so colors work in tmux
+set t_Co=256
+set termguicolors
 
 " Disable highlighting of builtins (list, len, etc.) by Vim's own Python
 " syntax highlighter, because that's Semshi's job. If you turn it off, Vim may
@@ -140,10 +154,10 @@ set background=dark
 " small changes and update only changed highlights. This can lead to some
 " missing highlights. Turn this on for more reliable highlighting, but a small
 " additional overhead.)
-let g:semshi#always_update_all_highlights = v:true
+"let g:semshi#always_update_all_highlights = v:true
 
 syntax enable
-colorscheme night-owl
+colorscheme rose-pine
 
 "nnoremap <leader>- call deoplete#toggle()
 
