@@ -19,14 +19,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'pechorin/any-jump.vim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
 
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'ianks/vim-tsx' " typescript
-Plug 'cespare/vim-toml'
+"Plug 'ianks/vim-tsx' " typescript
+"Plug 'cespare/vim-toml'
 Plug 'LukeGoodsell/nextflow-vim'
+
 
 " python 
 
@@ -44,14 +47,40 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
+    disable = {'markdown'},  -- list of language that will be disabled
   },
 }
 EOF
 
-" stop snakemake plugin from folding everything by default 😖
-set foldlevelstart=99
-set foldlevel=99
+lua << EOF
+-- stop snakemake plugin from folding everything by default 😖
+vim.o.foldlevelstart = 99
+vim.o.foldlevel = 99
+EOF
+
+" nvim-tree config
+lua << EOF
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+EOF
 
 " run snakefmt on save
 let g:black_linelength=100
@@ -70,6 +99,7 @@ endif
 " type Conf to edit config
 
 command Conf execute "tabe ~/.config/nvim/init.vim"
+
 
 "
 " System
