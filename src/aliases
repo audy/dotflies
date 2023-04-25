@@ -8,6 +8,17 @@ alias scansf="mplayer http://stream.scansf.com:8000/scansf.hp"
 #
 # BASH/ZSH
 #
+function nextflow() {
+  JAVA_CMD=$(which java) /usr/local/bin/nextflow $*
+}
+
+alias nf=nextflow
+
+# pretty json pager
+function json() {
+  cat $1 | jq -C | less -Sr  
+}
+
 function fq-dump() {
 echo "--- fetching ${1} and saving to ${2}"
   fasterq-dump \
