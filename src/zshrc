@@ -55,8 +55,7 @@ if [ -e /usr/local/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-if [ -e $HOME/.pyenv/bin/pyenv ]; then
-  export PATH="${PATH}:$HOME/.pyenv/bin/"
+if [ -e /opt/homebrew/bin/pyenv ]; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
@@ -180,3 +179,4 @@ autoload -Uz compinit
 compinit
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
