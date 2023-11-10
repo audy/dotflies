@@ -8,8 +8,10 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+    #- ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -176,98 +178,97 @@ font:
 draw_bold_text_with_bright_colors: false
 
 
-night-owl: &night-owl
-  # Default colors
-  primary:
-    background: '#011627'
-    foreground: '#d6deeb'
+# Default colors
+primary:
+  background: '#011627'
+  foreground: '#d6deeb'
 
-  cursor:
-    text: '#011627'
-    cursor: '#d6deeb'
+cursor:
+  text: '#011627'
+  cursor: '#d6deeb'
 
-  selection:
-    background: '#1b90dd'
+selection:
+  background: '#1b90dd'
 
-   # Normal colors
-  normal:
-    black:   '#011627'
-    red:     '#ef5350'
-    green:   '#22da6e'
-    yellow:  '#c5e478'
-    blue:    '#82aaff'
-    magenta: '#c792ea'
-    cyan:    '#21c7a8'
-    white:   '#ffffff'
+ # Normal colors
+normal:
+  black:   '#011627'
+  red:     '#ef5350'
+  green:   '#22da6e'
+  yellow:  '#c5e478'
+  blue:    '#82aaff'
+  magenta: '#c792ea'
+  cyan:    '#21c7a8'
+  white:   '#ffffff'
 
-   # Bright colors
-  bright:
-    black:   '#575656'
-    red:     '#ef5350'
-    green:   '#22da6e'
-    yellow:  '#ffeb95'
-    blue:    '#82aaff'
-    magenta: '#c792ea'
-    cyan:    '#7fdbca'
-    white:   '#ffffff'
+ # Bright colors
+bright:
+  black:   '#575656'
+  red:     '#ef5350'
+  green:   '#22da6e'
+  yellow:  '#ffeb95'
+  blue:    '#82aaff'
+  magenta: '#c792ea'
+  cyan:    '#7fdbca'
+  white:   '#ffffff'
 
-tokyo-night: &tokyo-night
-  # Default colors
-  primary:
-    background: '#1a1b26'
-    foreground: '#a9b1d6'
+kyo-night: &tokyo-night
+# Default colors
+primary:
+  background: '#1a1b26'
+  foreground: '#a9b1d6'
 
-  # Normal colors
-  normal:
-    black:   '#32344a'
-    red:     '#f7768e'
-    green:   '#9ece6a'
-    yellow:  '#e0af68'
-    blue:    '#7aa2f7'
-    magenta: '#ad8ee6'
-    cyan:    '#449dab'
-    white:   '#787c99'
+# Normal colors
+normal:
+  black:   '#32344a'
+  red:     '#f7768e'
+  green:   '#9ece6a'
+  yellow:  '#e0af68'
+  blue:    '#7aa2f7'
+  magenta: '#ad8ee6'
+  cyan:    '#449dab'
+  white:   '#787c99'
 
-  # Bright colors
-  bright:
-    black:   '#444b6a'
-    red:     '#ff7a93'
-    green:   '#b9f27c'
-    yellow:  '#ff9e64'
-    blue:    '#7da6ff'
-    magenta: '#bb9af7'
-    cyan:    '#0db9d7'
-    white:   '#acb0d0'
+# Bright colors
+bright:
+  black:   '#444b6a'
+  red:     '#ff7a93'
+  green:   '#b9f27c'
+  yellow:  '#ff9e64'
+  blue:    '#7da6ff'
+  magenta: '#bb9af7'
+  cyan:    '#0db9d7'
+  white:   '#acb0d0'
 
-tokyo-night-storm: &tokyo-night-storm
-  # Default colors
-  primary:
-    background: '#24283b'
-    foreground: '#a9b1d6'
+kyo-night-storm: &tokyo-night-storm
+# Default colors
+primary:
+  background: '#24283b'
+  foreground: '#a9b1d6'
 
-  # Normal colors
-  normal:
-    black:   '#32344a'
-    red:     '#f7768e'
-    green:   '#9ece6a'
-    yellow:  '#e0af68'
-    blue:    '#7aa2f7'
-    magenta: '#ad8ee6'
-    cyan:    '#449dab'
-    white:   '#9699a8'
+# Normal colors
+normal:
+  black:   '#32344a'
+  red:     '#f7768e'
+  green:   '#9ece6a'
+  yellow:  '#e0af68'
+  blue:    '#7aa2f7'
+  magenta: '#ad8ee6'
+  cyan:    '#449dab'
+  white:   '#9699a8'
 
-  # Bright colors
-  bright:
-    black:   '#444b6a'
-    red:     '#ff7a93'
-    green:   '#b9f27c'
-    yellow:  '#ff9e64'
-    blue:    '#7da6ff'
-    magenta: '#bb9af7'
-    cyan:    '#0db9d7'
-    white:   '#acb0d0'
+# Bright colors
+bright:
+  black:   '#444b6a'
+  red:     '#ff7a93'
+  green:   '#b9f27c'
+  yellow:  '#ff9e64'
+  blue:    '#7da6ff'
+  magenta: '#bb9af7'
+  cyan:    '#0db9d7'
+  white:   '#acb0d0'
 
-colors: *tokyo-night-storm
+#colors: *tokyo-night-storm
 
 
 # Bell
