@@ -5,9 +5,6 @@ export TERM='xterm-256color'
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export PATH="${PATH}:/Users/audy/.local/bin"
 
-# added by Miniconda3 installer
-#export PATH="/Users/austin/miniconda3/bin:$PATH"
-
 # emacs keybindings
 bindkey -e
 
@@ -44,51 +41,7 @@ then
   eval "$(direnv hook zsh)"
 fi
 
-# vim
 export EDITOR='nvim'
-alias vim=nvim
-
-# very important path-related things
-export PATH="/usr/local/sbin:$PATH"
-
-if [ -e /usr/local/bin/rbenv ]; then
-  eval "$(rbenv init -)"
-fi
-
-if [ -e /opt/homebrew/bin/pyenv ]; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-if [ -e /usr/local/bin/jenv ]; then
-  eval "$(jenv init -)"
-fi
-
-
-# rust
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -e ~/.cargo/env ]; then
-  source ~/.cargo/env
-fi
-
-# NPM
-export PATH=$PATH:/usr/local/share/npm/bin
-
-# go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH:/bin
-
-# for gems installed by Homebrew Ruby
-# make sure $PATH goes first!
-export PATH="${PATH}:/usr/local/lib/ruby/gems/bin"
-
-# so CPAN installs modules to ~/perl5
-#:eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-
-PERL_MB_OPT="--install_base \"/Users/austin/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 
 # nothing to see here
 [ -f ~/.secrets ] && source ~/.secrets
@@ -96,18 +49,11 @@ PERL_MM_OPT="INSTALL_BASE=/Users/austin/perl5"; export PERL_MM_OPT;
 # aliases
 [ -f ~/.aliases ] && . ~/.aliases
 
-
 #
 # Prompt
 #
 
 EMOJIS=(
-☁️
-☎️
-☕️
-⛈
-⛵️
-⛺️
 🌎
 🌨
 🍄
@@ -145,7 +91,6 @@ EMOJIS=(
 🥝
 🦀
 🦄
-🦄
 )
 
 # emoji-based terminal helps me remember where I am
@@ -178,5 +123,31 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+#
+# Package & Environment Managers
+#
+
+# very important path-related things
+export PATH="/usr/local/sbin:$PATH"
+
+if [ -e /opt/homebrew/bin/pyenv ]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -e ~/.cargo/env ]; then
+  source ~/.cargo/env
+fi
+
+# NPM
+export PATH=$PATH:/usr/local/share/npm/bin
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH:/bin
+
+# nodejs
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
