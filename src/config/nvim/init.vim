@@ -12,8 +12,6 @@ call plug#begin('~/.config/.nvim/plugged')
 
 Plug 'neomake/neomake' " autodetects mypy, flake8, snakefmt, etc...
 Plug 'cloudhead/neovim-fuzzy'
-Plug 'haishanh/night-owl.vim'
-Plug 'rose-pine/neovim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -22,7 +20,11 @@ Plug 'pechorin/any-jump.vim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 
-"Plug 'github/copilot.vim'
+" colors
+Plug 'haishanh/night-owl.vim'
+Plug 'rose-pine/neovim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -153,12 +155,9 @@ set relativenumber
 " setting this applies to Deoplete
 set smartcase 
 
-
-
 " highlight pesky invisible chars
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
-
 
 " return to same line when you reopen vim
 augroup line_return
@@ -173,24 +172,19 @@ augroup END
 " Appearance/Theme
 "
 
-set background=dark
 " so colors work in tmux
 set t_Co=256
 set termguicolors
 
-" Disable highlighting of builtins (list, len, etc.) by Vim's own Python
-" syntax highlighter, because that's Semshi's job. If you turn it off, Vim may
-" add incorrect highlights.
-"let g:semshi#no_default_buildin_highlight = v:true
-
-" Update all visible highlights for every change. (Semshi tries to detect
-" small changes and update only changed highlights. This can lead to some
-" missing highlights. Turn this on for more reliable highlighting, but a small
-" additional overhead.)
-"let g:semshi#always_update_all_highlights = v:true
-
 syntax enable
-colorscheme rose-pine
+
+let g:rosepine#disable_italics = 1
+
+"colorscheme rose-pine
+colorscheme catppuccin-mocha
+"colorscheme catppuccin-latte
+
+let g:airline_theme = 'catppuccin'
 
 "nnoremap <leader>- call deoplete#toggle()
 
