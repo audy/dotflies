@@ -14,26 +14,33 @@ bindkey "\e[3~" delete-char # fixes delete key
 # i do not care that u deprecated thin
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
-# store history in daily logs
 
-# history doesn't work if the directory doesn't exist yet
-if [[ ! -e "${HOME}/.history" ]]; then
-  mkdir "${HOME}/.history"
-fi
+#
+# HISTORY
+# 
 
+eval "$(atuin init zsh)"
 
-# create one file per month
-export HISTFILE="${HOME}/.history/$(date -u +%Y-%m)"
-export SAVEHIST=100000
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-
-# per-direcctory history
-# ctrl-G toggles between global and local history search
-source ~/.config/zsh/per-directory-history.zsh
+## store history in daily logs
+#
+## history doesn't work if the directory doesn't exist yet
+#if [[ ! -e "${HOME}/.history" ]]; then
+#  mkdir "${HOME}/.history"
+#fi
+#
+#
+## create one file per month
+#export HISTFILE="${HOME}/.history/$(date -u +%Y-%m)"
+#export SAVEHIST=100000
+#setopt APPEND_HISTORY
+#setopt SHARE_HISTORY
+#
+## per-direcctory history
+## ctrl-G toggles between global and local history search
+#source ~/.config/zsh/per-directory-history.zsh
 
 # fzf shell integration
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # https://direnv.net
 if [[ -e "/usr/local/bin/direnv" ]]
