@@ -19,7 +19,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 # HISTORY
 # 
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 ## store history in daily logs
 #
