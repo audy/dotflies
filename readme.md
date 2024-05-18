@@ -1,7 +1,5 @@
 # `audy/dotflies`
 
-![test](https://github.com/audy/dotflies/actions/workflows/test.yml/badge.svg)
-
 Austin G. Davis-Richardson
 
 ![~/. (fly)](./logo.png?raw=true)
