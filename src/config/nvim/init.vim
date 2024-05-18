@@ -180,6 +180,9 @@ syntax enable
 
 let g:rosepine#disable_italics = 1
 
+" reduce "press Enter ..." messages?
+set shortmess+=F
+
 "colorscheme rose-pine
 colorscheme catppuccin-mocha
 "colorscheme catppuccin-latte
@@ -255,3 +258,5 @@ autocmd BufWritePre Snakefile execute ':Neoformat'
 nnoremap <C-p> :FuzzyOpen<CR>
 
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+
+set shortmess=filnxtToOc
