@@ -8,6 +8,7 @@ function nextflow() {
 }
 
 alias nf=nextflow
+alias vim=nvim
 
 # pretty json pager
 function json() {
