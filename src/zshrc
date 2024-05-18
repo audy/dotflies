@@ -19,7 +19,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 #
 # HISTORY
-# 
+#
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
@@ -167,9 +167,12 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH:/bin
 
-# nodejs
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 # aptible cli
 export PATH="${PATH}:/opt/aptible-toolbelt/bin/"
 export PATH=$PATH:/Users/audy/.pixi/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
