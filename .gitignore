@@ -1,7 +1,2 @@
-.DS_Store
-src/vim/.netrwhist
-src/vim/plugged
-src/vim/tmp
-src/vim/black
-src/jupyter/lab
-src/config/gh/hosts.yml
+*
+!.config/
