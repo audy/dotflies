@@ -25,7 +25,6 @@ Plug 'haishanh/night-owl.vim'
 Plug 'rose-pine/neovim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "Plug 'ianks/vim-tsx' " typescript
@@ -33,7 +32,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'LukeGoodsell/nextflow-vim'
 
 
-" python 
+" python
 
 Plug 'sbdchd/neoformat'
 Plug 'psf/black', { 'branch': 'stable' }
@@ -46,7 +45,10 @@ call plug#end()
 " configure treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua" },
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = false,
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = {'markdown'},  -- list of language that will be disabled
@@ -153,7 +155,7 @@ set number
 set relativenumber
 " don't be cases insensitive if uppercase characters are included in search query
 " setting this applies to Deoplete
-set smartcase 
+set smartcase
 
 " highlight pesky invisible chars
 syntax match nonascii "[^\x00-\x7F]"
@@ -194,6 +196,8 @@ let g:airline_theme = 'catppuccin'
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
+" if something goes wrong with this
+" try :UpdateRemotePlugins
 call deoplete#custom#option({
 \	'auto_complete_delay': 200,
 \	'max_list': 12
