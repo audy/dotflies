@@ -169,3 +169,7 @@ export PATH=$PATH:$GOPATH:/bin
 
 # nodejs
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+# aptible cli
+export PATH="${PATH}:/opt/aptible-toolbelt/bin/"
+export PATH=$PATH:/Users/audy/.pixi/bin
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
