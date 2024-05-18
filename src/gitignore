@@ -1,5 +1,2 @@
-__pycache__/
-.*.swp
-.DS_Store
-.vscode
-*.pyc
+*
+!.config/
