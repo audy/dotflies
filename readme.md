@@ -8,13 +8,13 @@ Austin G. Davis-Richardson
 
 ## Installation
 
-### macos or ubuntu
+Based on [this guide](https://queensidecastle.com/guides/tracking-your-home-directory-in-git-part-1)
 
-```bash
-curl https://raw.githubusercontent.com/audy/dotflies/master/install.sh | sh -
+Initialize repo in ~
+
 ```
-### macOS-specific enhancements
-
-```bash
-./macos.sh # requires reboot
+cd ~
+git init
+git remote add origin git@github.com:audy/dotflies.git
+git fetch
 ```
