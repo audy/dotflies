@@ -71,9 +71,6 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
 -- OR setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -113,9 +110,11 @@ let mapleader = " "
 let maplocalleader = ","
 
 set ic " case-insensitive search
+" don't be cases insensitive if uppercase characters are included in search query
+" setting this applies to Deoplete
+set smartcase
+
 set mouse=vin
-
-
 set clipboard+=unnamedplus
 
 nnoremap q :q<cr> " kill window with q
@@ -153,13 +152,13 @@ set undoreload=10000
 
 set number
 set relativenumber
-" don't be cases insensitive if uppercase characters are included in search query
-" setting this applies to Deoplete
-set smartcase
 
 " highlight pesky invisible chars
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
+
+" space+ww to trim trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " return to same line when you reopen vim
 augroup line_return
@@ -180,10 +179,9 @@ set termguicolors
 
 syntax enable
 
-let g:rosepine#disable_italics = 1
-
 " reduce "press Enter ..." messages?
 set shortmess+=F
+"set shortmess=filnxtToOc
 
 "colorscheme rose-pine
 colorscheme catppuccin-mocha
@@ -218,6 +216,8 @@ function! s:fuzzy_getroot()
   return "."
 endfunction
 
+nnoremap <C-p> :FuzzyOpen<CR>
+
 "
 " AnyJump
 "
@@ -242,9 +242,6 @@ nnoremap <leader>al :AnyJumpLastResults<CR>
 " Neomake
 "
 
-" TODO: get this to work
-"let g:python3_host_prog='/Users/austin/.pyenv/versions/neomake/bin/python'
-
 call neomake#configure#automake('w')
 
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,W503,E203',  '--format=default'] }
@@ -254,13 +251,3 @@ let g:black_linelength = 100
 autocmd BufWritePre *.py execute ':Black'
 
 autocmd BufWritePre Snakefile execute ':Neoformat'
-
-"
-" Misc. Plugin Config
-"
-
-nnoremap <C-p> :FuzzyOpen<CR>
-
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-
-set shortmess=filnxtToOc
