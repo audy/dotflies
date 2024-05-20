@@ -21,7 +21,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # HISTORY
 #
 
-#eval "$(atuin init zsh --disable-up-arrow)"
+if [[ -e `which atuin` ]]; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
 
 ## store history in daily logs
 #
