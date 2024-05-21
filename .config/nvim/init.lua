@@ -2,8 +2,8 @@
 -- Plugins
 --
 
-vim.g.python3_host_prog = '/Users/audy/.pyenv/versions/neovim/bin/python'
-
+-- use virtualenv for Python dependencies
+vim.g.python3_host_prog = os.getenv("HOME") .. "/.pyenv/versions/neovim/bin/python"
 
 --
 -- Plugin Manager (https://github.com/junegunn/vim-plug)
