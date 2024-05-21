@@ -37,7 +37,6 @@ Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
 Plug('LukeGoodsell/nextflow-vim')
 
-
 -- python
 
 Plug('sbdchd/neoformat')
@@ -48,9 +47,8 @@ Plug('snakemake/snakemake', {['rtp'] = 'misc/vim'})
 vim.call('plug#end')
 
 --
--- Plugin-specific Settings
+-- Plugins
 --
-
 
 -- [neomake]
 
@@ -158,18 +156,21 @@ vim.o.foldlevel = 99
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 --
 -- Custom Commands
 --
 
 vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
 
---
--- Interface Settings
---
 
+-- Space+ww to trim trailing whitespace
+vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+--
+-- Interface
+--
 
 -- Set leader keys
 vim.g.mapleader = ' '
@@ -184,6 +185,9 @@ vim.o.clipboard = 'unnamedplus'
 -- Kill window with q
 vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true }) 
 
+--
+-- Behavior
+--
 
 -- Use version control for version control
 vim.o.autowrite = true
@@ -220,14 +224,6 @@ vim.o.undoreload = 10000
 vim.o.number = true
 vim.o.relativenumber = true
 
-
--- Highlight pesky invisible chars
-vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
-vim.cmd('highlight nonascii guibg=Red ctermbg=2')
-
--- Space+ww to trim trailing whitespace
-vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true })
-
 -- Return to same line when you reopen vim
 vim.cmd([[
   augroup line_return
@@ -242,7 +238,6 @@ vim.cmd([[
 --
 -- Appearance
 --
-
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
@@ -262,3 +257,7 @@ vim.cmd('colorscheme catppuccin-mocha')
 
 -- Airline theme
 vim.g.airline_theme = 'catppuccin'
+
+-- Highlight pesky invisible chars
+vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
+vim.cmd('highlight nonascii guibg=Red ctermbg=2')
