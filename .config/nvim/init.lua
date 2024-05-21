@@ -132,26 +132,23 @@ require("nvim-tree").setup({
 })
 
 -- [nvim-treesitter]
--- require'nvim-treesitter.configs'.setup {
---   ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua" },
---   -- Automatically install missing parsers when entering buffer
---   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
---   auto_install = false,
---   highlight = {
---     enable = true, -- false will disable the whole extension
---     disable = {'markdown'},  -- list of language that will be disabled
---   },
--- }
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = {'markdown'},
+  },
+}
 
 -- [deoplete]
 vim.g['deoplete#enable_at_startup'] = 1
 
 -- Deoplete custom options
--- vim.fn['deoplete#custom#option']({
---   auto_complete_delay = 200,
---   max_list = 12,
--- })
-
+vim.fn['deoplete#custom#option']({
+  auto_complete_delay = 200,
+  max_list = 12,
+})
 
 -- [snakemake] (default is to fold everything)
 vim.o.foldlevelstart = 99
