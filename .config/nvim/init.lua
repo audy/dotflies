@@ -29,6 +29,8 @@ Plug('nvim-tree/nvim-web-devicons')
 
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 
+Plug("kylechui/nvim-surround")
+
 -- colors
 Plug('haishanh/night-owl.vim')
 Plug('rose-pine/neovim')
