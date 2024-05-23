@@ -258,11 +258,27 @@ vim.cmd('syntax enable')
 -- Reduce "press Enter ..." messages
 vim.o.shortmess = vim.o.shortmess .. 'F'
 
--- Colorscheme
-vim.cmd('colorscheme catppuccin-mocha')
 
 -- Airline theme
 vim.g.airline_theme = 'catppuccin'
+
+-- Function to run a shell command and return its output
+local function run_shell_command(command)
+    local handle = io.popen(command)
+    local result = handle:read("*a")
+    handle:close()
+    return result
+end
+
+-- Run the command and get its output
+local output = run_shell_command("defaults read -g AppleInterfaceStyle")
+
+-- Check if the output contains "Dark" and set the colorscheme accordingly
+if string.find(output, "Dark") then
+  vim.cmd('colorscheme catppuccin-mocha')
+else
+  vim.cmd('colorscheme catppuccin-latte')
+end
 
 -- Highlight pesky invisible chars
 vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
