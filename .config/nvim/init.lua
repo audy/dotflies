@@ -58,8 +58,7 @@ require("nvim-surround").setup({})
 
 -- [neomake]
 
--- Neomake automake configuration
--- vim.fn['neomake#configure#automake']('w')
+vim.fn['neomake#configure#automake']('w')
 
 -- Neomake settings for Python
 vim.g.neomake_python_flake8_maker = { args = { '--ignore=E501,W503,E203', '--format=default' } }
