@@ -220,9 +220,9 @@ vim.o.smarttab = false  -- No tabs to begin with
 vim.o.backup = true
 vim.o.swapfile = false
 
-vim.o.undodir = '~/.vim/tmp/undo//'     -- Undo files
-vim.o.backupdir = '~/.vim/tmp/backup//' -- Backups
-vim.o.directory = '~/.vim/tmp/swap//'   -- Swap files
+vim.o.undodir = vim.fn.expand('~/.vim/tmp/undo//')     -- Undo files
+vim.o.backupdir = vim.fn.expand('~/.vim/tmp/backup//') -- Backups
+vim.o.directory = vim.fn.expand('~/.vim/tmp/swap//')   -- Swap files
 vim.o.undofile = true
 vim.o.undoreload = 10000
 
