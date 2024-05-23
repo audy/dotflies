@@ -3,8 +3,15 @@
 #
 # BASH/ZSH
 #
-function nextflow() {
-  JAVA_CMD=$(which java) /usr/local/bin/nextflow $*
+#function nextflow() {
+#  JAVA_HOME="/opt/homebrew/opt/openjdk@11/" /usr/local/bin/nextflow $*
+#}
+
+#
+# BASH/ZSH
+#
+function nf-test() {
+  JAVA_CMD=$(which java) /usr/local/bin/nf-test $*
 }
 
 alias nf=nextflow
