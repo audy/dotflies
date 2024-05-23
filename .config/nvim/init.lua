@@ -52,6 +52,10 @@ vim.call('plug#end')
 -- Plugins
 --
 
+--- [nvim-surround]
+
+require("nvim-surround").setup({})
+
 -- [neomake]
 
 -- Neomake automake configuration
