@@ -170,3 +170,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# java
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+# nextflow
+export JAVA_HOME="/opt/homebrew/opt/openjdk@11/"
