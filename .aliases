@@ -23,13 +23,14 @@ function json() {
 }
 
 function fq-dump() {
-echo "--- fetching ${1} and saving to ${2}"
+  output="${1}.fastq"
+  echo "--- fetching ${1} and saving to ${output}"
   fasterq-dump \
     --split-spot \
     --seq-defline '@$ac.$sn/$ri $si length=$rl' \
     --qual-defline '+$ac.$sn/$ri $si length=$rl' \
     --threads 4 \
-    --outfile "${2}" \
+    --outfile "${output}" \
     "${1}"
 }
 
