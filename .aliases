@@ -448,6 +448,34 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 # BIOINFORMATICS
 #
 
+
+# make blastn output pretty / parseable
+function pretty-blastn() {
+  # see blastn -help for definitions + other columns you can include
+  # this is the same as -outfmt 6:
+  column_names=(
+    qaccver
+    saccver
+    pident
+    length
+    mismatch
+    gapopen
+    qstart
+    qend
+    sstart
+    send
+    evalue
+    bitscore
+  )
+  
+  column_names_string=$(IFS=' ' ; echo "${column_names[*]}")
+  
+  header=$(IFS=',' ; echo "${column_names[*]}")
+
+  echo "${header}"
+  blastn -outfmt "10 delim=, ${column_names_string}" "${@}"
+}
+
 # hack so I can run figtree on macOS (requires java 1.8)
 alias figtree='jenv shell 1.8 && java -jar $(mdfind -name figtree.jar) $1'
 
