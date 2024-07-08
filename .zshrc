@@ -128,7 +128,6 @@ compinit
 #
 
 export PAGER=less
-export LESS="--ignore-case --LONG-PROMPT --chop-long-lines --tabs=4 --RAW-CONTROL-CHARS --quit-if-one-screen --no-init --quit-at-eof"
 
 #
 
