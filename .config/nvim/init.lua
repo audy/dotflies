@@ -14,8 +14,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('neomake/neomake') -- autodetects mypy, flake8, snakefmt, etc...
-
+Plug('mfussenegger/nvim-lint')
+Plug('stevearc/conform.nvim')
 
 Plug('cloudhead/neovim-fuzzy')
 Plug('vim-airline/vim-airline')
@@ -41,10 +41,7 @@ Plug('LukeGoodsell/nextflow-vim')
 
 -- python
 
-Plug('sbdchd/neoformat')
-Plug('psf/black', { ['branch'] = 'stable' })
 Plug('deoplete-plugins/deoplete-jedi')
-Plug('snakemake/snakemake', {['rtp'] = 'misc/vim'})
 
 vim.call('plug#end')
 
@@ -52,26 +49,45 @@ vim.call('plug#end')
 -- Plugins
 --
 
+--- [conform.nvim]
+
+require("conform").setup({
+  formatters_by_ft = {
+    -- Conform will run multiple formatters sequentially
+    python = { "isort", "black" },
+    javascript = { { "prettier" } },
+  },
+})
+
+require("conform").formatters.black = {
+  prepend_args = { "--line-length", "100" },
+}
+
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
 --- [nvim-surround]
 
 require("nvim-surround").setup({})
 
--- [neomake]
+--- [nvim-lint]
 
-vim.fn['neomake#configure#automake']('w')
+require('lint').linters_by_ft = {
+  markdown = {'vale',},
+  python = {'ruff',}
+}
 
--- Neomake settings for Python
-vim.g.neomake_python_flake8_maker = { args = { '--ignore=E501,W503,E203', '--format=default' } }
-vim.g.neomake_python_enabled_makers = { 'flake8', 'mypy' }
-
--- Black line length
-vim.g.black_linelength = 100
-
--- Autocommands
-vim.cmd([[
-  autocmd BufWritePre *.py execute ':Black'
-  autocmd BufWritePre Snakefile execute ':Neoformat'
-]])
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    -- try_lint without arguments runs the linters defined in `linters_by_ft`
+    -- for the current filetype
+    require("lint").try_lint()
+  end,
+})
 
 -- [anyjump]
 
@@ -101,21 +117,6 @@ vim.api.nvim_set_keymap('n', '<C-p>', ':FuzzyOpen<CR>', { noremap = true, silent
 
 -- [black]
 vim.g.black_linelength = 100
-
--- [neomake]
-vim.g.neoformat_snakemake_snakefmt = {
-    exe = 'snakefmt',
-    args = { '-l', tostring(vim.g.black_linelength), '-' },
-    stdin = 1,
-}
-
-vim.g.neoformat_enabled_snakemake = { 'snakefmt' }
-
-
-if vim.fn.exists(':Neoformat') == 2 then
-  vim.api.nvim_command('command! Snakefmt :Neoformat! snakemake snakefmt')
-end
-
 
 -- [nvim-tree]
 
