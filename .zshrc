@@ -11,6 +11,11 @@ bindkey -e
 # input fuckery
 bindkey "\e[3~" delete-char # fixes delete key
 
+# enable CTRL-X CTRL-E (edit command in $EDITOR)
+autoload edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # i do not care that u deprecated thin
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
