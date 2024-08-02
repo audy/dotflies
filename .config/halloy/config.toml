@@ -1,0 +1,23 @@
+[servers.liberachat]
+nickname = "audy"
+server = "irc.libera.chat"
+channels = ["#spaghetti", "#indieweb", "#lobsters"]
+
+nick_password_file = "/Users/audy/.config/halloy/password"
+
+[buffer.channel.topic]
+enabled = true
+
+[buffer.server_messages.join]
+enabled = false
+
+[buffer.server_messages.part]
+enabled = false
+smart = 10
+
+[buffer.server_messages.quit]
+enabled = false
+smart = 10
+
+[sidebar]
+default_action = "replace-pane"
