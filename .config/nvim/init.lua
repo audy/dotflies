@@ -57,6 +57,10 @@ require("conform").setup({
     python = { "isort", "black" },
     javascript = { { "prettier" } },
   },
+  -- format async
+  format_after_save = {
+    lsp_format = "fallback",
+  },
 })
 
 require("conform").formatters.black = {
@@ -64,21 +68,13 @@ require("conform").formatters.black = {
 }
 
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
 --- [nvim-surround]
 
 require("nvim-surround").setup({})
 
 --- [nvim-lint]
-
 require('lint').linters_by_ft = {
-  markdown = {'vale',},
-  python = {'ruff',}
+  python = {'mypy', 'ruff',}
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -277,7 +273,7 @@ local output = run_shell_command("defaults read -g AppleInterfaceStyle")
 if string.find(output, "Dark") then
   vim.cmd('colorscheme catppuccin-mocha')
 else
-  vim.cmd('colorscheme catppuccin-latte')
+  vim.cmd('colorscheme catppuccin-mocha')
 end
 
 -- Highlight pesky invisible chars
