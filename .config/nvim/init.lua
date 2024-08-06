@@ -101,11 +101,6 @@ vim.g.fuzzy_rootcmds = {
   { "git", "rev-parse", "--show-toplevel" }
 }
 
--- Always use pwd as root
-local function fuzzy_getroot()
-  return "."
-end
-
 -- Map <C-p> to :FuzzyOpen
 vim.api.nvim_set_keymap('n', '<C-p>', ':FuzzyOpen<CR>', { noremap = true, silent = true })
 
