@@ -21,8 +21,6 @@ Plug('cloudhead/neovim-fuzzy')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 Plug('Shougo/deoplete.nvim', { ['do'] = ':UpdateRemotePlugins' })
-Plug('SirVer/ultisnips')
-Plug('pechorin/any-jump.vim')
 
 Plug('nvim-tree/nvim-tree.lua')
 Plug('nvim-tree/nvim-web-devicons')
