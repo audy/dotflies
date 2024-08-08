@@ -464,6 +464,7 @@ function pretty-blastn() {
     qend
     sstart
     send
+    slen
     evalue
     bitscore
   )
