@@ -53,7 +53,7 @@ vim.call('plug#end')
 require("conform").setup({
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
+    python = { "ruff_format" },
     javascript = { { "prettier" } },
   },
   -- format async
