@@ -143,9 +143,13 @@ export PAGER=less
 # very important path-related things
 export PATH="/usr/local/sbin:$PATH"
 
-if [ -e /opt/homebrew/bin/pyenv ]; then
+function pyenv_init {
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+}
+
+if [ -e /opt/homebrew/bin/pyenv ]; then
+  pyenv_init
 fi
 
 # rust
@@ -167,10 +171,13 @@ export PATH="${PATH}:/opt/aptible-toolbelt/bin/"
 export PATH=$PATH:/Users/audy/.pixi/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
+function nvm_init {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
+}
+
+nvm_init
 
 # ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
