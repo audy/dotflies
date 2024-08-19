@@ -1,12 +1,12 @@
 [servers.liberachat]
 nickname = "audy"
 server = "irc.libera.chat"
-channels = ["#spaghetti", "#indieweb", "#lobsters"]
+channels = ["#spaghetti", "#indieweb", "#lobsters", "##programming", "##proxmox", "#neovim"]
 
 nick_password_file = "/Users/audy/.config/halloy/password"
 
 [buffer.channel.topic]
-enabled = true
+enabled = false
 
 [buffer.server_messages.join]
 enabled = false
