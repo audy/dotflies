@@ -67,7 +67,6 @@ require("conform").formatters.black = {
   prepend_args = { "--line-length", "100" },
 }
 
-
 --- [nvim-surround]
 
 require("nvim-surround").setup({})
@@ -137,7 +136,6 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
   highlight = {
     enable = true,
-    disable = {'markdown'},
   },
 }
 
@@ -195,20 +193,15 @@ vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, s
 vim.o.autowrite = true
 vim.o.autoread = true
 
-vim.o.autoindent = true
 
--- Defaults
+-- indenting (when not defined by ft)
+vim.o.autoindent = true
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.tabstop = 2
 
 -- Respect plugin's preferences
 vim.cmd('filetype plugin indent on')
-
--- Override markdown
-vim.cmd([[
-  autocmd Filetype markdown setlocal ts=2 sw=2 expandtab
-]])
 
 vim.o.wrap = false
 vim.o.expandtab = true  -- Expand tabs to spaces
