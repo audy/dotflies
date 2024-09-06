@@ -90,6 +90,11 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- AnyJump settings
 vim.g.any_jump_references_only_for_current_filetype = 1
 
+-- Any-jump window size & position options
+vim.g.any_jump_window_width_ratio  = 1
+vim.g.any_jump_window_height_ratio = 1
+vim.g.any_jump_window_top_offset   = 0
+
 -- Keybindings for AnyJump
 vim.api.nvim_set_keymap('n', '<leader>j', ':AnyJump<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<leader>j', ':AnyJumpVisual<CR>', { noremap = true, silent = true })
