@@ -55,6 +55,7 @@ require("conform").setup({
     -- Conform will run multiple formatters sequentially
     python = { "ruff_format" },
     javascript = { { "prettier" } },
+    rust = { "rustfmt" },
   },
   -- format async
   format_after_save = {
