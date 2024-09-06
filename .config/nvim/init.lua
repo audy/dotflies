@@ -158,17 +158,6 @@ vim.o.foldlevel = 99
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
---
--- Custom Commands
---
-
-vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
-
-
--- Space+ww to trim trailing whitespace
-vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 --
 -- Interface
@@ -185,7 +174,18 @@ vim.o.mouse = 'vin'
 vim.o.clipboard = 'unnamedplus'
 
 -- Kill window with q
-vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true }) 
+vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
+
+--
+-- Custom Commands
+--
+
+vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
+
+-- Space+ww to trim trailing whitespace
+vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 --
 -- Behavior
