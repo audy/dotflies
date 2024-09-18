@@ -51,12 +51,6 @@ fi
 # fzf shell integration
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# https://direnv.net
-if [[ -e "/usr/local/bin/direnv" ]]
-then
-  eval "$(direnv hook zsh)"
-fi
-
 export EDITOR='nvim'
 
 # nothing to see here
