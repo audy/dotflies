@@ -247,7 +247,6 @@ vim.cmd([[
 vim.cmd('colorscheme catppuccin-mocha')
 
 -- So colors work in tmux
-vim.o.t_Co = '256'
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
