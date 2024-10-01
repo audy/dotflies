@@ -2,8 +2,9 @@
 -- Plugins
 --
 
--- use virtualenv for Python dependencies
-vim.g.python3_host_prog = os.getenv("HOME") .. "/.pyenv/versions/neovim/bin/python"
+-- use system python
+-- TODO: ubuntu, windows
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 
 --
 -- Plugin Manager (https://github.com/junegunn/vim-plug)
