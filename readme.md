@@ -40,7 +40,12 @@ git checkout main
 
 ### Neovim
 
-1. [Install vim-plug](https://github.com/junegunn/vim-plug) + open nvim, run `:PlugInstall` and `:UpdateRemotePlugins`
-2. [Install pyenv](https://github.com/pyenv/pyenv)
-3. Setup a pyenv for neovim: `pyenv install 3.12 && pyenv virtualenv neovim 3.12`
-4. `pyenv shell neovim && pip install neovim`
+- [Install vim-plug](https://github.com/junegunn/vim-plug) + open nvim, run `:PlugInstall` and `:UpdateRemotePlugins`
+- Neovim requires Python + some Python packages (for things like deoplete,
+  black). On macOS, I use the homebrew-provided Python to install these
+  dependencies:
+
+    ```sh
+    brew install python3
+    pip3 install --break-system-packages ruff mypy black pynvim
+    ```
