@@ -16,8 +16,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# i do not care that u deprecated thin
-export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
 # stop breaking stuff
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -136,15 +134,6 @@ export PAGER=less
 
 # very important path-related things
 export PATH="/usr/local/sbin:$PATH"
-
-function pyenv_init {
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-}
-
-if [ -e /opt/homebrew/bin/pyenv ]; then
-  pyenv_init
-fi
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
