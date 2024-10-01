@@ -170,3 +170,6 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
 # nextflow
 export JAVA_HOME="/opt/homebrew/opt/openjdk@11/"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
