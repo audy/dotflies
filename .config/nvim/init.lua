@@ -64,8 +64,13 @@ require("conform").setup({
   },
 })
 
+-- leave here in case I need to switch back to black
 require("conform").formatters.black = {
   prepend_args = { "--line-length", "100" },
+}
+
+require("conform").formatters.ruff_format = {
+  append_args = { "--line-length", "100" },
 }
 
 --- [nvim-surround]
