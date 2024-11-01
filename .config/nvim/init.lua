@@ -4,7 +4,7 @@
 
 -- use system python
 -- TODO: ubuntu, windows
-vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+vim.g.python3_host_prog = "/home/audy/.venv/bin/python"
 
 --
 -- Plugin Manager (https://github.com/junegunn/vim-plug)
@@ -207,9 +207,9 @@ vim.o.autoread = true
 
 -- indenting (when not defined by ft)
 vim.o.autoindent = true
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.tabstop = 2
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
 
 -- Respect plugin's preferences
 vim.cmd('filetype plugin indent on')
