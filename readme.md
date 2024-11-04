@@ -18,7 +18,7 @@ Based on [this guide](https://queensidecastle.com/guides/tracking-your-home-dire
 
 Initialize repo in ~
 
-```
+```sh
 # fetch the repo
 cd ~
 git init
