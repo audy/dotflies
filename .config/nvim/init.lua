@@ -15,48 +15,50 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+-- linting + formatting
 Plug('mfussenegger/nvim-lint')
 Plug('stevearc/conform.nvim')
 
+-- ctrl-P
 Plug('cloudhead/neovim-fuzzy')
+
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
+
+-- autocomplete
 Plug('Shougo/deoplete.nvim', { ['do'] = ':UpdateRemotePlugins' })
 Plug('pechorin/any-jump.vim')
 
+-- the tree
 Plug('nvim-tree/nvim-tree.lua')
 Plug('nvim-tree/nvim-web-devicons')
 
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-
 Plug("kylechui/nvim-surround")
 
--- colors
-Plug('haishanh/night-owl.vim')
-Plug('rose-pine/neovim')
+-- colors / syntax
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
+-- language-specific plugins
 
 Plug('LukeGoodsell/nextflow-vim')
-
--- python
-
 Plug('deoplete-plugins/deoplete-jedi')
 
 vim.call('plug#end')
 
 --
--- Plugins
+-- Plugin Configuration
 --
 
 --- [conform.nvim]
 
+-- TODO: check if project uses black / flake8? inspect pyproject.toml?
 require("conform").setup({
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
     python = { "ruff_format" },
-    javascript = { { "prettier" } },
     rust = { "rustfmt" },
+    javascript = { { "prettier" } },
   },
   -- format async
   format_after_save = {
@@ -76,19 +78,6 @@ require("conform").formatters.ruff_format = {
 --- [nvim-surround]
 
 require("nvim-surround").setup({})
-
---- [nvim-lint]
-require('lint').linters_by_ft = {
-  python = {'mypy', 'ruff',}
-}
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    -- try_lint without arguments runs the linters defined in `linters_by_ft`
-    -- for the current filetype
-    require("lint").try_lint()
-  end,
-})
 
 -- [anyjump]
 
@@ -116,11 +105,7 @@ vim.g.fuzzy_rootcmds = {
 -- Map <C-p> to :FuzzyOpen
 vim.api.nvim_set_keymap('n', '<C-p>', ':FuzzyOpen<CR>', { noremap = true, silent = true })
 
--- [black]
-vim.g.black_linelength = 100
-
 -- [nvim-tree]
-
 require("nvim-tree").setup({
   sort = {
     sorter = "case_sensitive",
@@ -158,6 +143,7 @@ require'nvim-treesitter.configs'.setup {
 -- [deoplete]
 vim.g['deoplete#enable_at_startup'] = 1
 
+
 -- Deoplete custom options
 vim.fn['deoplete#custom#option']({
   auto_complete_delay = 200,
@@ -171,7 +157,6 @@ vim.o.foldlevel = 99
 -- disable built-in neovim file explorer
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 
 --
 -- Interface
@@ -209,7 +194,6 @@ vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, s
 vim.o.autowrite = true
 vim.o.autoread = true
 
-
 -- indenting (when not defined by ft)
 vim.o.autoindent = true
 vim.o.shiftwidth = 4
@@ -233,7 +217,7 @@ vim.o.undofile = true
 vim.o.undoreload = 10000
 
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 -- Return to same line when you reopen vim
 vim.cmd([[
