@@ -47,5 +47,5 @@ git checkout main
 
     ```sh
     brew install python3
-    pip3 install --break-system-packages ruff mypy black pynvim
+    pip3 install --break-system-packages ruff mypy black pynvim jedi
     ```
