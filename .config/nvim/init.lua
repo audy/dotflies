@@ -4,7 +4,7 @@
 
 -- use system python
 -- TODO: ubuntu, windows
-vim.g.python3_host_prog = "/home/audy/.venv/bin/python"
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 
 --
 -- Plugin Manager (https://github.com/junegunn/vim-plug)
@@ -50,6 +50,19 @@ vim.call('plug#end')
 -- Plugin Configuration
 --
 
+--- [nvim-lint]
+require("lint").linters_by_ft = {
+    python = { "ruff", "mypy" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    -- try_lint without arguments runs the linters defined in `linters_by_ft`
+    -- for the current filetype
+    require("lint").try_lint()
+  end,
+})
+
 --- [conform.nvim]
 
 -- TODO: check if project uses black / flake8? inspect pyproject.toml?
@@ -59,17 +72,14 @@ require("conform").setup({
     python = { "ruff_format" },
     rust = { "rustfmt" },
     javascript = { { "prettier" } },
+    typescript = { { "prettier" } },
+    typescriptvue = { { "prettier" } },
   },
   -- format async
   format_after_save = {
     lsp_format = "fallback",
   },
 })
-
--- leave here in case I need to switch back to black
-require("conform").formatters.black = {
-  prepend_args = { "--line-length", "100" },
-}
 
 require("conform").formatters.ruff_format = {
   append_args = { "--line-length", "100" },
