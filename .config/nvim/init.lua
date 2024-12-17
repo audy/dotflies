@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 require("conform").setup({
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
-    python = { "ruff_format" },
+    python = { "ruff_format", "isort" },
     rust = { "rustfmt" },
     javascript = { { "prettier" } },
     typescript = { { "prettier" } },
@@ -84,6 +84,21 @@ require("conform").setup({
 require("conform").formatters.ruff_format = {
   append_args = { "--line-length", "100" },
 }
+
+
+-- ruff format doesn't sort imports
+-- but ruff check complains when the imports aren't sorted
+-- type :Imports to sort them...
+vim.api.nvim_create_user_command("Imports", function()
+  local file = vim.api.nvim_buf_get_name(0) -- Get the current file name
+  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
+    stdout = function(_, data) print(data) end,
+    stderr = function(_, data) print("Error: " .. data) end,
+    on_exit = function()
+      vim.cmd("edit") -- Reload the buffer to reflect the changes
+    end,
+  })
+end, { nargs = 0 })
 
 --- [nvim-surround]
 
