@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 require("conform").setup({
   formatters_by_ft = {
     -- Conform will run multiple formatters sequentially
-    python = { "ruff_format", "isort" },
+    python = { "ruff_format" },
     rust = { "rustfmt" },
     javascript = { { "prettier" } },
     typescript = { { "prettier" } },
