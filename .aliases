@@ -34,6 +34,9 @@ function fq-dump() {
     "${1}"
 }
 
+function venv() {
+  source .venv/bin/activate
+}
 
 function tmp() {
   dir=$(mktemp -d)
