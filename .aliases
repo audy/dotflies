@@ -491,3 +491,8 @@ function fqseqs () {
 
 # 💖 https://github.com/tomnomnom/gron
 alias ungron="gron --ungron"
+
+function science() {
+    echo "Stand back! I'm doing science!"
+    source /Users/audy/Code/science-vessel/.venv/bin/activate
+}
