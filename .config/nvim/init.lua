@@ -44,6 +44,9 @@ Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('LukeGoodsell/nextflow-vim')
 Plug('deoplete-plugins/deoplete-jedi')
 
+-- zen mode
+Plug('folke/zen-mode.nvim')
+
 vim.call('plug#end')
 
 --
@@ -197,6 +200,8 @@ vim.o.smartcase = true  -- Don't be case insensitive if uppercase characters are
 
 vim.o.mouse = 'vin'
 vim.o.clipboard = 'unnamedplus'
+
+vim.o.colorcolumn = "100"
 
 -- Kill window with q
 vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
