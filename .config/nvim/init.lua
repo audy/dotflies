@@ -71,9 +71,10 @@ require("conform").setup({
     -- Conform will run multiple formatters sequentially
     python = { "ruff_format" },
     rust = { "rustfmt" },
-    javascript = { { "prettier" } },
-    typescript = { { "prettier" } },
-    typescriptvue = { { "prettier" } },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    typescriptvue = { "prettier" },
+    typescriptreact = { "prettier" },
   },
   -- format async
   format_after_save = {
