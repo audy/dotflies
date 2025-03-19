@@ -38,8 +38,8 @@ function fq-dump() {
   echo "--- fetching ${1} and saving to ${output}"
   fasterq-dump \
     --split-spot \
-    --seq-defline '@$ac.$sn/$ri $si length=$rl' \
-    --qual-defline '+$ac.$sn/$ri $si length=$rl' \
+    --seq-defline '@$sn/$ri $si' \
+    --qual-defline '+$sn/$ri $si' \
     --threads 4 \
     --outfile "${output}" \
     "${1}"
