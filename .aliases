@@ -17,6 +17,17 @@ function nf-test() {
 alias nf=nextflow
 alias vim=nvim
 
+
+function ocxdl() {
+    python -c "
+import onecodex
+ocx = onecodex.Api()
+sample = ocx.Samples.get(\"$@\")
+print(f\"downloading sample {sample.id} {sample.filename}\")
+sample.download(progressbar=True)
+    "
+}
+
 # pretty json pager
 function json() {
   cat $1 | jq -C | less -Sr  
