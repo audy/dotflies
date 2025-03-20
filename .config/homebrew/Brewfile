@@ -47,6 +47,7 @@ brew "parallel"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tmuxinator"
+brew "zsh-syntax-highlighting"
 
 # languages
 
