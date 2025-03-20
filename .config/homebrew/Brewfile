@@ -1,0 +1,95 @@
+# vim: set ft=ruby
+tap "audy/deskclean", "https://github.com/audy/deskclean"
+tap "homebrew/cask"
+tap "homebrew/core"
+
+# casks
+cask "1password"
+cask "1password-cli"
+cask "firefox"
+cask "espanso"
+cask "monitorcontrol"
+cask "rectangle"
+cask "steam"
+cask "slack"
+cask "spotify"
+cask "vlc"
+cask "xbar"
+cask "ghostty"
+cask "google-chrome"
+cask "linear-linear"
+cask "netnewswire"
+cask "notion"
+cask "obsidian"
+cask "orbstack"
+
+# taps
+tap "porter-dev/porter"
+brew "porter-dev/porter/porter"
+
+
+# dev
+brew "neovim"
+brew "atuin"
+brew "flyctl"
+
+brew "fzf"
+brew "git-lfs"
+brew "git"
+brew "gh"
+brew "grep"
+brew "gron"
+brew "jq"
+brew "htop"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "parallel"
+brew "the_silver_searcher"
+brew "tmux"
+brew "tmuxinator"
+
+# languages
+
+# python
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "openjdk", link: true
+
+
+# misc tools
+brew "cffi"
+brew "awscli"
+brew "coreutils"
+brew "ffmpeg"
+brew "pigz"
+brew "pwgen"
+brew "rclone"
+brew "ripgrep"
+brew "gnupg"
+
+
+# bioinformatics
+brew "htslib"
+brew "bcftools"
+brew "bedtools"
+brew "blast"
+brew "minimap2"
+brew "samtools"
+brew "seqkit"
+brew "seqtk"
+
+# system
+brew "csvkit"
+brew "csvtk"
+brew "curl"
+
+# fonts
+cask "font-comic-mono"
+cask "font-departure-mono"
+cask "font-fira-mono"
+cask "font-monaspace"
+cask "font-monofur-nerd-font"
+cask "font-mononoki-nerd-font"
+
+brew "postgresql@14", restart_service: :changed
+brew "redis", restart_service: :changed
