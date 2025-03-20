@@ -50,12 +50,10 @@ brew "tmuxinator"
 brew "zsh-syntax-highlighting"
 
 # languages
-
-# python
-brew "pyenv"
-brew "pyenv-virtualenv"
 brew "openjdk", link: true
 
+# python
+brew "uv"
 
 # misc tools
 brew "cffi"
