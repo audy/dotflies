@@ -1,112 +1,21 @@
 --
--- Plugins
+-- Main vim.*.* Settings
+-- (must go before plugins)
 --
 
 -- use system python
 -- TODO: ubuntu, windows
 vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 
---
--- Plugin Manager (https://github.com/junegunn/vim-plug)
---
+-- Set leader keys
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
 
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
--- linting + formatting
-Plug('mfussenegger/nvim-lint')
-Plug('stevearc/conform.nvim')
-
--- ctrl-P
-Plug('cloudhead/neovim-fuzzy')
-
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
-
--- autocomplete
-Plug('Shougo/deoplete.nvim', { ['do'] = ':UpdateRemotePlugins' })
-Plug('pechorin/any-jump.vim')
-
--- the tree
-Plug('nvim-tree/nvim-tree.lua')
-Plug('nvim-tree/nvim-web-devicons')
-
-Plug("kylechui/nvim-surround")
-
--- colors / syntax
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
-
--- language-specific plugins
-
-Plug('LukeGoodsell/nextflow-vim')
-Plug('deoplete-plugins/deoplete-jedi')
-
--- zen mode
-Plug('folke/zen-mode.nvim')
-
-vim.call('plug#end')
-
---
--- Plugin Configuration
---
-
---- [nvim-lint]
-require("lint").linters_by_ft = {
-    python = { "ruff", "mypy" },
-}
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    -- try_lint without arguments runs the linters defined in `linters_by_ft`
-    -- for the current filetype
-    require("lint").try_lint()
-  end,
-})
-
---- [conform.nvim]
-
--- TODO: check if project uses black / flake8? inspect pyproject.toml?
-require("conform").setup({
-  formatters_by_ft = {
-    -- Conform will run multiple formatters sequentially
-    python = { "ruff_format" },
-    rust = { "rustfmt" },
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    typescriptvue = { "prettier" },
-    typescriptreact = { "prettier" },
-  },
-  -- format async
-  format_after_save = {
-    lsp_format = "fallback",
-  },
-})
-
-require("conform").formatters.ruff_format = {
-  append_args = { "--line-length", "100" },
-}
-
-
--- ruff format doesn't sort imports
--- but ruff check complains when the imports aren't sorted
--- type :Imports to sort them...
-vim.api.nvim_create_user_command("Imports", function()
-  local file = vim.api.nvim_buf_get_name(0) -- Get the current file name
-  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
-    stdout = function(_, data) print(data) end,
-    stderr = function(_, data) print("Error: " .. data) end,
-    on_exit = function()
-      vim.cmd("edit") -- Reload the buffer to reflect the changes
-    end,
-  })
-end, { nargs = 0 })
-
---- [nvim-surround]
-
-require("nvim-surround").setup({})
+-- Airline theme
+vim.g.airline_theme = 'catppuccin'
 
 -- [anyjump]
 
@@ -134,50 +43,8 @@ vim.g.fuzzy_rootcmds = {
 -- Map <C-p> to :FuzzyOpen
 vim.api.nvim_set_keymap('n', '<C-p>', ':FuzzyOpen<CR>', { noremap = true, silent = true })
 
--- [nvim-tree]
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
-
--- [nvim-treesitter]
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua", "markdown" },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    -- disable = { 'markdown' },
-  },
-
-  -- disable treesitter on large files
-  disable = function(lang, buf)
-      local max_filesize = 100 * 1024 -- 100 KB
-      local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-      if ok and stats and stats.size > max_filesize then
-          return true
-      end
-  end,
-}
-
 -- [deoplete]
 vim.g['deoplete#enable_at_startup'] = 1
-
-
--- Deoplete custom options
-vim.fn['deoplete#custom#option']({
-  auto_complete_delay = 200,
-  max_list = 12,
-})
 
 -- [snakemake] (default is to fold everything)
 vim.o.foldlevelstart = 99
@@ -190,10 +57,6 @@ vim.g.loaded_netrwPlugin = 1
 --
 -- Interface
 --
-
--- Set leader keys
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
 
 vim.o.ignorecase = true  -- Case-insensitive search
 vim.o.smartcase = true  -- Don't be case insensitive if uppercase characters are included in search query
@@ -265,8 +128,6 @@ vim.cmd([[
 -- Appearance
 --
 
-vim.cmd('colorscheme catppuccin-mocha')
-
 -- So colors work in tmux
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
@@ -276,9 +137,174 @@ vim.cmd('syntax enable')
 -- Reduce "press Enter ..." messages
 vim.o.shortmess = vim.o.shortmess .. 'F'
 
--- Airline theme
-vim.g.airline_theme = 'catppuccin'
-
 -- Highlight pesky invisible chars
 vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
 vim.cmd('highlight nonascii guibg=Red ctermbg=2')
+
+--
+-- Plugins
+--
+
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  spec = {
+    -- add your plugins here
+    { 'stevearc/conform.nvim' },
+    -- linting + formatting
+    { 'mfussenegger/nvim-lint' },
+    { 'stevearc/conform.nvim' },
+
+    -- ctrl-P alternative
+    { 'cloudhead/neovim-fuzzy' },
+
+    -- statusline
+    { 'vim-airline/vim-airline-themes' },
+    { 'vim-airline/vim-airline',  },
+
+    -- autocomplete
+    { 'Shougo/deoplete.nvim', build = ':UpdateRemotePlugins' },
+    { 'pechorin/any-jump.vim' },
+
+    -- file tree
+    { 'nvim-tree/nvim-tree.lua' },
+    { 'nvim-tree/nvim-web-devicons' },
+
+    -- surround
+    { 'kylechui/nvim-surround' },
+
+    -- colors / syntax
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'catppuccin/nvim', name = 'catppuccin' },
+
+    -- language-specific
+    { 'LukeGoodsell/nextflow-vim' },
+    { 'deoplete-plugins/deoplete-jedi' },
+
+    -- zen mode
+    { 'folke/zen-mode.nvim' },
+
+  },
+  -- automatically check for plugin updates
+  -- disabled because that's annoying
+  checker = { enabled = false },
+})
+
+--
+-- Plugin Configuration
+--
+
+--- [nvim-lint]
+require("lint").linters_by_ft = {
+    python = { "ruff", "mypy" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    -- try_lint without arguments runs the linters defined in `linters_by_ft`
+    -- for the current filetype
+    require("lint").try_lint()
+  end,
+})
+
+--- [conform.nvim]
+
+-- TODO: check if project uses black / flake8? inspect pyproject.toml?
+require("conform").setup({
+  formatters_by_ft = {
+    -- Conform will run multiple formatters sequentially
+    python = { "ruff_format" },
+    rust = { "rustfmt" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    typescriptvue = { "prettier" },
+    typescriptreact = { "prettier" },
+  },
+  -- format async
+  format_after_save = {
+    lsp_format = "fallback",
+  },
+})
+
+require("conform").formatters.ruff_format = {
+  append_args = { "--line-length", "100" },
+}
+
+
+-- ruff format doesn't sort imports
+-- but ruff check complains when the imports aren't sorted
+-- type :Imports to sort them...
+vim.api.nvim_create_user_command("Imports", function()
+  local file = vim.api.nvim_buf_get_name(0) -- Get the current file name
+  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
+    stdout = function(_, data) print(data) end,
+    stderr = function(_, data) print("Error: " .. data) end,
+    on_exit = function()
+      vim.cmd("edit") -- Reload the buffer to reflect the changes
+    end,
+  })
+end, { nargs = 0 })
+
+--- [nvim-surround]
+
+-- this is needed to initialize vim-surround
+require("nvim-surround").setup({})
+
+-- [nvim-tree]
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+-- [nvim-treesitter]
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua", "markdown" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    -- disable = { 'markdown' },
+  },
+
+  -- disable treesitter on large files
+  disable = function(lang, buf)
+      local max_filesize = 100 * 1024 -- 100 KB
+      local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      if ok and stats and stats.size > max_filesize then
+          return true
+      end
+  end,
+}
+
+-- Deoplete custom options
+vim.fn['deoplete#custom#option']({
+  auto_complete_delay = 200,
+  max_list = 12,
+})
+
+-- must go after loading plugins (otherwise the theme doesn't exist)
+vim.cmd('colorscheme catppuccin-mocha')
