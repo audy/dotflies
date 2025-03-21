@@ -8,8 +8,19 @@ Austin G. Davis-Richardson
 
 ### Install Dependencies
 
+#### ubuntu
+
 ```sh
 apt-get install -y tmux htop neovim curl git zsh build-essential
+```
+
+#### macos
+
+after cloning:
+
+```sh
+# uses ~/.config/homebrew/Brewfile
+brew bundle --global
 ```
 
 ### Clone this repo into ~
