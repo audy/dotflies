@@ -35,6 +35,7 @@ brew "flyctl"
 
 brew "fzf"
 brew "fzy"
+brew "watch"
 brew "git-lfs"
 brew "git"
 brew "gh"
