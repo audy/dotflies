@@ -19,6 +19,7 @@ bindkey "^X^E" edit-command-line
 
 # stop breaking stuff
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_BUNDLE_FILE_GLOBAL=~/.config/homebrew/Brewfile
 
 #
 # HISTORY
