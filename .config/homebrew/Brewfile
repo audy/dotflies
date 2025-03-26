@@ -1,87 +1,80 @@
 # vim: set ft=ruby
+
+# taps
 tap "audy/deskclean", "https://github.com/audy/deskclean"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "porter-dev/porter"
 
 # casks
 cask "1password"
 cask "1password-cli"
-cask "firefox"
 cask "espanso"
-cask "monitorcontrol"
-cask "rectangle"
-cask "steam"
-cask "slack"
-cask "spotify"
-cask "vlc"
-cask "xbar"
+cask "firefox"
 cask "ghostty"
 cask "google-chrome"
 cask "linear-linear"
+cask "minecraft"
+cask "monitorcontrol"
 cask "netnewswire"
 cask "notion"
 cask "obsidian"
 cask "orbstack"
-
-# taps
-tap "porter-dev/porter"
-brew "porter-dev/porter/porter"
-
+cask "rectangle"
+cask "slack"
+cask "spotify"
+cask "steam"
+cask "vlc"
+cask "xbar"
 
 # dev
-brew "neovim"
 brew "atuin"
+brew "awscli"
+brew "cffi"
+brew "coreutils"
+brew "csvkit"
+brew "csvtk"
+brew "curl"
+brew "ffmpeg"
 brew "flyctl"
-
 brew "fzf"
 brew "fzy"
-brew "git-lfs"
-brew "git"
 brew "gh"
+brew "git"
+brew "git-lfs"
+brew "gnupg"
 brew "grep"
 brew "gron"
-brew "jq"
 brew "htop"
-brew "kubernetes-cli"
+brew "jq"
 brew "kubectx"
+brew "kubernetes-cli"
+brew "neovim"
+brew "openjdk", link: true
 brew "parallel"
+brew "pigz"
+brew "porter-dev/porter/porter"
+brew "postgresql@14", restart_service: :changed
+brew "pwgen"
+brew "rclone"
+brew "redis", restart_service: :changed
+brew "ripgrep"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tmuxinator"
+brew "uv"
+brew "watch"
 brew "zsh-syntax-highlighting"
 
-# languages
-brew "openjdk", link: true
-
-# python
-brew "uv"
-
-# misc tools
-brew "cffi"
-brew "awscli"
-brew "coreutils"
-brew "ffmpeg"
-brew "pigz"
-brew "pwgen"
-brew "rclone"
-brew "ripgrep"
-brew "gnupg"
-
-
 # bioinformatics
-brew "htslib"
 brew "bcftools"
 brew "bedtools"
 brew "blast"
+brew "htslib"
 brew "minimap2"
 brew "samtools"
 brew "seqkit"
 brew "seqtk"
-
-# system
-brew "csvkit"
-brew "csvtk"
-brew "curl"
 
 # fonts
 cask "font-comic-mono"
@@ -90,6 +83,3 @@ cask "font-fira-mono"
 cask "font-monaspace"
 cask "font-monofur-nerd-font"
 cask "font-mononoki-nerd-font"
-
-brew "postgresql@14", restart_service: :changed
-brew "redis", restart_service: :changed
