@@ -10,3 +10,8 @@ font-feature = -calt
 
 window-padding-x = 12
 window-padding-y = 8,12
+
+cursor-color = #555555
+cursor-style = block
+
+shell-integration-features = no-cursor
