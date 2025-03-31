@@ -36,6 +36,7 @@ Plug('nvim-tree/nvim-web-devicons')
 Plug("kylechui/nvim-surround")
 
 -- colors / syntax
+Plug 'vimpostor/vim-lumen' -- light/dark detection that works in tmux
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
@@ -265,7 +266,7 @@ vim.cmd([[
 -- Appearance
 --
 
-vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd('colorscheme catppuccin')
 
 -- So colors work in tmux
 vim.o.termguicolors = true
