@@ -15,3 +15,6 @@ cursor-color = #555555
 cursor-style = block
 
 shell-integration-features = no-cursor
+
+selection-background = #00ff00
+selection-foreground = #ff0000
