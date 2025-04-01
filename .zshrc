@@ -16,7 +16,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-
 # stop breaking stuff
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_BUNDLE_FILE_GLOBAL=~/.config/homebrew/Brewfile
@@ -91,11 +90,8 @@ EMOJIS=(
 🦄
 )
 
-# emoji-based terminal helps me remember where I am
+# emoji-based terminal is essential for productivity
 emoji="$EMOJIS[$RANDOM%$#EMOJIS+1]"
-
-# sets iTerm2 window title
-echo -ne "\e]1;${emoji}\a"
 
 # left prompt
 get_left_prompt() {
@@ -150,27 +146,16 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH:/bin
 
-# aptible cli
-export PATH="${PATH}:/opt/aptible-toolbelt/bin/"
 export PATH=$PATH:/Users/audy/.pixi/bin
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# nvm (slow, do it async)
-function nvm_init {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-}
-
-nvm_init
-
-# ruby
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # java
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # nextflow
 export JAVA_HOME="/opt/homebrew/opt/openjdk@11/"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# so that weasyprint can see glib, pango, etc...
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
