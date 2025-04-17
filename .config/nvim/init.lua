@@ -15,6 +15,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+Plug('tpope/vim-fugitive')
+
 -- linting + formatting
 Plug('mfussenegger/nvim-lint')
 Plug('stevearc/conform.nvim')
