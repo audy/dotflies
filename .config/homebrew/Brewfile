@@ -9,6 +9,7 @@ tap "porter-dev/porter"
 # casks
 cask "1password"
 cask "1password-cli"
+cask "claude"
 cask "espanso"
 cask "firefox"
 cask "ghostty"
@@ -26,8 +27,10 @@ cask "spotify"
 cask "steam"
 cask "vlc"
 cask "xbar"
+cask "zed"
 
 # dev
+brew "asciiquarium"
 brew "atuin"
 brew "awscli"
 brew "cffi"
@@ -70,7 +73,11 @@ brew "tree"
 brew "uv"
 brew "watch"
 brew "wget"
+brew "yarn"
 brew "zsh-syntax-highlighting"
+brew 'hugo'
+brew 'nmap'
+brew 'node'
 
 # bioinformatics
 brew "bcftools"
