@@ -17,21 +17,20 @@ vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
 
+
+Plug('folke/which-key.nvim')
+
 -- LSP
 Plug('neovim/nvim-lspconfig')
 
 -- linting + formatting
 Plug('stevearc/conform.nvim')
 
--- ctrl-P
-Plug('cloudhead/neovim-fuzzy')
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim')
 
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
-
--- autocomplete
-Plug('Shougo/deoplete.nvim', { ['do'] = ':UpdateRemotePlugins' })
-Plug('pechorin/any-jump.vim')
 
 -- the tree
 Plug('nvim-tree/nvim-tree.lua')
@@ -45,26 +44,25 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
 -- language-specific plugins
-
 Plug('LukeGoodsell/nextflow-vim')
-Plug('deoplete-plugins/deoplete-jedi')
-
--- zen mode
-Plug('folke/zen-mode.nvim')
 
 vim.call('plug#end')
+
+--
+-- Base Config
+-- (needs to run before plugins)
+
+-- Set leader keys
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
 
 --
 -- Plugin Configuration
 --
 
-vim.diagnostic.config({ virtual_text = true })
-
-
 -- LSP
 
-vim.lsp.enable('ruff')
-vim.lsp.enable('ty')
+require('lspconfig').pyright.setup({})
 
 --- [conform.nvim]
 
@@ -108,31 +106,43 @@ end, { nargs = 0 })
 
 require("nvim-surround").setup({})
 
--- [anyjump]
+-- [telescope]
+require('telescope').setup({
+  defaults = {
+    layout_strategy = 'vertical',  -- This gives you horizontal split
+    layout_config = {
+      height = 0.999,        -- Almost full height
+      width = 0.999,         -- Almost full width
+      vertical = {
+        height = 0.999,
+        preview_cutoff = 10,  -- When to hide preview
+      },
+    },
+  },
+  pickers = {
+    lsp_references = {
+      show_line = false,       -- No line content in results
+      fname_width = 80,        -- More space for filenames
+    },
+    lsp_definitions = {
+      show_line = false,
+      fname_width = 80,
+    },
+  }
+})
 
--- AnyJump settings
-vim.g.any_jump_references_only_for_current_filetype = 1
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
--- Any-jump window size & position options
-vim.g.any_jump_window_width_ratio  = 1
-vim.g.any_jump_window_height_ratio = 1
-vim.g.any_jump_window_top_offset   = 0
-
--- Keybindings for AnyJump
-vim.api.nvim_set_keymap('n', '<leader>j', ':AnyJump<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<leader>j', ':AnyJumpVisual<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ab', ':AnyJumpBack<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>al', ':AnyJumpLastResults<CR>', { noremap = true, silent = true })
-
--- [neovim-fuzzy]
-
--- Don't look for mercurial
-vim.g.fuzzy_rootcmds = {
-  { "git", "rev-parse", "--show-toplevel" }
-}
-
--- Map <C-p> to :FuzzyOpen
-vim.api.nvim_set_keymap('n', '<C-p>', ':FuzzyOpen<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
+vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
+vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
+vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
+-- Replace FuzzyOpen  
+vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
 
 -- [nvim-tree]
 require("nvim-tree").setup({
@@ -169,16 +179,6 @@ require'nvim-treesitter.configs'.setup {
   end,
 }
 
--- [deoplete]
-vim.g['deoplete#enable_at_startup'] = 1
-
-
--- Deoplete custom options
-vim.fn['deoplete#custom#option']({
-  auto_complete_delay = 200,
-  max_list = 12,
-})
-
 -- [snakemake] (default is to fold everything)
 vim.o.foldlevelstart = 99
 vim.o.foldlevel = 99
@@ -190,10 +190,6 @@ vim.g.loaded_netrwPlugin = 1
 --
 -- Interface
 --
-
--- Set leader keys
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
 
 vim.o.ignorecase = true  -- Case-insensitive search
 vim.o.smartcase = true  -- Don't be case insensitive if uppercase characters are included in search query
@@ -265,7 +261,7 @@ vim.cmd([[
 -- Appearance
 --
 
-vim.cmd('colorscheme catppuccin')
+vim.cmd('colorscheme catppuccin-mocha')
 
 -- So colors work in tmux
 vim.o.termguicolors = true
