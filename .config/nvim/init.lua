@@ -17,8 +17,10 @@ vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
 
+-- LSP
+Plug('neovim/nvim-lspconfig')
+
 -- linting + formatting
-Plug('mfussenegger/nvim-lint')
 Plug('stevearc/conform.nvim')
 
 -- ctrl-P
@@ -56,18 +58,13 @@ vim.call('plug#end')
 -- Plugin Configuration
 --
 
---- [nvim-lint]
-require("lint").linters_by_ft = {
-    python = { "ruff", "mypy" },
-}
+vim.diagnostic.config({ virtual_text = true })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    -- try_lint without arguments runs the linters defined in `linters_by_ft`
-    -- for the current filetype
-    require("lint").try_lint()
-  end,
-})
+
+-- LSP
+
+vim.lsp.enable('ruff')
+vim.lsp.enable('ty')
 
 --- [conform.nvim]
 
