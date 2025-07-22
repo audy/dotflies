@@ -1,5 +1,5 @@
 font-family = Mononoki Nerd Font Mono Regular
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:catppuccin-mocha.conf,light:catppuccin-latte.conf
 
 # fix old
 font-size = 16
