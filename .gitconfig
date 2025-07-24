@@ -29,5 +29,4 @@
 [gpg]
 	format = ssh
 [credential "https://github.com"]
-	helper = 
 	helper = !gh auth git-credential
