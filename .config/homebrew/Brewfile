@@ -4,6 +4,7 @@
 tap "audy/deskclean", "https://github.com/audy/deskclean"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "audy/gdl"
 tap "porter-dev/porter"
 
 # casks
@@ -90,6 +91,7 @@ brew "minimap2"
 brew "samtools"
 brew "seqkit"
 brew "seqtk"
+brew "audy/gdl/gdl"
 
 # fonts
 cask "font-comic-mono"
