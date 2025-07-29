@@ -278,7 +278,6 @@ function prox() {
 
 # hide desktop icons (mac os x)
 alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
-
 alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
 
 # find largest files in pwd
