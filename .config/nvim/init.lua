@@ -16,8 +16,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
-
-
 Plug('folke/which-key.nvim')
 
 -- LSP
@@ -42,9 +40,6 @@ Plug("kylechui/nvim-surround")
 Plug 'vimpostor/vim-lumen' -- light/dark detection that works in tmux
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
-
--- language-specific plugins
-Plug('LukeGoodsell/nextflow-vim')
 
 vim.call('plug#end')
 
@@ -178,10 +173,6 @@ require'nvim-treesitter.configs'.setup {
       end
   end,
 }
-
--- [snakemake] (default is to fold everything)
-vim.o.foldlevelstart = 99
-vim.o.foldlevel = 99
 
 -- disable built-in neovim file explorer
 vim.g.loaded_netrw = 1
