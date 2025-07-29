@@ -18,3 +18,4 @@ shell-integration-features = no-cursor
 
 selection-background = #92B3F4
 selection-foreground = #181824
+keybind = shift+enter=text:\n
