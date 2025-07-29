@@ -159,4 +159,5 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # so that weasyprint can see glib, pango, etc...
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 eval "$(starship init zsh)"
