@@ -217,8 +217,8 @@ function pushover () {
 
 
 # lazy ls
-alias ls='ls -G'
-alias l='ls -l'
+alias ls='lsd -G'
+alias l='lsd'
 
 # ring a bell -- cause iTerm2 to notify u of something
 # works over ssh, too! (the alert, not the alias)
