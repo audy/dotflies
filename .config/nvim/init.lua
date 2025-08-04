@@ -59,6 +59,18 @@ vim.g.maplocalleader = ','
 
 require('lspconfig').pyright.setup({})
 
+vim.diagnostic.config({
+ virtual_text = {
+   source = "always",  -- Show source of diagnostic
+   spacing = 4,        -- Space between text and virtual text
+   prefix = "●",       -- Prefix for virtual text
+ },
+ signs = true,
+ underline = true,
+ update_in_insert = false,
+ severity_sort = true,
+})
+
 --- [conform.nvim]
 
 -- TODO: check if project uses black / flake8? inspect pyproject.toml?
