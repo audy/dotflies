@@ -18,6 +18,8 @@ vim.call('plug#begin')
 Plug('tpope/vim-fugitive')
 Plug('folke/which-key.nvim')
 
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/nvim-cmp')
 -- LSP
 Plug('neovim/nvim-lspconfig')
 
@@ -33,6 +35,7 @@ Plug('vim-airline/vim-airline-themes')
 -- the tree
 Plug('nvim-tree/nvim-tree.lua')
 Plug('nvim-tree/nvim-web-devicons')
+
 
 Plug("kylechui/nvim-surround")
 
@@ -50,6 +53,28 @@ vim.call('plug#end')
 -- Set leader keys
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
+
+---
+-- LSP
+--
+
+-- more configs here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+vim.lsp.enable('pyright') -- npm i -g pyright
+vim.lsp.enable('rust_analyzer') -- cargo install
+vim.lsp.enable('bashls') -- brew install bash-language-server
+vim.lsp.enable('yamlls') -- brew install yaml-language-server
+
+vim.diagnostic.config({
+  virtual_lines = {
+    current_line = true,
+  },
+})
+
+--
+-- Completion
+--
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 --
 -- Plugin Configuration
@@ -71,8 +96,25 @@ vim.diagnostic.config({
  severity_sort = true,
 })
 
---- [conform.nvim]
+local cmp = require('cmp')
+require('cmp').setup {
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<Up>'] = cmp.mapping.select_prev_item(),
+    ['<Down>'] = cmp.mapping.select_next_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+  }
+}
 
+--- [conform.nvim]
 -- TODO: check if project uses black / flake8? inspect pyproject.toml?
 require("conform").setup({
   formatters_by_ft = {
@@ -90,6 +132,8 @@ require("conform").setup({
   },
 })
 
+
+-- TODO: use pyproject.toml as default?
 require("conform").formatters.ruff_format = {
   append_args = { "--line-length", "100" },
 }
@@ -139,6 +183,7 @@ require('telescope').setup({
 })
 
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
@@ -148,8 +193,8 @@ vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
 vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
 vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
 vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
--- Replace FuzzyOpen  
-vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
+
+vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')
 
 -- [nvim-tree]
 require("nvim-tree").setup({
@@ -264,7 +309,8 @@ vim.cmd([[
 -- Appearance
 --
 
-vim.cmd('colorscheme catppuccin-mocha')
+vim.g.lumen_light_colorscheme = 'catppuccin-latte'
+vim.g.lumen_dark_colorscheme = 'catppuccin'
 
 -- So colors work in tmux
 vim.o.termguicolors = true
