@@ -50,6 +50,28 @@ vim.o.directory = vim.fn.expand('~/.vim/tmp/swap//')
 -- UI improvements
 vim.o.shortmess = vim.o.shortmess .. 'F'
 
+-- Appearance & Syntax
+
+vim.cmd('syntax enable')
+
+-- Highlight non-ASCII characters
+vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
+vim.cmd('highlight nonascii guibg=Red ctermbg=2')
+
+-- Status line styling
+vim.cmd(":hi statusline guibg=NONE")
+
+-- Is this needed?
+vim.cmd('filetype plugin indent on')
+
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    border = "rounded",
+    source = "always"
+  }
+})
+
 -- ================================
 -- PLUGINS
 -- ================================
@@ -62,66 +84,17 @@ vim.pack.add({
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
   { src = "https://tpope/vim-fugitive" },
   { src = "https://github.com/folke/which-key.nvim" },
-  { src = "https://kylechui/nvim-surround" }
+  { src = "https://kylechui/nvim-surround" },
+  { src = "https://github.com/stevearc/oil.nvim" },
 })
 
--- ================================
--- APPEARANCE & SYNTAX
--- ================================
-
-vim.cmd('syntax enable')
-vim.cmd("colorscheme catppuccin")
-
--- Highlight non-ASCII characters
-vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
-vim.cmd('highlight nonascii guibg=Red ctermbg=2')
-
--- Status line styling
-vim.cmd(":hi statusline guibg=NONE")
 
 -- ================================
--- FILETYPE & PLUGINS INITIALIZATION
+-- PLUGIN CONFIGURATION
 -- ================================
 
-vim.cmd('filetype plugin indent on')
 
--- ================================
--- CUSTOM COMMANDS
--- ================================
-
-vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
-
--- Ruff import sorting
-vim.api.nvim_create_user_command("Imports", function()
-  local file = vim.api.nvim_buf_get_name(0)
-  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
-    stdout = function(_, data) print(data) end,
-    stderr = function(_, data) print("Error: " .. data) end,
-    on_exit = function()
-      vim.cmd("edit")
-    end,
-  })
-end, { nargs = 0 })
-
-
--- ================================
--- KEYMAPS
--- ================================
-
--- Window management
-vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
-
--- Whitespace cleanup
-vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true, desc = "Strip whitespace" })
-
--- LSP keymaps
-vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = "Format buffer" })
-vim.keymap.set('n', '<leader>li', ':Imports<CR>', { desc = "Sort imports" })
-vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, { desc = "Show hover" })
-
--- ================================
--- TELESCOPE CONFIGURATION
--- ================================
+-- TELESCOPE
 
 require('telescope').setup({
   defaults = {
@@ -147,31 +120,24 @@ require('telescope').setup({
   }
 })
 
--- Telescope keymaps
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
-vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
-vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
-vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
-vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')
-
--- ================================
--- TREESITTER CONFIGURATION
--- ================================
+-- TREESITTER
 
 require "nvim-treesitter.configs".setup({
   highlight = { enable = true }
 })
 
+
+-- OIL
+require("oil").setup()
+
+-- CATPPUCCIN
+vim.cmd("colorscheme catppuccin")
+
 -- ================================
 -- LSP CONFIGURATION
 -- ================================
 
-vim.lsp.enable({'ruff'})
+vim.lsp.enable({'pyright', 'ruff', 'rust_analyzer', 'bashls', 'neocmake'})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
@@ -183,18 +149,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.cmd("set completeopt+=noselect")
-
--- ================================
--- DIAGNOSTICS CONFIGURATION
--- ================================
-
-vim.diagnostic.config({
-  virtual_text = true,
-  float = {
-    border = "rounded",
-    source = "always"
-  }
-})
 
 -- ================================
 -- AUTOCOMMANDS
@@ -210,3 +164,49 @@ vim.cmd([[
       \ endif
   augroup END
 ]])
+
+-- ================================
+-- COMMANDS
+-- ================================
+
+-- `Conf`: Open Neovim config
+vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
+
+-- `Imports`: (Python) Sort imports
+vim.api.nvim_create_user_command("Imports", function()
+  local file = vim.api.nvim_buf_get_name(0)
+  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
+    stdout = function(_, data) print(data) end,
+    stderr = function(_, data) print("Error: " .. data) end,
+    on_exit = function()
+      vim.cmd("edit")
+    end,
+  })
+end, { nargs = 0 })
+
+-- ================================
+-- KEYMAPS
+-- ================================
+
+-- Window management
+vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
+
+-- Whitespace cleanup
+vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true, desc = "Strip whitespace" })
+
+-- LSP keymaps
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = "Format buffer" })
+vim.keymap.set('n', '<leader>li', ':Imports<CR>', { desc = "Sort imports" })
+vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, { desc = "Show hover" })
+
+-- Telescope keymaps
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
+vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
+vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
+vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
+vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')
