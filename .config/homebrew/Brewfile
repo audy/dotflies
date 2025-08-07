@@ -1,10 +1,10 @@
 # vim: set ft=ruby
+# usage: brew bundle --cleanup
 
 # taps
-tap "audy/deskclean", "https://github.com/audy/deskclean"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "audy/gdl"
+tap "audy/tap"
 tap "porter-dev/porter"
 
 # casks
@@ -58,7 +58,6 @@ brew "jq"
 brew "k9s"
 brew "kubectx"
 brew "kubernetes-cli"
-brew "neovim"
 brew "openjdk", link: true
 brew "parallel"
 brew "pigz"
@@ -79,8 +78,19 @@ brew "wget"
 brew "yarn"
 brew "zsh-syntax-highlighting"
 brew 'hugo'
+brew 'lsd'
 brew 'nmap'
 brew 'node'
+brew 's5cmd'
+brew 'starship'
+
+# neovim + lsps
+brew 'pyright'
+brew 'tree-sitter'
+brew 'bash-language-server'
+brew 'lua-language-server'
+brew 'typescript-language-server'
+brew 'bob', postinstall: 'bob use latest'
 
 # bioinformatics
 brew "bcftools"
@@ -91,7 +101,8 @@ brew "minimap2"
 brew "samtools"
 brew "seqkit"
 brew "seqtk"
-brew "audy/gdl/gdl"
+brew "audy/tap/gdl"
+brew "audy/tap/deskclean"
 
 # fonts
 cask "font-comic-mono"
