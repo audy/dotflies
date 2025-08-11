@@ -140,7 +140,7 @@ vim.cmd("colorscheme nord")
 -- LSP CONFIGURATION
 -- ================================
 
-vim.lsp.enable({'pyright', 'ruff', 'rust_analyzer', 'bashls', 'neocmake'})
+vim.lsp.enable({ 'pyright', 'ruff', 'rust_analyzer', 'bashls', 'ts_ls', 'lua_ls' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
