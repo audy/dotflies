@@ -17,7 +17,7 @@ function nf-test() {
 alias nf=nextflow
 alias vim=nvim
 
-alias otop='watch -n 15 orbiter list runs --all --incomplete'
+alias otop='watch -n 5 orbiter list runs --all --incomplete'
 alias ol='orbiter logs -f'
 alias oa='orbiter attach'
 alias oc='orbiter cancel'
