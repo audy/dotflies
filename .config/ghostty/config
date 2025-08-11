@@ -1,9 +1,7 @@
-font-family = Mononoki Nerd Font Mono Regular
-theme = dark:catppuccin-mocha.conf,light:catppuccin-latte.conf
+theme = nord
 
-# fix old
+font-family = Mononoki Nerd Font Mono Regular
 font-size = 16
-font-thicken = true
 
 # disable ligatures
 font-feature = -calt

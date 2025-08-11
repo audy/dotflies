@@ -2,6 +2,8 @@
 -- LEADER KEYS
 -- ================================
 
+local vim = vim
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
@@ -81,11 +83,12 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
-  { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+  { src = "https://github.com/catppuccin/nvim",                name = "catppuccin" },
   { src = "https://tpope/vim-fugitive" },
   { src = "https://github.com/folke/which-key.nvim" },
   { src = "https://kylechui/nvim-surround" },
   { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/gbprod/nord.nvim" },
 })
 
 
@@ -131,7 +134,7 @@ require "nvim-treesitter.configs".setup({
 require("oil").setup()
 
 -- CATPPUCCIN
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme nord")
 
 -- ================================
 -- LSP CONFIGURATION
