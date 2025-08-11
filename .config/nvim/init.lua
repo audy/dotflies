@@ -195,7 +195,8 @@ end, { nargs = 0 })
 vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
 
 -- Whitespace cleanup
-vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true, desc = "Strip whitespace" })
+vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z',
+  { noremap = true, silent = true, desc = "Strip whitespace" })
 
 -- LSP keymaps
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = "Format buffer" })
