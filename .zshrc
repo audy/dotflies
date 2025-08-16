@@ -155,7 +155,9 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # nextflow
 export JAVA_HOME="/opt/homebrew/opt/openjdk@11/"
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -e /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # so that weasyprint can see glib, pango, etc...
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
