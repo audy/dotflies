@@ -17,12 +17,26 @@ function nf-test() {
 alias nf=nextflow
 alias vim=nvim
 
+alias otop='watch -n 15 orbiter list runs --all --incomplete'
+alias ol='orbiter logs -f'
+alias oa='orbiter attach'
+alias oc='orbiter cancel'
+
 
 function ocxdl() {
     python -c "
 import onecodex
 ocx = onecodex.Api()
 sample = ocx.Samples.get(\"$@\")
+
+if sample is None:
+    analysis = ocx.Classifications.get(\"$@\")
+    sample = analysis.sample
+
+if sample is None:
+    print(\"Could not find a sample/classification with that ID\")
+    quit(1)
+
 print(f\"downloading sample {sample.id} {sample.filename}\")
 sample.download(progressbar=True)
     "
@@ -203,8 +217,8 @@ function pushover () {
 
 
 # lazy ls
-alias ls='ls -G'
-alias l='ls -l'
+alias ls='lsd -G'
+alias l='lsd'
 
 # ring a bell -- cause iTerm2 to notify u of something
 # works over ssh, too! (the alert, not the alias)
@@ -264,7 +278,6 @@ function prox() {
 
 # hide desktop icons (mac os x)
 alias deskhide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
-
 alias deskshow='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
 
 # find largest files in pwd

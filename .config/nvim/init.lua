@@ -1,128 +1,117 @@
---
--- Plugins
---
+-- ================================
+-- LEADER KEYS
+-- ================================
 
--- use system python
--- TODO: ubuntu, windows
-vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
-
---
--- Plugin Manager (https://github.com/junegunn/vim-plug)
---
-
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
-Plug('tpope/vim-fugitive')
-
-
-Plug('folke/which-key.nvim')
-
--- LSP
-Plug('neovim/nvim-lspconfig')
-
--- linting + formatting
-Plug('stevearc/conform.nvim')
-
-Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim')
-
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
-
--- the tree
-Plug('nvim-tree/nvim-tree.lua')
-Plug('nvim-tree/nvim-web-devicons')
-
-Plug("kylechui/nvim-surround")
-
--- colors / syntax
-Plug 'vimpostor/vim-lumen' -- light/dark detection that works in tmux
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
-
--- language-specific plugins
-Plug('LukeGoodsell/nextflow-vim')
-
-vim.call('plug#end')
-
---
--- Base Config
--- (needs to run before plugins)
-
--- Set leader keys
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
---
--- Plugin Configuration
---
+-- ================================
+-- CORE SETTINGS
+-- ================================
 
--- LSP
+-- Search
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-require('lspconfig').pyright.setup({})
+-- System integration
+vim.o.mouse = 'vin'
+vim.o.clipboard = 'unnamedplus'
 
---- [conform.nvim]
+-- Editor appearance
+vim.o.colorcolumn = "100"
+vim.o.number = true
+vim.o.relativenumber = false
+vim.o.termguicolors = true
+vim.opt.termguicolors = true
+vim.o.winborder = "rounded"
 
--- TODO: check if project uses black / flake8? inspect pyproject.toml?
-require("conform").setup({
-  formatters_by_ft = {
-    -- Conform will run multiple formatters sequentially
-    python = { "ruff_format" },
-    rust = { "rustfmt" },
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    typescriptvue = { "prettier" },
-    typescriptreact = { "prettier" },
-  },
-  -- format async
-  format_after_save = {
-    lsp_format = "fallback",
-  },
+-- Indentation
+vim.o.autoindent = true
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.tabstop = 2
+vim.o.expandtab = true
+vim.o.smarttab = false
+vim.o.wrap = false
+
+-- File handling
+vim.o.autowrite = true
+vim.o.autoread = true
+vim.o.backup = true
+vim.o.swapfile = false
+vim.o.undofile = true
+vim.o.undoreload = 10000
+
+-- File directories
+vim.o.undodir = vim.fn.expand('~/.vim/tmp/undo//')
+vim.o.backupdir = vim.fn.expand('~/.vim/tmp/backup//')
+vim.o.directory = vim.fn.expand('~/.vim/tmp/swap//')
+
+-- UI improvements
+vim.o.shortmess = vim.o.shortmess .. 'F'
+
+-- Appearance & Syntax
+
+vim.cmd('syntax enable')
+
+-- Highlight non-ASCII characters
+vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
+vim.cmd('highlight nonascii guibg=Red ctermbg=2')
+
+-- Status line styling
+vim.cmd(":hi statusline guibg=NONE")
+
+-- Is this needed?
+vim.cmd('filetype plugin indent on')
+
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    border = "rounded",
+    source = "always"
+  }
 })
 
-require("conform").formatters.ruff_format = {
-  append_args = { "--line-length", "100" },
-}
+-- ================================
+-- PLUGINS
+-- ================================
+
+vim.pack.add({
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+  { src = "https://tpope/vim-fugitive" },
+  { src = "https://github.com/folke/which-key.nvim" },
+  { src = "https://kylechui/nvim-surround" },
+  { src = "https://github.com/stevearc/oil.nvim" },
+})
 
 
--- ruff format doesn't sort imports
--- but ruff check complains when the imports aren't sorted
--- type :Imports to sort them...
-vim.api.nvim_create_user_command("Imports", function()
-  local file = vim.api.nvim_buf_get_name(0) -- Get the current file name
-  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
-    stdout = function(_, data) print(data) end,
-    stderr = function(_, data) print("Error: " .. data) end,
-    on_exit = function()
-      vim.cmd("edit") -- Reload the buffer to reflect the changes
-    end,
-  })
-end, { nargs = 0 })
+-- ================================
+-- PLUGIN CONFIGURATION
+-- ================================
 
---- [nvim-surround]
 
-require("nvim-surround").setup({})
+-- TELESCOPE
 
--- [telescope]
 require('telescope').setup({
   defaults = {
-    layout_strategy = 'vertical',  -- This gives you horizontal split
+    layout_strategy = 'vertical',
     layout_config = {
-      height = 0.999,        -- Almost full height
-      width = 0.999,         -- Almost full width
+      height = 0.999,
+      width = 0.999,
       vertical = {
         height = 0.999,
-        preview_cutoff = 10,  -- When to hide preview
+        preview_cutoff = 10,
       },
     },
   },
   pickers = {
     lsp_references = {
-      show_line = false,       -- No line content in results
-      fname_width = 80,        -- More space for filenames
+      show_line = false,
+      fname_width = 80,
     },
     lsp_definitions = {
       show_line = false,
@@ -131,122 +120,41 @@ require('telescope').setup({
   }
 })
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+-- TREESITTER
 
-vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
-vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
-vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
-vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
--- Replace FuzzyOpen  
-vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
-
--- [nvim-tree]
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
+require "nvim-treesitter.configs".setup({
+  highlight = { enable = true }
 })
 
--- [nvim-treesitter]
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "vim", "python", "bash", "ruby", "lua", "markdown" },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    -- disable = { 'markdown' },
-  },
 
-  -- disable treesitter on large files
-  disable = function(lang, buf)
-      local max_filesize = 100 * 1024 -- 100 KB
-      local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-      if ok and stats and stats.size > max_filesize then
-          return true
-      end
+-- OIL
+require("oil").setup()
+
+-- CATPPUCCIN
+vim.cmd("colorscheme catppuccin")
+
+-- ================================
+-- LSP CONFIGURATION
+-- ================================
+
+vim.lsp.enable({'pyright', 'ruff', 'rust_analyzer', 'bashls', 'neocmake'})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
   end,
-}
+})
 
--- [snakemake] (default is to fold everything)
-vim.o.foldlevelstart = 99
-vim.o.foldlevel = 99
+vim.cmd("set completeopt+=noselect")
 
--- disable built-in neovim file explorer
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- ================================
+-- AUTOCOMMANDS
+-- ================================
 
---
--- Interface
---
-
-vim.o.ignorecase = true  -- Case-insensitive search
-vim.o.smartcase = true  -- Don't be case insensitive if uppercase characters are included in search query
-
-vim.o.mouse = 'vin'
-vim.o.clipboard = 'unnamedplus'
-
-vim.o.colorcolumn = "100"
-
--- Kill window with q
-vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
-
---
--- Custom Commands
---
-
-vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
-
--- Space+ww to trim trailing whitespace
-vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
---
--- Behavior
---
-
--- Use version control for version control
-vim.o.autowrite = true
-vim.o.autoread = true
-
--- indenting (when not defined by ft)
-vim.o.autoindent = true
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.tabstop = 4
-
--- Respect plugin's preferences
-vim.cmd('filetype plugin indent on')
-
-vim.o.wrap = false
-vim.o.expandtab = true  -- Expand tabs to spaces
-vim.o.smarttab = false  -- No tabs to begin with
-
-vim.o.backup = true
-vim.o.swapfile = false
-
-vim.o.undodir = vim.fn.expand('~/.vim/tmp/undo//')     -- Undo files
-vim.o.backupdir = vim.fn.expand('~/.vim/tmp/backup//') -- Backups
-vim.o.directory = vim.fn.expand('~/.vim/tmp/swap//')   -- Swap files
-vim.o.undofile = true
-vim.o.undoreload = 10000
-
-vim.o.number = true
-vim.o.relativenumber = false
-
--- Return to same line when you reopen vim
+-- Return to same line when reopening files
 vim.cmd([[
   augroup line_return
     au!
@@ -257,24 +165,48 @@ vim.cmd([[
   augroup END
 ]])
 
---
--- Appearance
---
+-- ================================
+-- COMMANDS
+-- ================================
 
-vim.cmd('colorscheme catppuccin-mocha')
+-- `Conf`: Open Neovim config
+vim.api.nvim_command('command! Conf execute "tabe ~/.config/nvim/init.lua"')
 
--- So colors work in tmux
-vim.o.termguicolors = true
-vim.opt.termguicolors = true
+-- `Imports`: (Python) Sort imports
+vim.api.nvim_create_user_command("Imports", function()
+  local file = vim.api.nvim_buf_get_name(0)
+  vim.fn.jobstart({ "ruff", "check", "--select", "I", "--fix", file }, {
+    stdout = function(_, data) print(data) end,
+    stderr = function(_, data) print("Error: " .. data) end,
+    on_exit = function()
+      vim.cmd("edit")
+    end,
+  })
+end, { nargs = 0 })
 
-vim.cmd('syntax enable')
+-- ================================
+-- KEYMAPS
+-- ================================
 
--- Reduce "press Enter ..." messages
-vim.o.shortmess = vim.o.shortmess .. 'F'
+-- Window management
+vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true })
 
--- Airline theme
-vim.g.airline_theme = 'catppuccin'
+-- Whitespace cleanup
+vim.api.nvim_set_keymap('n', '<leader>ww', 'mz:%s/\\s\\+$//<CR>:let @/=\'\'<CR>`z', { noremap = true, silent = true, desc = "Strip whitespace" })
 
--- Highlight pesky invisible chars
-vim.cmd('syntax match nonascii "[^\\x00-\\x7F]"')
-vim.cmd('highlight nonascii guibg=Red ctermbg=2')
+-- LSP keymaps
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = "Format buffer" })
+vim.keymap.set('n', '<leader>li', ':Imports<CR>', { desc = "Sort imports" })
+vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, { desc = "Show hover" })
+
+-- Telescope keymaps
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', '<leader>jd', '<cmd>Telescope lsp_definitions<cr>')
+vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
+vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
+vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
+vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')

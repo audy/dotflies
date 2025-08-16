@@ -1,6 +1,15 @@
 # be colorful
 export TERM='xterm-256color'
 
+# skip using completions in /opt/homebrew/share/zsh/site-functions which are
+# annoying because
+# they're often borken and I mostly just want to tab-complete filenames anyway
+fpath=(
+/usr/local/share/zsh/site-functions
+/usr/share/zsh/site-functions
+/usr/share/zsh/5.9/functions
+)
+
 # I always need this ?
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export PATH="${PATH}:/Users/audy/.local/bin"
@@ -161,4 +170,5 @@ fi
 
 # so that weasyprint can see glib, pango, etc...
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 eval "$(starship init zsh)"
