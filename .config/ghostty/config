@@ -6,8 +6,8 @@ font-size = 16
 # disable ligatures
 font-feature = -calt
 
-window-padding-x = 12
-window-padding-y = 8,12
+window-padding-x = 8
+window-padding-y = 8,8
 
 cursor-color = #C5A7F2
 cursor-style = block
