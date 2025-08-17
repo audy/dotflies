@@ -8,6 +8,7 @@ tap "audy/tap"
 tap "porter-dev/porter"
 
 # casks
+cask "calibre"
 cask "1password"
 cask "1password-cli"
 cask "claude"
@@ -31,6 +32,7 @@ cask "tailscale-app"
 cask "vlc"
 cask "xbar"
 cask "zed"
+cask "orion"
 
 # dev
 brew "asciiquarium"
