@@ -131,7 +131,26 @@ require "nvim-treesitter.configs".setup({
 
 
 -- OIL
-require("oil").setup()
+require("oil").setup({
+  columns = {
+    "icon"
+  },
+  delete_to_trash = true,
+  view_options = {
+    show_hidden = false,
+    is_hidden_file = function(name, bufnr)
+      if name == ".github" then
+        return false
+      elseif name:match("^%.") then
+        return true
+      elseif name == "__pycache__" then
+        return true
+      else
+        return false
+      end
+    end,
+  }
+})
 
 -- CATPPUCCIN
 vim.cmd("colorscheme nord")
