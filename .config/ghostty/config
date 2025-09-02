@@ -5,6 +5,7 @@ font-size = 16
 
 # disable ligatures
 font-feature = -calt
+font-thicken = true
 
 window-padding-x = 8
 window-padding-y = 8,8
