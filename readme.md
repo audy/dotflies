@@ -48,15 +48,3 @@ git checkout main
 
 # all of the dotfiles should now be in ~
 ```
-
-### Neovim
-
-- [Install vim-plug](https://github.com/junegunn/vim-plug) + open nvim, run `:PlugInstall` and `:UpdateRemotePlugins`
-- Neovim requires Python + some Python packages (for things like deoplete,
-  black). On macOS, I use the homebrew-provided Python to install these
-  dependencies:
-
-    ```sh
-    brew install python3
-    pip3 install --break-system-packages ruff mypy black pynvim jedi
-    ```
