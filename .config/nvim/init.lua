@@ -167,25 +167,23 @@ require("oil").setup({
   }
 })
 
--- CATPPUCCIN
 vim.cmd("colorscheme nord")
 
 -- ================================
 -- LSP CONFIGURATION
 -- ================================
 
-vim.lsp.enable({ 'pyright', 'ruff', 'rust_analyzer', 'bashls', 'ts_ls', 'lua_ls' })
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
+vim.lsp.enable({
+  'bashls',
+  'cssls',
+  'gopls',
+  'html',
+  'lua_ls',
+  'pyright',
+  'ruff',
+  'rust_analyzer',
+  'ts_ls',
 })
-
-vim.cmd("set completeopt+=noselect")
 
 -- ================================
 -- AUTOCOMMANDS
