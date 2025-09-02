@@ -44,7 +44,7 @@ sample.download(progressbar=True)
 
 # pretty json pager
 function json() {
-  cat $1 | jq -C | less -Sr  
+  cat $1 | jq -C | less -Sr
 }
 
 function fq-dump() {
@@ -495,9 +495,9 @@ function pretty-blastn() {
     evalue
     bitscore
   )
-  
+
   column_names_string=$(IFS=' ' ; echo "${column_names[*]}")
-  
+
   header=$(IFS=',' ; echo "${column_names[*]}")
 
   echo "${header}"
