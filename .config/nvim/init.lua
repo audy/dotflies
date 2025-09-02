@@ -123,14 +123,29 @@ require('telescope').setup({
   }
 })
 
--- TREESITTER
-
-require "nvim-treesitter.configs".setup({
-  highlight = { enable = true }
+require("nvim-treesitter.configs").setup({
+  highlight = { enable = true },
+  auto_install = true,
+  disable = function(lang, buf)
+    local max_filesize = 1024 * 1024   -- 1MiB
+    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+    if ok and stats and stats.size > max_filesize then
+      return true
+    end
+  end,
+  refactor = {
+    highlight_definitions = { enable = true },
+    highlight_current_scope = { enable = false },
+    smart_rename = {
+      enable = true,
+      -- Assign keymaps to false to disable them, e.g. `smart_rename = false`.
+      keymaps = {
+        smart_rename = "grr",
+      },
+    },
+  },
 })
 
-
--- OIL
 require("oil").setup({
   columns = {
     "icon"
