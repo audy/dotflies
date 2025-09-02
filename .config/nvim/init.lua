@@ -89,6 +89,7 @@ vim.pack.add({
   { src = "https://kylechui/nvim-surround" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/gbprod/nord.nvim" },
+  { src = "https://github.com/petertriho/nvim-scrollbar" },
 })
 
 
@@ -96,8 +97,7 @@ vim.pack.add({
 -- PLUGIN CONFIGURATION
 -- ================================
 
-
--- TELESCOPE
+require("scrollbar").setup()
 
 require('telescope').setup({
   defaults = {
