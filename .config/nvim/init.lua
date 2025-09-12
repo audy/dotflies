@@ -250,12 +250,14 @@ vim.lsp.enable({
   'cssls',
   'gopls',
   'html',
+  'jsonls',
   'lua_ls',
+  'nextflow_ls',
   'pyright',
   'ruff',
   'rust_analyzer',
   'ts_ls',
-  'nextflow_ls',
+  'ruby-lsp'
 })
 
 vim.lsp.config('nextflow_ls', {
