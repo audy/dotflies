@@ -85,6 +85,7 @@ brew 'nmap'
 brew 'node'
 brew 's5cmd'
 brew 'starship'
+brew 'pre-commit'
 
 # neovim + lsps
 brew 'pyright'
