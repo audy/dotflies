@@ -333,3 +333,10 @@ vim.keymap.set('n', '<leader>jr', '<cmd>Telescope lsp_references<cr>')
 vim.keymap.set('n', '<leader>ji', '<cmd>Telescope lsp_implementations<cr>')
 vim.keymap.set('n', '<leader>jt', '<cmd>Telescope lsp_type_definitions<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')
+
+
+-- Folding
+vim.keymap.set('n', '<leader>zf', 'zfa{', { desc = 'Fold current block' })
+vim.keymap.set('n', '<leader>zl', 'zM', { desc = '[F]old everything at current [l]evel' })
+vim.keymap.set('n', '<leader>zu', 'zR', { desc = '[U]nfold eve[r]ything' })
+vim.keymap.set('n', '<leader>za', 'zM', { desc = '[F]old everything[M]' })
