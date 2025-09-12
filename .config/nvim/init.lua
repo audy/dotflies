@@ -156,6 +156,7 @@ require("nvim-treesitter.configs").setup({
       },
     },
   },
+  fold = { enabled = true },
 })
 
 -- Use groovy treesitter as stand-in for nextflow
