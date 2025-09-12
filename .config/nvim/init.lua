@@ -12,45 +12,51 @@ vim.g.maplocalleader = ','
 -- ================================
 
 -- Search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- System integration
-vim.o.mouse = 'vin'
-vim.o.clipboard = 'unnamedplus'
+vim.opt.mouse = 'vin'
+vim.opt.clipboard = 'unnamedplus'
 
 -- Editor appearance
-vim.o.colorcolumn = "100"
-vim.o.number = true
-vim.o.relativenumber = false
-vim.o.termguicolors = true
+vim.opt.colorcolumn = "100"
+vim.opt.cursorline = true          -- highlight current line
+vim.opt.cursorlineopt = "number"   -- only highlight the line number
+vim.opt.number = true
+vim.opt.relativenumber = false
 vim.opt.termguicolors = true
-vim.o.winborder = "rounded"
+
+vim.opt.winborder = "rounded"
 
 -- Indentation
-vim.o.autoindent = true
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.tabstop = 2
-vim.o.expandtab = true
-vim.o.smarttab = false
-vim.o.wrap = false
+vim.opt.autoindent = true
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.smarttab = false
+vim.opt.wrap = false
 
 -- File handling
-vim.o.autowrite = true
-vim.o.autoread = true
-vim.o.backup = true
-vim.o.swapfile = false
-vim.o.undofile = true
-vim.o.undoreload = 10000
+vim.opt.autowrite = true
+vim.opt.autoread = true
+vim.opt.backup = true
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undoreload = 10000
 
 -- File directories
-vim.o.undodir = vim.fn.expand('~/.vim/tmp/undo//')
-vim.o.backupdir = vim.fn.expand('~/.vim/tmp/backup//')
-vim.o.directory = vim.fn.expand('~/.vim/tmp/swap//')
+vim.opt.undodir = vim.fn.expand('~/.vim/tmp/undo//')
+vim.opt.backupdir = vim.fn.expand('~/.vim/tmp/backup//')
+vim.opt.directory = vim.fn.expand('~/.vim/tmp/swap//')
 
 -- UI improvements
-vim.o.shortmess = vim.o.shortmess .. 'F'
+vim.opt.shortmess = vim.o.shortmess .. 'F'
+
+-- Don't fold anything by default
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 
 -- Appearance & Syntax
 
