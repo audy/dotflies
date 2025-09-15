@@ -20,7 +20,7 @@ after cloning:
 
 ```sh
 # uses ~/.config/homebrew/Brewfile
-brew bundle --global
+brew bundle cleanup --global
 ```
 
 ### Clone this repo into ~

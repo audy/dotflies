@@ -82,6 +82,7 @@ brew "zsh-syntax-highlighting"
 brew 'hugo'
 brew 'lsd'
 brew 'nmap'
+brew 'neovim'
 brew 'node'
 brew 's5cmd'
 brew 'starship'
@@ -93,7 +94,6 @@ brew 'tree-sitter'
 brew 'bash-language-server'
 brew 'lua-language-server'
 brew 'typescript-language-server'
-brew 'bob', postinstall: 'bob use latest'
 
 # bioinformatics
 brew "bcftools"
