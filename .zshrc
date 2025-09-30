@@ -13,6 +13,7 @@ fpath=(
 # I always need this ?
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export PATH="${PATH}:/Users/audy/.local/bin"
+export CLICOLOR=1
 
 # emacs keybindings
 bindkey -e
