@@ -103,6 +103,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/tpope/vim-dispatch" },
   { src = "https://github.com/tpope/vim-fugitive" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
 
 -- ================================
