@@ -217,12 +217,15 @@ function pushover () {
 
 
 # lazy ls
-alias ls='lsd -G'
-alias l='lsd'
 
 # ring a bell -- cause iTerm2 to notify u of something
 # works over ssh, too! (the alert, not the alias)
 alias doot="echo -e '\a'"
+
+alias l='lsd'
+
+# colors + / at the end of dir names
+alias ls='ls -Gp'
 
 #
 # GIT
