@@ -381,7 +381,13 @@ vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files no_ignore=false<cr>')
 
 
 -- Folding
-vim.keymap.set('n', '<leader>zf', 'zfa{', { desc = 'Fold current block' })
-vim.keymap.set('n', '<leader>zl', 'zM', { desc = '[F]old everything at current [l]evel' })
-vim.keymap.set('n', '<leader>zu', 'zR', { desc = '[U]nfold eve[r]ything' })
-vim.keymap.set('n', '<leader>za', 'zM', { desc = '[F]old everything[M]' })
+-- vim.keymap.set('n', '<leader>zf', 'zfa{', { desc = 'Fold current block' })
+-- vim.keymap.set('n', '<leader>zl', 'zM', { desc = '[F]old everything at current [l]evel' })
+-- vim.keymap.set('n', '<leader>zu', 'zR', { desc = '[U]nfold eve[r]ything' })
+-- vim.keymap.set('n', '<leader>za', 'zM', { desc = '[F]old everything[M]' })
+
+-- Oil
+vim.keymap.set('n', '<C-L>', ':Oil<CR>')
+
+-- Neotree
+vim.keymap.set('n', '<C-T>', ':Neotree toggle show<CR>')
