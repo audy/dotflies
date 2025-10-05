@@ -101,10 +101,21 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/petertriho/nvim-scrollbar" },
   { src = "https://github.com/stevearc/oil.nvim" },
-  { src = "https://github.com/tpope/vim-dispatch" },
   { src = "https://github.com/tpope/vim-fugitive" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
+
+-- neotree
+vim.pack.add({
+  {
+    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    version = vim.version.range('3')
+  },
+  -- dependencies
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/MunifTanjim/nui.nvim",
+})
+
 
 -- ================================
 -- PLUGIN CONFIGURATION
