@@ -19,7 +19,6 @@ cask "google-chrome"
 cask "linear-linear"
 cask "minecraft"
 cask "monitorcontrol"
-cask "netnewswire"
 cask "notion"
 cask "obsidian"
 cask "orbstack"
@@ -31,8 +30,8 @@ cask "steam"
 cask "tailscale-app"
 cask "vlc"
 cask "xbar"
-cask "zed"
 cask "orion"
+cask "gcloud-cli"
 
 # dev
 brew "asciiquarium"
@@ -55,21 +54,30 @@ brew "gnupg"
 brew "grep"
 brew "gron"
 brew "htop"
+brew "hugo"
 brew "imagemagick"
 brew "jq"
 brew "k9s"
 brew "kubectx"
 brew "kubernetes-cli"
+brew "lsd"
+brew "mergiraf"
+brew "neovim"
+brew "nmap"
+brew "node"
 brew "openjdk", link: true
 brew "parallel"
 brew "pigz"
 brew "porter-dev/porter/porter"
 brew "postgresql@14", restart_service: :changed
+brew "pre-commit"
 brew "pwgen"
 brew "rclone"
 brew "redis", restart_service: :changed
 brew "ripgrep"
+brew "s5cmd"
 brew "shellcheck"
+brew "starship"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tmuxinator"
@@ -79,21 +87,13 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "zsh-syntax-highlighting"
-brew 'hugo'
-brew 'lsd'
-brew 'nmap'
-brew 'neovim'
-brew 'node'
-brew 's5cmd'
-brew 'starship'
-brew 'pre-commit'
 
 # neovim + lsps
-brew 'pyright'
-brew 'tree-sitter'
-brew 'bash-language-server'
-brew 'lua-language-server'
-brew 'typescript-language-server'
+brew "pyright"
+brew "tree-sitter"
+brew "bash-language-server"
+brew "lua-language-server"
+brew "typescript-language-server"
 
 # bioinformatics
 brew "bcftools"
