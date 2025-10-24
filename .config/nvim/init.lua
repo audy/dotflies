@@ -2,6 +2,7 @@
 -- LEADER KEYS
 -- ================================
 
+
 local vim = vim
 
 vim.g.mapleader = ' '
@@ -21,8 +22,8 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- Editor appearance
 vim.opt.colorcolumn = "100"
-vim.opt.cursorline = true          -- highlight current line
-vim.opt.cursorlineopt = "number"   -- only highlight the line number
+vim.opt.cursorline = true        -- highlight current line
+vim.opt.cursorlineopt = "number" -- only highlight the line number
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.termguicolors = true
@@ -93,7 +94,6 @@ vim.filetype.add({
 
 vim.pack.add({
   { src = "https://github.com/folke/which-key.nvim" },
-  { src = "https://github.com/gbprod/nord.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/nvim-mini/mini.completion" },
@@ -103,6 +103,12 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/tpope/vim-fugitive" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+})
+
+-- colorschemes
+vim.pack.add({
+  { src = "https://github.com/gbprod/nord.nvim" },
+  { src = "https://github.com/folke/tokyonight.nvim" },
 })
 
 -- neotree
@@ -176,9 +182,10 @@ vim.treesitter.language.register("groovy", "nf")
 
 require("oil").setup({
   columns = {
-    "icon"
+    "icon",
   },
   delete_to_trash = true,
+  watch_for_changes = true,
   view_options = {
     show_hidden = false,
     is_hidden_file = function(name, bufnr)
@@ -223,8 +230,6 @@ require("nord").setup({
 })
 
 vim.cmd("colorscheme nord")
-
-
 
 require('mini.completion').setup(
   {
@@ -297,7 +302,6 @@ vim.lsp.enable({
   'ruff',
   'rust_analyzer',
   'ts_ls',
-  'ruby-lsp',
   'yamlls',
 })
 
