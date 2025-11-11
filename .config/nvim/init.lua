@@ -298,8 +298,9 @@ vim.lsp.enable({
   'html',
   'jsonls',
   'nextflow_ls',
-  'pyright',
-  'ruff',
+  'pyright', -- code nav
+  'ty', -- linting, typing
+  'ruff', -- formatting
   'rust_analyzer',
   'ts_ls',
   'yamlls',
@@ -315,6 +316,18 @@ vim.lsp.config('nextflow_ls', {
       },
     },
   },
+})
+
+-- only use pyright for code nav
+vim.lsp.config('pyright', {
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+        diagnosticMode = "off"
+      }
+    }
+  }
 })
 
 -- ================================
