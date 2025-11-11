@@ -22,6 +22,19 @@ alias ol='orbiter logs -f'
 alias oa='orbiter attach'
 alias oc='orbiter cancel'
 
+alias mcat='mcat --theme nord'
+
+function s() {
+  mcat $(fd "${1}" | fzy)
+}
+
+function S() {
+  mcat $(fd -I "${1}" | fzy)
+}
+
+function vs() {
+  vim $(fd "${1}" | fzy)
+}
 
 function ocxdl() {
     python -c "
