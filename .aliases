@@ -40,18 +40,29 @@ function ocxdl() {
     python -c "
 import onecodex
 ocx = onecodex.Api()
-sample = ocx.Samples.get(\"$@\")
 
-if sample is None:
-    analysis = ocx.Classifications.get(\"$@\")
-    sample = analysis.sample
+project = ocx.Projects.get(\"$@\")
 
-if sample is None:
-    print(\"Could not find a sample/classification with that ID\")
-    quit(1)
+if project:
+    print(f\"Found project: {project.name}\")
+    samples = ocx.Samples.where(project=project)
+else:
+    sample = ocx.Samples.get(\"$@\")
 
-print(f\"downloading sample {sample.id} {sample.filename}\")
-sample.download(progressbar=True)
+    if sample is None:
+        analysis = ocx.Analyses.get(\"$@\")
+
+        sample = analysis.sample
+
+    if sample is None:
+        print(\"Could not find a sample/classification with that ID\")
+        quit(1)
+    samples = [ sample ]
+
+print(f\"downloading {len(samples):,} samples\")
+
+for sample in samples:
+    sample.download(progressbar=True)
     "
 }
 
