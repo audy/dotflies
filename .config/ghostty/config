@@ -1,7 +1,7 @@
 theme = nord
 
 font-family = Mononoki Nerd Font Mono Regular
-font-size = 16
+font-size = 14
 
 # disable ligatures
 font-feature = -calt
