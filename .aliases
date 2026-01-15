@@ -246,7 +246,7 @@ function pushover () {
 # works over ssh, too! (the alert, not the alias)
 alias doot="echo -e '\a'"
 
-alias l='lsd'
+alias l='lsd --group-directories-first --extensionsort'
 
 # colors + / at the end of dir names
 alias ls='ls -Gp'
