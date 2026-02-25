@@ -173,3 +173,9 @@ fi
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 eval "$(starship init zsh)"
+
+
+# always default to `science-vessel` virtualenv (if it exists)
+if [[ -e ~/Code/science-vessel/.venv/bin/activate ]]; then
+  VIRTUAL_ENV_DISABLE_PROMPT=1 source ~/Code/science-vessel/.venv/bin/activate
+fi
