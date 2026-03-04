@@ -74,6 +74,7 @@ brew "pigz"
 brew "porter-dev/porter/porter"
 brew "postgresql@14", restart_service: :changed
 brew "pre-commit"
+brew "pv"
 brew "pwgen"
 brew "rclone"
 brew "redis", restart_service: :changed
