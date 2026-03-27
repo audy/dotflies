@@ -37,7 +37,14 @@ vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.smarttab = false
-vim.opt.wrap = false
+
+-- (Soft) Wrap
+vim.opt.colorcolumn = "100"
+vim.opt.wrap = true -- softwrap
+vim.opt.linebreak = true -- wrap at word boundaries
+vim.opt.textwidth = 0
+vim.opt_local.breakindent = true -- match indentation of wrapped lines
+vim.opt_local.breakindentopt = "shift:2"  -- indent wrapped lines an extra 2 spaces
 
 -- File handling
 vim.opt.autowrite = true
@@ -103,6 +110,8 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/tpope/vim-fugitive" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  { src = "https://github.com/Vigemus/iron.nvim" },
+  { src = "https://github.com/nvimtools/none-ls.nvim" },
 })
 
 -- colorschemes
@@ -126,6 +135,84 @@ vim.pack.add({
 -- ================================
 -- PLUGIN CONFIGURATION
 -- ================================
+
+
+-- IRON
+
+local iron = require("iron.core")
+local view = require("iron.view")
+local common = require("iron.fts.common")
+
+iron.setup {
+  config = {
+    -- Whether a repl should be discarded or not
+    scratch_repl = true,
+    -- Your repl definitions come here
+    repl_definition = {
+      sh = {
+        -- Can be a table or a function that
+        -- returns a table (see below)
+        command = {"zsh"}
+      },
+      python = {
+        command = { "ipython", "--no-autoindent" },
+        format = common.bracketed_paste_python,
+        block_dividers = { "# %%", "#%%" },
+        env = {PYTHON_BASIC_REPL = "1"} --this is needed for python3.13 and up.
+      }
+    },
+    -- set the file type of the newly created repl to ft
+    -- bufnr is the buffer id of the REPL and ft is the filetype of the 
+    -- language being used for the REPL. 
+    repl_filetype = function(bufnr, ft)
+      return ft
+      -- or return a string name such as the following
+      -- return "iron"
+    end,
+    -- Send selections to the DAP repl if an nvim-dap session is running.
+    dap_integration = true,
+    -- How the repl window will be displayed
+    -- See below for more information
+    repl_open_cmd = view.right(80),
+
+  },
+  -- Iron doesn't set keymaps by default anymore.
+  -- You can set them here or manually add keymaps to the functions in iron.core
+  keymaps = {
+    toggle_repl = "<space>rr", -- toggles the repl open and closed.
+    -- If repl_open_command is a table as above, then the following keymaps are
+    -- available
+    -- toggle_repl_with_cmd_1 = "<space>rv",
+    -- toggle_repl_with_cmd_2 = "<space>rh",
+    restart_repl = "<space>rR", -- calls `IronRestart` to restart the repl
+    send_motion = "<space>sc",
+    visual_send = "<space>sc",
+    send_file = "<space>sf",
+    send_line = "<space>sl",
+    send_paragraph = "<space>sp",
+    send_until_cursor = "<space>su",
+    send_mark = "<space>sm",
+    send_code_block = "<space>sb",
+    send_code_block_and_move = "<space>sn",
+    mark_motion = "<space>mc",
+    mark_visual = "<space>mc",
+    remove_mark = "<space>md",
+    cr = "<space>s<cr>",
+    interrupt = "<space>s<space>",
+    exit = "<space>sq",
+    clear = "<space>cl",
+  },
+  -- If the highlight is on, you can change how it looks
+  -- For the available options, check nvim_set_hl
+  highlight = {
+    italic = true
+  },
+  ignore_blank_lines = true, -- ignore blank lines when sending visual select lines
+}
+
+-- iron also has a list of commands, see :h iron-commands for all available commands
+vim.keymap.set('n', '<space>rf', '<cmd>IronFocus<cr>')
+vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>')
 
 require("scrollbar").setup()
 
@@ -306,6 +393,10 @@ vim.lsp.enable({
   'yamlls',
 })
 
+require('null-ls').setup({
+  sources = { require('null-ls').builtins.formatting.mdformat }
+})
+
 vim.lsp.config('nextflow_ls', {
   cmd = { 'java', '-jar', '/Users/audy/Code/nf-language-server/language-server-all.jar' },
   filetypes = { 'nextflow' },
@@ -333,6 +424,14 @@ vim.lsp.config('pyright', {
 -- ================================
 -- AUTOCOMMANDS
 -- ================================
+
+-- Disable mini.completion (LSP) for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.b.minicompletion_disable = true
+  end,
+})
 
 -- Return to same line when reopening files
 vim.cmd([[
