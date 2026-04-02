@@ -105,7 +105,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/nvim-mini/mini.completion" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/petertriho/nvim-scrollbar" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/tpope/vim-fugitive" },
