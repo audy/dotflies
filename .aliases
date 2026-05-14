@@ -17,12 +17,14 @@ function nf-test() {
 alias nf=nextflow
 alias vim=nvim
 
-alias otop='watch -n 5 orbiter list runs --all --incomplete'
+#alias otop='watch -n 5 orbiter list runs --all --incomplete'
 alias ol='orbiter logs -f'
 alias oa='orbiter attach'
 alias oc='orbiter cancel'
 
 alias mcat='mcat --theme nord'
+
+alias aws="aws-vault exec default -- aws"
 
 function s() {
   mcat $(fd "${1}" | fzy)
@@ -34,6 +36,10 @@ function S() {
 
 function vs() {
   vim $(fd "${1}" | fzy)
+}
+
+iocx() {
+  ipython -c "import onecodex; ocx = onecodex.Api()" -i
 }
 
 function ocxdl() {
@@ -270,7 +276,7 @@ alias gap='git add -p'
 alias gs='git status -sb .'
 alias gbh='gb | head'
 alias gr='git reset'
-alias branch='git branch --sort=-committerdate | grep -v "^\*" | fzf --height=20% --reverse --info=inline | xargs git checkout'
+alias fbr='git branch --sort=-committerdate | grep -v "^\*" | fzf --height=20% --reverse --info=inline | xargs git checkout'
 
 alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 
