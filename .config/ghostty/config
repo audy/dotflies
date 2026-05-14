@@ -1,14 +1,17 @@
-theme = nord
+pgtheme = nord
 
 font-family = Mononoki Nerd Font Mono Regular
-font-size = 14
+font-size = 16
 
 # disable ligatures
 font-feature = -calt
 font-thicken = true
 
-window-padding-x = 8
-window-padding-y = 8,8
+# FIX: ghostty's paste confirmation crashes tmux
+clipboard-paste-protection = false
+
+window-padding-x = 12
+window-padding-y = 12,12
 
 cursor-color = #C5A7F2
 cursor-style = block
@@ -18,3 +21,6 @@ shell-integration-features = no-cursor
 selection-background = #92B3F4
 selection-foreground = #181824
 keybind = shift+enter=text:\n
+
+# uncomment this if ghostty decides to intercept ctrl-b again...
+#keybind = ctrl+b=unbind
