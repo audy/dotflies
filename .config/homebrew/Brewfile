@@ -65,7 +65,7 @@ brew "kubernetes-cli"
 brew "lsd"
 brew "mergiraf"
 brew "miller"
-brew "neovim", args: ['HEAD']
+brew "neovim"
 brew "nmap"
 brew "node"
 brew "openjdk", link: true
