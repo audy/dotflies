@@ -43,7 +43,7 @@ iocx() {
 }
 
 function ocxdl() {
-    python -c "
+  python -c "
 import onecodex
 ocx = onecodex.Api()
 
@@ -115,7 +115,6 @@ function kshell() {
   kubectl exec ${1} -t -i -- /bin/bash
 }
 
-
 function qshell() {
   kubectl exec ${1} -c runtime -t -i -- /bin/bash
 }
@@ -128,10 +127,9 @@ alias ss3="~/Code/onecodex-helper/s3-list/search.py"
 
 alias recent="mdfind 'kMDItemContentModificationDate > \$time.yesterday' | grep -v Library"
 
-
 alias lab="cd ~/Code/lab-notebook/"
 
-function nigiri () {
+function nigiri() {
   echo "ahi
 aji
 ebi
@@ -154,7 +152,7 @@ sake-toro" | gshuf | head -n 1
 }
 
 # use a remote docker daemon via an SSH tunnel
-function dtun () {
+function dtun() {
   # set this up as an alias in ~/.ssh/config
   machine_name="${1}"
   socket_path=~/.docker/tunnel/${machine_name}.sock
@@ -168,10 +166,10 @@ function dtun () {
 }
 
 # show number of files in each directory
-function count () {
+function count() {
   find . -type d -print0 | while read -d '' -r dir; do
-      files=("$dir"/*)
-      printf "%5d files in directory %s\n" "${#files[@]}" "$dir"
+    files=("$dir"/*)
+    printf "%5d files in directory %s\n" "${#files[@]}" "$dir"
   done
 }
 
@@ -182,13 +180,13 @@ function genome() {
 
 # setup ssh-agent for github
 # TODO: figure out a way to never have to do this again
-function ssha () {
+function ssha() {
   eval "$(ssh-agent -s)"
   ssh-add -K ~/.ssh/id_rsa
 }
 
 # show columns in a CSV file
-function columns () {
+function columns() {
   head -n 1 $1 | tr ',' '\n'
 }
 
@@ -220,16 +218,16 @@ alias mtrek='telnet mtrek.com 1701'
 
 # cleanup whiteboard image
 # (https://gist.github.com/lelandbatey/8677901)
-function whiteboard () {
+function whiteboard() {
   convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2"
 }
 
 # lab notebook
 function lab() {
   case $1 in
-    new)
-      touch notes.md && vim notes.md
-      ;;
+  new)
+    touch notes.md && vim notes.md
+    ;;
   esac
 }
 
@@ -237,14 +235,13 @@ function htmlstrip() {
   sed 's/<[^>]\+>//g'
 }
 
-function pushover () {
+function pushover() {
   curl \
     --form-string "token=${PUSHOVER_TOKEN}" \
     --form-string "user=${PUSHOVER_USER}" \
     --form-string "message=$1" \
     https://api.pushover.net/1/messages.json
 }
-
 
 # lazy ls
 
@@ -315,10 +312,11 @@ function prox() {
     ;;
   off)
     echo "disabling proxy"
-    sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off \
+    sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off
     ;;
   *)
     echo "usage: prox on|off"
+    ;;
   esac
 }
 
@@ -331,7 +329,6 @@ alias big='du  -a . | sort -n -r | less'
 
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
-
 #
 # DOCKER DOCKER DOCKER DOCKER DOCKER DOCKER
 #
@@ -340,7 +337,6 @@ alias kc='kubectl'
 
 # easy ubuntu
 alias ubuntu='docker run --entrypoint /bin/bash -ti --rm ubuntu:18.04'
-
 
 alias tf='terraform'
 
@@ -384,7 +380,6 @@ alias pea='pyenv activate'
 alias pad='pyenv activate $(basename $(pwd))'
 alias pac='pyenv virtualenv $1 $(basename $(pwd))'
 
-
 function dark() {
   osascript -e '
     tell application "System Events"
@@ -424,41 +419,40 @@ alias ws='find . -not \( -name .svn -prune -o -name .git -prune \) -type f -prin
 
 # Display image with tput
 function image() {
-  convert $1 -resize 40 txt:-|sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d'|awk '{print $1,$2}'|sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/'|bc|sed 's/$/;echo -n "  ";/'|tr '\n' ' '|sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/'|bash
+  convert $1 -resize 40 txt:- | sed -E 's/://;s/\( ? ?//;s/, ? ?/,/g;s/\)//;s/([0-9]+,[0-9]+,[0-9]+),[0-9]+/\1/g;s/255/254/g;/mage/d' | awk '{print $1,$2}' | sed -E 's/^0,[0-9]+ /print "echo;tput setaf "\;/;s/^[0-9]+,[0-9]+ /print "tput setaf ";/;s/(.+),(.+),(.+)/\1\/42.5*36+\2\/42.5*6+\3\/42.5+16/' | bc | sed 's/$/;echo -n "  ";/' | tr '\n' ' ' | sed 's/^/tput rev;/;s/; /;/g;s/$/tput sgr0;echo/' | bash
 }
 
 colors() {
-  for i in {0..255} ; do
-      printf "\x1b[38;5;${i}mcolour${i}\n"
+  for i in {0..255}; do
+    printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
 
 # extract most known archives with one command
-extract () {
-    if [ -f $1 ] ; then
-      case $1 in
-        *.tar.bz2)   tar xjf $1     ;;
-        *.tar.gz)    tar xzf $1     ;;
-        *.bz2)       bunzip2 $1     ;;
-        *.rar)       unrar e $1     ;;
-        *.gz)        gunzip $1      ;;
-        *.tar)       tar xf $1      ;;
-        *.tbz2)      tar xjf $1     ;;
-        *.tgz)       tar xzf $1     ;;
-        *.zip)       unzip $1       ;;
-        *.Z)         uncompress $1  ;;
-        *.7z)        7z x $1        ;;
-        *)     echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
+extract() {
+  if [ -f $1 ]; then
+    case $1 in
+    *.tar.bz2) tar xjf $1 ;;
+    *.tar.gz) tar xzf $1 ;;
+    *.bz2) bunzip2 $1 ;;
+    *.rar) unrar e $1 ;;
+    *.gz) gunzip $1 ;;
+    *.tar) tar xf $1 ;;
+    *.tbz2) tar xjf $1 ;;
+    *.tgz) tar xzf $1 ;;
+    *.zip) unzip $1 ;;
+    *.Z) uncompress $1 ;;
+    *.7z) 7z x $1 ;;
+    *) echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
-
 
 # fetch a random pokemon name
 # i use this to name machines
-function pokemon () {
+function pokemon() {
   count=$(curl --silent https://pokeapi.co/api/v2/pokemon | jq .count)
   pokemon_id=$((1 + RANDOM % ${count}))
   pokemon_data=$(curl --silent https://pokeapi.co/api/v2/pokemon/${pokemon_id})
@@ -466,7 +460,7 @@ function pokemon () {
 }
 
 # switch to random mac address (en0)
-function switchmac () {
+function switchmac() {
   newmac=$(perl -e 'for ($i=0;$i<5;$i++){@m[$i]=int(rand(256));} printf "02:%X:%X:%X:%X:%X\n",@m;')
   echo "changing mac address to ${newmac}"
   sudo ifconfig en0 ether ${newmac} && sudo ifconfig en0 down && sudo ifconfig en0 up
@@ -502,16 +496,15 @@ alias vpn='sudo openvpn ~/.config.ovpn'
 # TILDE TOWN
 #
 
-function tilde-tun () {
-  if [ -e ~/.tilde_ssh_pid ]
-  then
+function tilde-tun() {
+  if [ -e ~/.tilde_ssh_pid ]; then
     echo "stopping tilde tunnel"
-    kill `cat ~/.tilde_ssh_pid`
+    kill $(cat ~/.tilde_ssh_pid)
     rm ~/.tilde_ssh_pid
   else
     echo "starting tilde tunnel"
     nohup ssh -N town -L localhost:6667:localhost:6667 &
-    echo $! > ~/.tilde_ssh_pid
+    echo $! >~/.tilde_ssh_pid
   fi
 }
 
@@ -520,7 +513,6 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 #
 # BIOINFORMATICS
 #
-
 
 # make blastn output pretty / parseable
 function pretty-blastn() {
@@ -542,9 +534,15 @@ function pretty-blastn() {
     bitscore
   )
 
-  column_names_string=$(IFS=' ' ; echo "${column_names[*]}")
+  column_names_string=$(
+    IFS=' '
+    echo "${column_names[*]}"
+  )
 
-  header=$(IFS=',' ; echo "${column_names[*]}")
+  header=$(
+    IFS=','
+    echo "${column_names[*]}"
+  )
 
   echo "${header}"
   blastn -outfmt "10 delim=, ${column_names_string}" "${@}"
@@ -558,7 +556,7 @@ alias ncbi='ftp ftp://anonymous:audy@ftp.ncbi.nih.gov'
 alias knit="Rscript -e 'knitr::render_markdown($1)'"
 
 # extract sequences from a fastq file
-function fqseqs () {
+function fqseqs() {
   awk 'NR%2 == 0 && NR%4 != 0'
 }
 
@@ -566,6 +564,6 @@ function fqseqs () {
 alias ungron="gron --ungron"
 
 function science() {
-    echo "Stand back! I'm doing science!"
-    source /Users/audy/Code/science-vessel/.venv/bin/activate
+  echo "Stand back! I'm doing science!"
+  source /Users/audy/Code/science-vessel/.venv/bin/activate
 }
