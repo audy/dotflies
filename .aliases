@@ -283,12 +283,24 @@ alias gb='for ref in $(git for-each-ref --sort=-committerdate --format="%(refnam
 # pretty list branches, sorted by date
 alias gb='git for-each-ref --sort=-committerdate refs/heads/ --format "%(committerdate:short) %09 %(committername) %09 %(refname:short)"'
 
-
 function gad() {
   git add $1
   git commit -m "+ $1"
 }
 
+# pretty git branch selector
+gco() {
+  local branch base
+  base=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/@@')
+  base=${base:-origin/master}
+  branch=$(git for-each-ref --color=always --sort=-committerdate refs/heads/ \
+    --format='%(refname:short) %(color:blue)%(committerdate:relative)%(color:reset)' |
+    fzf --ansi --height=40% --reverse \
+      --preview "git log --color=always --oneline -30 $base..{1}" \
+      --preview-window=right:60% |
+    awk '{print $1}')
+  [[ -n $branch ]] && git checkout "$branch"
+}
 
 #
 # macOS
