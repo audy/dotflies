@@ -24,7 +24,8 @@ alias oc='orbiter cancel'
 
 alias mcat='mcat --theme nord'
 
-alias aws="aws-vault exec default -- aws"
+alias aws="aws-vault exec -n default -- aws"
+alias kubectl='aws-vault exec -n default -- kubectl'
 
 function s() {
   mcat $(fd "${1}" | fzy)
