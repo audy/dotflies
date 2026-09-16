@@ -1,0 +1,41 @@
+{
+  "firstTranslationLanguage": "en",
+  "secondTranslationLanguage": "sp",
+  "thirdTranslationLanguage": null,
+  "globalShortcut": "command",
+  "showWindowOn": "screenWithFrontmost",
+  "calendarEnabled": false,
+  "showAllDayEvents": true,
+  "launchAtLogin": true,
+  "mediaKeyForwardingEnabled": true,
+  "showUpcomingEvent": false,
+  "scratchPadColor": "SYSTEM",
+  "searchFolders": [],
+  "searchEngine": "google",
+  "customSearchUrl": "https://google.com/search?q=%s",
+  "shortcuts": {
+    "emoji_picker": "command+control+space"
+  },
+  "showInAppBrowserBookMarks": true,
+  "hasDismissedGettingStarted": true,
+  "hyperKeyEnabled": false,
+  "customItems": [],
+  "disabledItemIds": [
+    "file:///System/Applications/Utilities/Screen%20Sharing.app/",
+    "scratchpad",
+    "resize_top_right",
+    "resize_top_half",
+    "resize_top_left",
+    "resize_right_half",
+    "resize_left_half",
+    "resize_fullscreen",
+    "resize_bottom_right",
+    "resize_bottom_left",
+    "resize_bottom_half",
+    "move_next_screen",
+    "move_to_next_space",
+    "move_previous_screen",
+    "lock",
+    "clipboard_manager"
+  ]
+}
