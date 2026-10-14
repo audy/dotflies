@@ -1,0 +1,20 @@
+/* Light/dark follows the OS. Hide Quarto's manual toggle: once clicked it
+   pins the scheme in localStorage and OS changes are ignored. */
+.quarto-color-scheme-toggle { display: none; }
+
+/* Vega tooltip and action menu are injected outside the chart, so they
+   do not inherit the page colours. */
+body.quarto-dark #vg-tooltip-element {
+  background: #2b2b2b;
+  color: #ddd;
+  border-color: #555;
+}
+body.quarto-dark #vg-tooltip-element td.key { color: #aaa; }
+body.quarto-dark .vega-embed .vega-actions {
+  background: #2b2b2b;
+  border-color: #555;
+}
+body.quarto-dark .vega-embed .vega-actions a { color: #ddd; }
+body.quarto-dark .vega-embed .vega-actions a:hover { background: #444; }
+body.quarto-dark .vega-embed .vega-actions::before { border-bottom-color: #555; }
+body.quarto-dark .vega-embed .vega-actions::after { border-bottom-color: #2b2b2b; }

@@ -1,0 +1,58 @@
+---
+title: "TITLE"
+date: YYYY-MM-DD
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    respect-user-color-scheme: true
+    css: adaptive.css
+    toc: true
+    code-fold: true
+    embed-resources: true
+jupyter: python3
+---
+
+```{python}
+#| label: setup
+import altair as alt
+import polars as pl
+
+alt.data_transformers.disable_max_rows()
+# SVG so chart colours are CSS-resolvable; canvas would bake them in
+alt.renderers.set_embed_options(renderer="svg")
+
+
+@alt.theme.register("adaptive", enable=True)
+def adaptive() -> alt.theme.ThemeConfig:
+    # currentColor inherits the page text colour, so charts follow the
+    # light/dark theme without re-rendering
+    fg = "currentColor"
+    return alt.theme.ThemeConfig(
+        config={
+            "background": "transparent",
+            "view": {"stroke": fg, "strokeOpacity": 0.2},
+            "title": {"color": fg, "subtitleColor": fg},
+            "axis": {
+                "labelColor": fg,
+                "titleColor": fg,
+                "domainColor": fg,
+                "domainOpacity": 0.4,
+                "tickColor": fg,
+                "tickOpacity": 0.4,
+                "gridColor": fg,
+                "gridOpacity": 0.1,
+            },
+            "legend": {"labelColor": fg, "titleColor": fg},
+            "header": {"labelColor": fg, "titleColor": fg},
+            "text": {"color": fg},
+        }
+    )
+```
+
+## 1. Introduction
+
+## 2. Materials and Methods
+
+## 3. Results
