@@ -1,7 +1,7 @@
-theme = nord
+theme = Nord
 
 font-family = Mononoki Nerd Font Mono Regular
-font-size = 16
+font-size = 14
 
 # disable ligatures
 font-feature = -calt
@@ -24,3 +24,15 @@ keybind = shift+enter=text:\n
 
 # uncomment this if ghostty decides to intercept ctrl-b again...
 #keybind = ctrl+b=unbind
+
+# Remap because Toshy sends Cmd+1–9 as Ctrl+1–9 (Ghostty's Linux default is Alt+1–9)
+# TODO: apply this only on Fedora/Sway?
+keybind = ctrl+digit_1=goto_tab:1
+keybind = ctrl+digit_2=goto_tab:2
+keybind = ctrl+digit_3=goto_tab:3
+keybind = ctrl+digit_4=goto_tab:4
+keybind = ctrl+digit_5=goto_tab:5
+keybind = ctrl+digit_6=goto_tab:6
+keybind = ctrl+digit_7=goto_tab:7
+keybind = ctrl+digit_8=goto_tab:8
+keybind = ctrl+digit_9=last_tab
