@@ -30,6 +30,9 @@ bindkey "^X^E" edit-command-line
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_BUNDLE_FILE_GLOBAL=~/.config/homebrew/Brewfile
 
+# fixes ghostty progress bars in some apps
+[[ -n $GHOSTTY_RESOURCES_DIR ]] && export TERM_PROGRAM=ghostty
+
 #
 # HISTORY
 #
