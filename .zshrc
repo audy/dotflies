@@ -182,3 +182,6 @@ eval "$(starship init zsh)"
 if [[ -e ~/Code/science-vessel/.venv/bin/activate ]]; then
   VIRTUAL_ENV_DISABLE_PROMPT=1 source ~/Code/science-vessel/.venv/bin/activate
 fi
+
+# fix for pango/weasyprint + homebrew
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH
