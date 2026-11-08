@@ -177,6 +177,9 @@ export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 eval "$(starship init zsh)"
 
+# linuxbrew
+[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 
 # always default to `science-vessel` virtualenv (if it exists)
 if [[ -e ~/Code/science-vessel/.venv/bin/activate ]]; then
